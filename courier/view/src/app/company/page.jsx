@@ -1,0 +1,86 @@
+import Image from "next/image";
+import React from "react";
+import companyp from "../../Assets/7.jpg";
+import companyprofile from "../../Assets/8.jpg";
+import Contactform from "@/UI/Contactform";
+
+const company = () => {
+  return (
+    <div>
+      <div className="">
+        <div className="  overflow-hidden relative ">
+          <Image src={companyp} alt="About us page " />
+        </div>
+        <div className="py-20 bg-orange-50">
+          <div className="flex p-10 gap-10 w-11/12 mx-auto">
+            <div className="w-full">
+              <Image src={companyprofile} alt="About us page " />
+            </div>
+            <div className="w-full space-y-8">
+              <div className="space-y-2">
+                <p className="text-orange-500   uppercase text-2xl font-bold">
+                  Company Profile
+                </p>
+                <p>
+                  Couriernet Limited was founded by Stephen Seemanpillai to
+                  provide a premier courier service to the London business
+                  community as well as to customers in England and the rest of
+                  the United Kingdom. We use cutting-edge technologies to
+                  deliver a unique e-commerce solution in today’s demanding
+                  business environment.
+                </p>
+              </div>
+              <p>
+                Our primary objectives are to:
+                
+              </p>
+              <ul>
+                  <li>
+                    Consistently provide the “best” standards of customer care
+                  </li>
+                  <li>
+                    Consistently provide the “best” standards of customer care
+                  </li>
+                  <li>
+                    Consistently provide the “best” standards of customer care
+                  </li>
+                  <li>
+                    Consistently provide the “best” standards of customer care
+                  </li>
+                </ul>
+            </div>
+          </div>
+        </div>
+        <div className="p-20  company-bg  flex justify-center relative text-white text-center h-60">
+        <div className="absolute inset-0 bg-orange-400  opacity-60 "></div>
+          <div className="  w-8/12 mx-auto space-y-4 absolute">
+          <p className="text-2xl font-semibold ">Client Satisfaction is Must !</p>
+          <p>
+            Committed to being at the forefront of new developments, our
+            objective is to help you optimise your costs by providing the
+            management information you want when you want it.
+          </p>
+          </div>
+        </div>
+        <div className="bg-orange-300">
+          <Contactform/>
+        </div>
+        <div className=" pt-   ">
+          <div className=" text-center font-bold p-10  text-3xl text-orange-700 font-sans ">
+            Our Location 
+          </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d435521.9536998145!2d74.00473299316174!3d31.482517983047398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190483e58107d9%3A0xc23abe6ccc7e2462!2sLahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1713373836553!5m2!1sen!2s"
+            height="450"
+            className="w-full"
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default company;
