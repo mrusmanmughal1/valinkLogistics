@@ -19,7 +19,7 @@ const NavLinks = ({style}) => {
           <Link href="/service">Services</Link>
         </li>
         <li>
-          <Link href="/">Client Area</Link>
+          <Link href="/client">Client Area</Link>
         </li>
       </ul>
     </div>

@@ -10,13 +10,24 @@ const company = () => {
       <div className="">
         <div className="  overflow-hidden relative ">
           <Image src={companyp} alt="About us page " />
+          <div className=" text-2xl text-center slide-right   Font-semibold    font-serif   font-semibold absolute top-[33%] left-[%] rounded-lg text-white ">
+          <div className=" relative uppercase  font-semibold bg-orange-500 p-4 rounded-r-2xl  ">
+            <p className=" p-4   rounded-md">
+              {" "}
+              We Care About Your Products{" "}
+            </p>
+            <p className="  rounded-md">
+              We Know How To Deliver
+            </p>
+          </div>
+        </div>
         </div>
         <div className="py-20 bg-orange-50">
           <div className="flex p-10 gap-10 w-11/12 mx-auto">
             <div className="w-full">
               <Image src={companyprofile} alt="About us page " />
             </div>
-            <div className="w-full space-y-8">
+            <div className="w-full space-y-4">
               <div className="space-y-2">
                 <p className="text-orange-500   uppercase text-2xl font-bold">
                   Company Profile
@@ -30,22 +41,28 @@ const company = () => {
                   business environment.
                 </p>
               </div>
-              <p>
-                Our primary objectives are to:
+              <p className="font-semibold">
+                Our primary objectives are :
                 
               </p>
               <ul>
                   <li>
-                    Consistently provide the “best” standards of customer care
+                 - To be the Ultimate Choice of our Supply Chain Stakeholders.
                   </li>
                   <li>
-                    Consistently provide the “best” standards of customer care
+                -  Creating Impact & Delivering Value Through Excellence Drive and Innovation for our Stakeholders.
                   </li>
                   <li>
-                    Consistently provide the “best” standards of customer care
+                    - Consistently provide the “best” standards of customer care
                   </li>
                   <li>
-                    Consistently provide the “best” standards of customer care
+                   - Always on time at every place where people need your products. Sell much more than before now!
+                  </li>
+                  <li>
+                    - Everything we do is guided by our values and professional ethics
+                  </li>
+                  <li>
+                    - We ensure that we hold ourselves accountable to the highest standards by delivering excellent
                   </li>
                 </ul>
             </div>

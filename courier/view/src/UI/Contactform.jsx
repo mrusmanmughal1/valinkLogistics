@@ -1,4 +1,7 @@
 import React from "react";
+import logo from "../Assets/Logo.png";
+import Image from "next/image";
+
 
 const Contactform = () => {
   return (
@@ -12,6 +15,10 @@ const Contactform = () => {
 
                 <p className="text-2xl font-bold">Service Area</p>
                 <p>We proudly serve clients in the United Kingdom.</p>
+            </div>
+            <div className=" flex justify-center">
+            <Image src={logo} width={170} height={170} alt="Logo" className="drop-shadow-2xl"/>
+
             </div>
           <div className="text-center">
             <p className="text-2xl font-bold">Contact Information</p>

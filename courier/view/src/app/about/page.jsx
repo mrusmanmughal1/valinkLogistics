@@ -7,8 +7,19 @@ const about = () => {
   return (
     <div>
       <div className="">
-        <div className="  overflow-hidden relative ">
+        <div className=" h-screen overflow-hidden relative">
           <Image src={aboutsecond} alt="About us page " />
+          <div className=" text-2xl text-center  Font-semibold   font-serif   font-semibold absolute top-[33%] left-[%] rounded-lg text-white ">
+          <div className=" relative uppercase  font-semibold bg-orange-500 p-4 rounded-r-2xl  ">
+            <p className=" p-4   rounded-md">
+              {" "}
+              We Care About Your Products{" "}
+            </p>
+            <p className="  rounded-md">
+              We Know How To Deliver
+            </p>
+          </div>
+        </div>
         </div>
         <div className="bg-orange-100">
           <div className="flex gap-20 p-10 w-11/12 mx-auto">

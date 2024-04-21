@@ -9,13 +9,13 @@ const home = () => {
       <div className="h-screen overflow-hidden relative ">
         <Image src={hero} alt="" />
 
-        <div className=" text-2xl text-center  Font-semibold     font-semibold absolute top-[30%] left-[2%] rounded-lg text-white p-8">
-          <div className="space-y-3 relative uppercase  p-6  ">
-            <p className="bg-orange-500 p-4 py-6 rounded-md">
+        <div className=" text-2xl text-center  slide-right  Font-semibold    font-serif  font-semibold absolute top-[33%] left-[%] rounded-lg text-white ">
+          <div className=" relative uppercase  font-semibold bg-orange-500 p-4 rounded-r-2xl  ">
+            <p className=" p-4   rounded-md">
               {" "}
               We Care About Your Products{" "}
             </p>
-            <p className="bg-orange-500 p-4 py-6 rounded-md">
+            <p className="  rounded-md">
               We Know How To Deliver
             </p>
           </div>

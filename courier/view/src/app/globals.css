@@ -50,3 +50,15 @@ background-attachment: fixed;
   width: 100%;
 
 }
+
+.slide-right {
+  animation: 2s slide-right;
+}
+@keyframes slide-right {
+  from {
+    margin-left: -100%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
