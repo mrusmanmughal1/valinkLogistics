@@ -6,14 +6,14 @@ const service = () => {
   return (
     <div>
       <div className="h-screen overflow-hidden relative ">
-        <Image src={sercice} alt="" />
+        <Image src={sercice} alt="" className="w-full" />
         <div className=" text-2xl text-center  slide-right   Font-semibold   font-serif   font-semibold absolute top-[33%] left-[%] rounded-lg text-white ">
-          <div className=" relative uppercase  font-semibold bg-orange-500 p-4 rounded-r-2xl  ">
-            <p className=" p-4   rounded-md">
+          <div className=" relative uppercase  font-semibold sidetip  p-4 rounded-r-2xl  ">
+            <p className=" p-4 drop-shadow-xl   rounded-md">
               {" "}
               We Care About Your Products{" "}
             </p>
-            <p className="  rounded-md">
+            <p className=" drop-shadow-xl   rounded-md">
               We Know How To Deliver
             </p>
           </div>
@@ -21,7 +21,7 @@ const service = () => {
       </div>
       <div className=" py-20 ">
         <div className="w-11/12 mx-auto text-center space-y-4">
-          <div className="text-bold font-serif text-3xl text-orange-500">
+          <div className="text-bold font-serif text-3xl text-orange-500 drop-shadow-xl ">
             One Booking Portal, Three Different Services
           </div>
           <div className="">
@@ -39,7 +39,7 @@ const service = () => {
         <div className="w-3/4 flex justify-center gap-10 mx-auto">
           <div className="border-orange-400   p-8    border-4">
             <div className=" text-center space-y-3">
-              <p className="text-2xl font-bold ">Worldwide Delivery</p>
+              <p className="text-2xl font-bold  ">Worldwide Delivery</p>
               <p className="">
                 We offer international shipments to any part of the world.
                 Experience a fast and reliable door-to-door service at a
@@ -58,13 +58,13 @@ const service = () => {
           </div>
         </div>
       </div>
-      <div className="py-20">
+      <div className="py-20 bg-orange-200">
         <div className="w-3/4 space-y-6 text-center  mx-auto p-8">
-          <p className="text-3xl font-semibold text-orange-500 font-serif">
+          <p className="text-3xl font-semibold drop-shadow-xl text-orange-500 font-serif">
             Why Choose Us?
           </p>
           <div className="text-justify  ">
-            <p>
+            <p className="why-choose-us drop-shadow-xl">
               " At Couriernet Limited, we strive to offer the best courier
               solutions for your business needs at a competitive price. Our
               company is constantly searching for new delivery sources and
@@ -73,7 +73,7 @@ const service = () => {
            
               Put simply, if you want a partner who cares about your business,
               choose Couriernet Limited. Contact us in London, England to find
-              out more about the services we can provide "
+              out more about the services we can provide"
             </p>
           </div>
           <div className="text-center">

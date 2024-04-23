@@ -6,7 +6,7 @@ import Image from "next/image";
 const Contactform = () => {
   return (
     <div className="w-11/12 mx-auto p-16 ">
-      <div className="text-center uppercase text-3xl font-semibold ">
+      <div className="text-center uppercase text-3xl font-semibold drop-shadow-xl  ">
         Contact Us
       </div>
       <div className="flex py-10  ">
@@ -23,11 +23,11 @@ const Contactform = () => {
           <div className="text-center">
             <p className="text-2xl font-bold">Contact Information</p>
             <p className="font-semibold">Couriernet Limited</p>
-            <p>UNIT – R3, 560-568 High Road</p>
-            <p>London, England N17 9TA</p>
+            <p>Vanlink , 4th floors, 84 Salop St,</p>
+            <p>Wolverhampton</p>
 
-            <p>Phone: 02033711919</p>
-            <p>Email: office@couriernet.co.uk</p>
+            <p>Phone: +44 (0)7860 246773</p>
+            <p>Email: info@vanlinklogitics.co.uk</p>
           </div>
         </div>
         <div className="w-full  shadow-lg p-10 bg-orange-50  ">

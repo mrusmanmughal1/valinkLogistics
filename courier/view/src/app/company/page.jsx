@@ -9,14 +9,14 @@ const company = () => {
     <div>
       <div className="">
         <div className="  overflow-hidden relative ">
-          <Image src={companyp} alt="About us page " />
+          <Image src={companyp} alt="About us page "  className="w-full"/>
           <div className=" text-2xl text-center slide-right   Font-semibold    font-serif   font-semibold absolute top-[33%] left-[%] rounded-lg text-white ">
-          <div className=" relative uppercase  font-semibold bg-orange-500 p-4 rounded-r-2xl  ">
-            <p className=" p-4   rounded-md">
+          <div className=" relative uppercase  font-semibold  sidetip p-4 rounded-r-2xl  ">
+            <p className=" p-4  drop-shadow-xl  rounded-md">
               {" "}
               We Care About Your Products{" "}
             </p>
-            <p className="  rounded-md">
+            <p className=" drop-shadow-xl   rounded-md">
               We Know How To Deliver
             </p>
           </div>
@@ -29,7 +29,7 @@ const company = () => {
             </div>
             <div className="w-full space-y-4">
               <div className="space-y-2">
-                <p className="text-orange-500   uppercase text-2xl font-bold">
+                <p className="text-orange-500 drop-shadow-xl    uppercase text-2xl font-bold">
                   Company Profile
                 </p>
                 <p>
@@ -68,7 +68,8 @@ const company = () => {
             </div>
           </div>
         </div>
-        <div className="p-20  company-bg  flex justify-center relative text-white text-center h-60">
+        <div className="">
+        <div className="p-20   company-bg  flex justify-center relative text-white text-center h-60">
         <div className="absolute inset-0 bg-orange-400  opacity-60 "></div>
           <div className="  w-8/12 mx-auto space-y-4 absolute">
           <p className="text-2xl font-semibold ">Client Satisfaction is Must !</p>
@@ -79,13 +80,12 @@ const company = () => {
           </p>
           </div>
         </div>
+        </div>
         <div className="bg-orange-300">
           <Contactform/>
         </div>
-        <div className=" pt-   ">
-          <div className=" text-center font-bold p-10  text-3xl text-orange-700 font-sans ">
-            Our Location 
-          </div>
+        <div className=" bg-orange-50 relative    justify-center">
+          
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d435521.9536998145!2d74.00473299316174!3d31.482517983047398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190483e58107d9%3A0xc23abe6ccc7e2462!2sLahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1713373836553!5m2!1sen!2s"
             height="450"

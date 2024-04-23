@@ -10,41 +10,41 @@ const Signup = () => {
             <div className=" grid gap-6 grid-cols-2">
             <div className="text-start text-sm font-semibold">
                 <label htmlFor="">First Name</label>
-                <input type="text" className='w-full p-2 rounded-md border-1 border-orange-700 border-2' />
+                <input type="text" className='w-full p-2 rounded-md outline-orange-300  border-orange-700 border' />
             </div>
             <div className="text-start text-sm font-semibold">
                 <label htmlFor="">Last Name</label>
-                <input type="text" className='w-full p-2 rounded-md border-1 border-orange-700 border-2' />
+                <input type="text" className='w-full p-2 rounded-md outline-orange-300  border-orange-700 border' />
             </div>
             <div className="text-start text-sm font-semibold">
                 <label htmlFor="">Company Name</label>
-                <input type="text" className='w-full p-2 rounded-md border-1 border-orange-700 border-2' />
+                <input type="text" className='w-full p-2 rounded-md outline-orange-300  border-orange-700 border' />
             </div>
             <div className="text-start text-sm font-semibold">
                 <label htmlFor="">Email Address</label>
-                <input type="text" className='w-full p-2 rounded-md border-1 border-orange-700 border-2' />
+                <input type="text" className='w-full p-2 rounded-md outline-orange-300  border-orange-700 border' />
             </div>
             <div className="text-start text-sm font-semibold">
                 <label htmlFor="">Address</label>
-                <input type="text" className='w-full p-2 rounded-md border-1 border-orange-700 border-2' />
+                <input type="text" className='w-full p-2 rounded-md outline-orange-300  border-orange-700 border' />
             </div>
             <div className="text-start text-sm font-semibold">
                 <label htmlFor="">City </label>
-                <input type="text" className='w-full p-2 rounded-md border-1 border-orange-700 border-2' />
+                <input type="text" className='w-full p-2 rounded-md outline-orange-300  border-orange-700 border' />
             </div>
             <div className="text-start text-sm font-semibold">
                 <label htmlFor="">Postcode</label>
-                <input type="text" className='w-full p-2 rounded-md border-1 border-orange-700 border-2' />
+                <input type="text" className='w-full p-2 rounded-md outline-orange-300  border-orange-700 border' />
             </div>
             <div className="text-start text-sm font-semibold">
                 <label htmlFor="">Phone Number</label>
-                <input type="text" className='w-full p-2 border-1 rounded-md border-orange-700 border-2' />
+                <input type="text" className='w-full p-2 outline-orange-300 rounded-md border-orange-700 border' />
             </div>
             
 
             </div>
             <div className="p-4">
-                <button className='px-6 py-4 bg-orange-500 text-white uppercase rounded-md'>Submit</button>
+                <button className='px-8 py-3 bg-orange-500 text-white uppercase rounded-md'>Submit</button>
             </div>
         </form>
         </div>
