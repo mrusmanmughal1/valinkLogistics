@@ -6,7 +6,7 @@ const service = () => {
   return (
     <div>
       <div className="h-screen overflow-hidden relative ">
-        <Image src={sercice} alt="" className="w-full" />
+        <Image src={sercice} alt="" className="w-full h-screen object-cover" />
         <div className=" text-2xl text-center  slide-right   Font-semibold   font-serif   font-semibold absolute top-[33%] left-[%] rounded-lg text-white ">
           <div className=" relative uppercase  font-semibold sidetip  p-4 rounded-r-2xl  ">
             <p className=" p-4 drop-shadow-xl   rounded-md">
@@ -36,7 +36,7 @@ const service = () => {
         </div>
       </div>
       <div className="py-14 bg-orange-50">
-        <div className="w-3/4 flex justify-center gap-10 mx-auto">
+        <div className="w-3/4 flex justify-center flex-col md:flex-row gap-10 mx-auto">
           <div className="border-orange-400   p-8    border-4">
             <div className=" text-center space-y-3">
               <p className="text-2xl font-bold  ">Worldwide Delivery</p>
@@ -59,12 +59,12 @@ const service = () => {
         </div>
       </div>
       <div className="py-20 bg-orange-200">
-        <div className="w-3/4 space-y-6 text-center  mx-auto p-8">
+        <div className="w-3/4 space-y-8 text-center  mx-auto p-8">
           <p className="text-3xl font-semibold drop-shadow-xl text-orange-500 font-serif">
             Why Choose Us?
           </p>
           <div className="text-justify  ">
-            <p className="why-choose-us drop-shadow-xl">
+            <p className="  drop-shadow-xl">
               " At Couriernet Limited, we strive to offer the best courier
               solutions for your business needs at a competitive price. Our
               company is constantly searching for new delivery sources and
@@ -72,8 +72,8 @@ const service = () => {
               out of your delivery requirements
            
               Put simply, if you want a partner who cares about your business,
-              choose Couriernet Limited. Contact us in London, England to find
-              out more about the services we can provide"
+              choose vanlinklogitics. Contact us in London, England to find
+              out more about the services we can provide "
             </p>
           </div>
           <div className="text-center">

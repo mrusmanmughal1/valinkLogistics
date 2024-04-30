@@ -86,7 +86,7 @@ background-attachment: fixed;
 
 
 
-.unbounded-font {
-  font-family: 'Unbounded', sans-serif;
-}
  
+.slick-dots li button:before{
+  font-size: 12px !important;
+}

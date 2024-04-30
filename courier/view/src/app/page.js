@@ -1,3 +1,5 @@
+
+import EstimationUI from "@/UI/EstimationUI"
 import SilderMain from "@/UI/SilderMain"
 import Hero from "@/components/Hero"
 import SelectVehicle from "@/components/SelectVehicle"
@@ -8,6 +10,7 @@ const page = () => {
         <Hero/>
         <SilderMain/>
         <SelectVehicle/>
+        <EstimationUI/>
     </div>
   )
 }

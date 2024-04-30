@@ -7,7 +7,7 @@ const Signup = () => {
         <p className='text-center text-xl font-semibold py-10  '>RESISTER HERE</p>
         <div className=" w-3/4 mx-auto">
         <form action="">
-            <div className=" grid gap-6 grid-cols-2">
+            <div className=" grid gap-6 md:grid-cols-2 grid-cols-1 ">
             <div className="text-start text-sm font-semibold">
                 <label htmlFor="">First Name</label>
                 <input type="text" className='w-full p-2 rounded-md outline-orange-300  border-orange-700 border' />

@@ -1,3 +1,4 @@
+import PlaceSearchForm from "@/UI/PlaceSearchForm";
 import Image from "next/image";
 import React from "react";
 
@@ -38,9 +39,9 @@ const SelectVehicle = () => {
           </p>
         </div>
 
-        <div className="flex  justify-around ">
+        <div className="flex md:flex-row flex-col md:flex-wrap lg:flex-nowrap justify-around ">
           <div className="space-y-4 text-center hover:bg-orange-400 hover:text-white rounded-md py-4 px-8">
-            <div className="hover:-translate-y-3 transition-all duration-700">
+            <div className="hover:-translate-y-3 transition-all duration-700 flex flex-col justify-center items-center">
               <Image
                 src="https://www.couriernet.co.uk/wp-content/uploads/2019/12/car-bg-preview-300-n.png"
                 width={250}
@@ -53,57 +54,52 @@ const SelectVehicle = () => {
             </div>
           </div>
           <div className="space-y-4 text-center hover:bg-orange-600 hover:text-white rounded-md py-4 px-8 ">
-            <div className="hover:-translate-y-3 transition-all duration-700 ">
+            <div className="hover:-translate-y-3 transition-all duration-700 flex flex-col justify-center items-center ">
               <Image
                 src="https://www.couriernet.co.uk/wp-content/uploads/2019/12/car-bg-preview-300-n.png"
                 width={250}
                 height={150}
                 alt="Car"
                 className="drop-shadow-lg"
-
               />
               <p className=" text-lg font-semibold ">Small Van </p>
               <p className="text-xs font-semibold  ">Up to 1.3 Meters</p>
             </div>
           </div>
           <div className="space-y-4 text-center hover:bg-orange-600 hover:text-white rounded-md py-4 px-8">
-            <div className="hover:-translate-y-3 transition-all duration-700">
+            <div className="hover:-translate-y-3 transition-all duration-700 flex flex-col justify-center items-center">
               <Image
                 src="https://www.couriernet.co.uk/wp-content/uploads/2019/12/van-bg-preview300b.png"
-               
                 width={250}
                 height={150}
                 alt="Car"
                 className="drop-shadow-lg"
-
               />
               <p className=" text-lg font-semibold">Large Van</p>
               <p className="text-xs font-semibold  ">Up to 3 Meter</p>
             </div>
           </div>
           <div className="space-y-4 text-center hover:bg-orange-600 hover:text-white rounded-md py-4 px-8">
-            <div className="hover:-translate-y-3 transition-all duration-700">
+            <div className="hover:-translate-y-3 transition-all duration-700 flex flex-col justify-center items-center">
               <Image
                 src="https://www.couriernet.co.uk/wp-content/uploads/2019/12/van-bg-preview300b.png"
                 width={250}
                 height={150}
                 alt="Car"
                 className="drop-shadow-lg"
-
               />
               <p className=" text-lg font-semibold"> Extra Large Van</p>
               <p className="text-xs font-semibold  ">Up To 4 Meter</p>
             </div>
           </div>
           <div className="space-y-4 text-center hover:bg-orange-600 hover:text-white  rounded-md py-4 px-8">
-            <div className="hover:-translate-y-3 transition-all duration-700">
+            <div className="hover:-translate-y-3 transition-all duration-700 flex flex-col justify-center items-center">
               <Image
                 src="https://www.couriernet.co.uk/wp-content/uploads/2019/12/van-bg-preview300b.png"
                 width={250}
                 height={150}
                 alt="Car"
                 className="drop-shadow-lg"
-
               />
               <p className=" text-lg font-semibold"> Luton Van</p>
               <p className="text-xs font-semibold  ">
@@ -112,36 +108,8 @@ const SelectVehicle = () => {
             </div>
           </div>
         </div>
-        <div className=" w-11/12 md:w-1/2   mx-auto">
-          <form action="">
-            <div className=" space-y-6">
-              <div className="flex gap-5 flex-col md:flex-row ">
-                <div className="flex flex-col gap-2 w-full mx-auto ">
-                  <label htmlFor="" className="font-semibold text-sm">
-                    Full Collection Postcode*
-                  </label>
-                  <input
-                    type="text"
-                    className="p-2 rounded-md outline-orange-300"
-                  />
-                </div>
-                <div className="flex flex-col gap-2 w-full">
-                  <label htmlFor="" className="font-semibold text-sm">
-                    Full Delivery Postcode*
-                  </label>
-                  <input
-                    type="text"
-                    className="p-2 rounded-md outline-orange-300"
-                  />
-                </div>
-              </div>
-              <div className="text-center">
-                <button className="text-white bg-orange-600 py-4 px-6 rounded-md font-semibold">
-                  Get a Quote
-                </button>
-              </div>
-            </div>
-          </form>
+        <div className="">
+          <PlaceSearchForm />
         </div>
       </div>
     </div>

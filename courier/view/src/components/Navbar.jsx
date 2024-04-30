@@ -8,11 +8,12 @@ import { SlSocialInstagram } from "react-icons/sl";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaGooglePlusG } from "react-icons/fa";
 import { TfiYoutube } from "react-icons/tfi";
+import Mobilenav from "@/UI/MobileNav";
 const Navbar = () => {
   return (
     <>
-      <div className="flex md:px-20 px-2   items-center justify-between relative text-sm py-2 gap-2 bg-orange-500 text-white">
-        <div className="flex gap-2 text-xs font-semibold">
+      <div className="flex md:px-20 px-2   w-full items-center justify-between relative text-sm py-2 gap-2 bg-orange-500 text-white">
+        <div className="flex gap-2  w-full justify-between md:justify-normal  md:flex-row text-xs font-semibold">
           <div className=" flex items-center   gap-1">
             {" "}
             <FaSquarePhone className="md:text-lg text-xs" />
@@ -27,7 +28,7 @@ const Navbar = () => {
             </a>
           </div>
         </div>
-        <div className="">
+        <div className="hidden md:block">
           <div className="flex justify-end md:text-lg text-xs gap-2">
             <a href="#">
               <FaFacebookSquare />
@@ -44,9 +45,8 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="w-full bg-orange-600 text-white py-2">
+      <div className="w-full bg-orange-600 text-white py-2 hidden md:block ">
         <nav>
-          <div className=""></div>
           <div className="flex      items-center  w-11/12 mx-auto   ">
             <div className="shadow-2xl  bg-orange-900 rounded-lg p-2 pt-">
               <Image src={logo} width={90} height={90} alt="Logo" />
@@ -65,6 +65,11 @@ const Navbar = () => {
             </div>
           </div>
         </nav>
+      </div>
+
+      {/* mobile nav */}
+      <div className="block md:hidden">
+      <Mobilenav/>
       </div>
     </>
   );

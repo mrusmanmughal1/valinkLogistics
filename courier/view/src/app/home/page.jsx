@@ -82,7 +82,7 @@ const home = () => {
 
       {/* fourth section  */}
       <div className="  bg-orange-50 pt-20 pb-10 ">
-        <div className="flex flex-col gap-32   md:flex-row w-11/12 mx-auto ">
+        <div className="flex flex-col  gap-14 md:gap-32   md:flex-row w-11/12 mx-auto ">
           <div className="w-full flex  md:w-3/4  justify-center ">
             <div className="w-full space-y-4">
               <h1 className="text-2xl font-bold text-orange-500 xl:text-[1.78rem] drop-shadow-xl  ">
@@ -113,7 +113,7 @@ const home = () => {
               </div>
             </div>
           </div>
-          <div className="w-3/4  text-center flex justify-center">
+          <div className=" w-full md:w-3/4   text-center flex justify-center">
             <Image src={home2} alt="" className="object-contain  w-full" />
           </div>
         </div>

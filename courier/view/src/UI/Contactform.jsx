@@ -9,7 +9,7 @@ const Contactform = () => {
       <div className="text-center uppercase text-3xl font-semibold drop-shadow-xl  ">
         Contact Us
       </div>
-      <div className="flex py-10  ">
+      <div className="flex py-10 flex-col md:flex-row ">
         <div className="w-full shadow-lg p-10 bg-orange-400 text-center flex-col justify-between flex ">
             <div className="space-y-2">
 

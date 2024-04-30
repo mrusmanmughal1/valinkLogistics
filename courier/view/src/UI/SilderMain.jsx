@@ -11,8 +11,8 @@ import img4 from "../Assets/trust/4.jpg";
 
 const SilderMain = () => {
   return (
-    <div className=" p-14 md:p-20 mx-auto    relative">
-      <div style={{fontFamily:'Bebas'}} className="text-5xl  text-center drop-shadow-md      font-bold">
+    <div className="px-8 py-12 md:py-14 md:px-14  mx-auto    relative">
+      <div style={{fontFamily:'Bebas'}} className="text-3xl md:text-5xl  text-center drop-shadow-md      font-bold">
         Our Trusted Partners{" "}
       </div>
       <div className="mx-auto w-3/4 my-8">
@@ -33,7 +33,7 @@ export const AllSlides = () => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay: true,
+    // autoplay: true,
     responsive: [
       {
         breakpoint: 1024,

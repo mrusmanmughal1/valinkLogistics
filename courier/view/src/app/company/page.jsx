@@ -9,7 +9,7 @@ const company = () => {
     <div>
       <div className="">
         <div className="  overflow-hidden relative ">
-          <Image src={companyp} alt="About us page "  className="w-full"/>
+          <Image src={companyp} alt="About us page "  className="w-full h-screen object-cover"/>
           <div className=" text-2xl text-center slide-right   Font-semibold    font-serif   font-semibold absolute top-[33%] left-[%] rounded-lg text-white ">
           <div className=" relative uppercase  font-semibold  sidetip p-4 rounded-r-2xl  ">
             <p className=" p-4  drop-shadow-xl  rounded-md">
@@ -23,7 +23,7 @@ const company = () => {
         </div>
         </div>
         <div className="py-20 bg-orange-50">
-          <div className="flex p-10 gap-10 w-11/12 mx-auto">
+          <div className="flex p-10 flex-col md:flex-row gap-10 w-11/12 mx-auto">
             <div className="w-full">
               <Image src={companyprofile} alt="About us page " />
             </div>
