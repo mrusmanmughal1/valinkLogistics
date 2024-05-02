@@ -2,6 +2,7 @@ import Image from "next/image";
 import hero from "../../Assets/2.jpg";
 import home1 from "../../Assets/home-1.jpg";
 import home2 from "../../Assets/home-2.jpg";
+import Link from "next/link";
 
 const home = () => {
   return (
@@ -119,7 +120,7 @@ const home = () => {
         </div>
         <div className="bg-orange-50 text-center py-10">
           <button className="text-white font-semibold bg-orange-600 p-4 rounded-md">
-             More About Us{" "}
+             <Link href={'/more-about-us'}>More About Us{" "}</Link>
           </button>
         </div>
       </div>

@@ -40,7 +40,7 @@ const SelectVehicle = () => {
         </div>
 
         <div className="flex md:flex-row flex-col md:flex-wrap lg:flex-nowrap justify-around ">
-          <div className="space-y-4 text-center hover:bg-orange-400 hover:text-white rounded-md py-4 px-8">
+          <div className="space-y-4 text-center hover:bg-orange-600 hover:text-white rounded-md py-4 px-8">
             <div className="hover:-translate-y-3 transition-all duration-700 flex flex-col justify-center items-center">
               <Image
                 src="https://www.couriernet.co.uk/wp-content/uploads/2019/12/car-bg-preview-300-n.png"

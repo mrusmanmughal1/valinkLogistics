@@ -49,6 +49,8 @@ html {
 .activeLink {
   @apply  bg-orange-500   rounded-md shadow-md;
 }
+
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

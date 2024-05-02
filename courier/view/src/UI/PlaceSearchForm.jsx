@@ -8,9 +8,9 @@ const PlaceSearchForm = () => {
     CollectionPostCode: "",
     DeliveryPostalCode: "",
   };
-  const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: "AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao",
-    libraries:['places']
+   const { isLoaded } = useJsApiLoader({
+    googleMapsApiKey:'AIzaSyAMQas2m1Fbq6JYpDf78c8RWHjH6uB4WRs',
+    libraries:['places'],
   });
   const { values, errors, touched, handleChange, handleSubmit, handleBlur } =
     useFormik({
@@ -43,8 +43,7 @@ const PlaceSearchForm = () => {
                 className={`p-2 w-full rounded-md outline-orange-300 ${
                   errors.CollectionPostCode && "border-2 border-red-600"
                 }`}
-                value={values.CollectionPostCode}
-                onChange={handleChange}
+                
                 name="CollectionPostCode"
                 id="CollectionPostCode"
               />

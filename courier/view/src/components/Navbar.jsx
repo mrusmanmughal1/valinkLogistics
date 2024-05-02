@@ -17,7 +17,7 @@ const Navbar = () => {
           <div className=" flex items-center   gap-1">
             {" "}
             <FaSquarePhone className="md:text-lg text-xs" />
-            <a href="02033711919" > +44 (0)7860 246773</a>
+            <a href="01217900800" > +44 (0)1217 900800</a>
           </div>
           <div className=" flex items-center   gap-1">
             {" "}

@@ -39,7 +39,7 @@ const service = () => {
         <div className="w-3/4 flex justify-center flex-col md:flex-row gap-10 mx-auto">
           <div className="border-orange-400   p-8    border-4">
             <div className=" text-center space-y-3">
-              <p className="text-2xl font-bold  ">Worldwide Delivery</p>
+              <p className="text-2xl font-bold  ">Next Day  Delivery</p>
               <p className="">
                 We offer international shipments to any part of the world.
                 Experience a fast and reliable door-to-door service at a

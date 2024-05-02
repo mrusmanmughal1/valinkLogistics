@@ -2,28 +2,43 @@
 import Link from "next/link";
 import React from "react";
 
-import { usePathname  } from 'next/navigation'
-const NavLinks = ({style}) => {
-  const pathname = usePathname()
-  console.log(pathname)
+import { usePathname } from "next/navigation";
+const NavLinks = ({ style }) => {
+  const pathname = usePathname();
+
+  const Links = [{
+    name :'Home',
+    Path :'/home'
+  },
+  {
+    name :'About us ',
+    Path :'/about'
+  },
+  {
+    name :'Our Company ',
+    Path :'/company'
+  },
+  {
+    name :'Services',
+    Path :'/service'
+  },
+  {
+    name :'Client Area',
+    Path :'/client'
+  }]
   return (
     <div className="  ">
       <ul className={`flex  gap-1 `}>
-        <li className="">
-          <Link href="/home"  className={`    p-4 ${pathname === '/home' ? 'activeLink  ' : ''}`}>Home</Link>
-        </li>
-        <li>
-          <Link href="/about" className={` p-4 ${pathname === '/about' ? 'activeLink ' : ''}`}>About Us</Link>
-        </li>
-        <li>
-          <Link href="/company" className={` p-4 ${pathname === '/company' ? 'activeLink ' : ''}`}>Our Company</Link>
-        </li>
-        <li>
-          <Link href="/service" className={` p-4 ${pathname === '/service' ? 'activeLink ' : ''}`}>Services</Link>
-        </li>
-        <li>
-          <Link href="/client" className={` p-4 ${pathname === '/client' ? 'activeLink ' : ''}`}>Client Area</Link>
-        </li>
+        
+        {Links.map((val)=>{
+          const {name , Path} = val ;
+          return <li  key={val} className={`${pathname !== Path && 'hover:-translate-y-1 transition-all duration-700'  }  `}>
+            
+            <Link href={`${Path}`}  className={`  p-4 ${
+              pathname === Path ? "activeLink " : ""
+            }`}>{name}</Link></li>
+        }) }
+        
       </ul>
     </div>
   );
