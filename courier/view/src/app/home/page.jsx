@@ -119,11 +119,14 @@ const home = () => {
           </div>
         </div>
         <div className="bg-orange-50 text-center py-10">
-          <button className="text-white font-semibold bg-orange-600 p-4 rounded-md">
-             <Link href={'/more-about-us'}>More About Us{" "}</Link>
-          </button>
+          <Link href={"/more-about-us"}>
+            <button className="text-white font-sans font-semibold bg-orange-600 p-4 rounded-md">
+              More About Us{" "}
+            </button>
+          </Link>
         </div>
       </div>
+     
     </div>
   );
 };

@@ -3,7 +3,7 @@
 
 
 export const metadata = {
-    title: "More About Us ",
+    title: "Vanlink Logistics -More About Us ",
     description: "More About Us",
   };
   
