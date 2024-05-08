@@ -30,7 +30,7 @@ const about = () => {
               </div>
               <div className="text-justify py-3">
                 <p>
-                  Express Courier Link is highly professional skilled & reliable
+                  VANLINK LOGISTICS is highly professional skilled & reliable
                   Courier Service Provider Company which has been classified for
                   courier delivery service for any destination in Pakistan and
                   abroad.
@@ -44,7 +44,7 @@ const about = () => {
                 <p>
                   {" "}
                   Head office Based in Karachi with regional offices Lahore and
-                  Islamabad. EXPRESS COURIER LINK – Offering
+                  Islamabad. VANLINK LOGISTICS – Offering
                   (Overnight-Overland-COD SERVICES) our Presence 300 Locations
                   in Pakistan & Overseas – UAE, Saudi Arabia, Bangladesh, Sri
                   Lanka, Hong Kong, Singapore, China.

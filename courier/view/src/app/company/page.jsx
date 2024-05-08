@@ -33,7 +33,7 @@ const company = () => {
                   Company Profile
                 </p>
                 <p>
-                  Couriernet Limited was founded by Stephen Seemanpillai to
+                VANLINK LOGISTICS was founded by Stephen Seemanpillai to
                   provide a premier courier service to the London business
                   community as well as to customers in England and the rest of
                   the United Kingdom. We use cutting-edge technologies to

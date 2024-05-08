@@ -41,12 +41,12 @@ const home = () => {
           <div className="w-full flex  justify-center">
             <div className="w-full lg:w-3/4 space-y-4">
               <h1 className="text-lg   font-bold text-orange-500 xl:text-3xl drop-shadow-xl   ">
-                Welcome to Couriernet Limited
+                Welcome to VANLINK LOGISTICS
               </h1>
               <div className="text-justify text-lg xl:text-lg leading-9">
                 <p className="">
                   Experience a better way to deliver parcels throughout the
-                  United Kingdom. Couriernet Limited is London, England’s
+                  United Kingdom. VANLINK LOGISTICS is London, England’s
                   premier on-demand, same-day courier service that uses
                   cutting-edge technologies to ensure the secure delivery of
                   your packages. We employ only the best people in the industry
@@ -109,8 +109,7 @@ const home = () => {
                   If you run a small business in London, we offer a 20% discount
                   for the first 3 months when you create an account. For more
                   information, give us a call on 02033711919 or email us at
-                  office@couriernet.co.uk.
-                </p>
+                  office@VANLINK LOGISTICS                </p>
               </div>
             </div>
           </div>
