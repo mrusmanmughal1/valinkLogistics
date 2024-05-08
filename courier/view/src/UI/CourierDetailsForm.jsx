@@ -52,7 +52,7 @@ const CourierDetailsForm = () => {
               <input
                 className={`${
                   errors.CompanyName && " border-4 border-red-300"
-                } w-full rounded-md border border-orange-500 p-2`}
+                } w-full rounded-md border border-red-500 p-2`}
                 onChange={handleChange}
                 id="CompanyName"
                 name="CompanyName"
@@ -67,7 +67,7 @@ const CourierDetailsForm = () => {
                name="CollectionAddress"
                 className={`${
                   errors.CollectionAddress && " border-4 border-red-300"
-                } w-full rounded-md border border-orange-500 p-2`}
+                } w-full rounded-md border border-red-500 p-2`}
               />
             </div>
             <div className=" space-y-1 py-2 font-semibold ">
@@ -75,7 +75,7 @@ const CourierDetailsForm = () => {
                 Post code (Collection)*
               </label>
               <input
-                className={`${errors.POstCode && " border-4 border-red-300"} w-full rounded-md border border-orange-500 p-2`}
+                className={`${errors.POstCode && " border-4 border-red-300"} w-full rounded-md border border-red-500 p-2`}
               
               />
             </div>
@@ -85,7 +85,7 @@ const CourierDetailsForm = () => {
               </label>
               <input
               
-              className={`${errors.CollectionDate && " border-4 border-red-300"} w-full rounded-md border border-orange-500 p-2`}
+              className={`${errors.CollectionDate && " border-4 border-red-300"} w-full rounded-md border border-red-500 p-2`}
               
               />
             </div>
@@ -95,7 +95,7 @@ const CourierDetailsForm = () => {
               </label>
               <input
               
-              className={`${errors.CollectionDate && " border-4 border-red-300"} w-full rounded-md border border-orange-500 p-2`}
+              className={`${errors.CollectionDate && " border-4 border-red-300"} w-full rounded-md border border-red-500 p-2`}
               
               />
             </div>
@@ -104,7 +104,7 @@ const CourierDetailsForm = () => {
                 Contact Name (Collection)*
               </label>
               <input 
-                className={`${errors.contactName && " border-4 border-red-300"} w-full rounded-md border border-orange-500 p-2`}
+                className={`${errors.contactName && " border-4 border-red-300"} w-full rounded-md border border-red-500 p-2`}
               
               />
             </div>
@@ -115,7 +115,7 @@ const CourierDetailsForm = () => {
               <input 
               
               
-              className={`${errors.contactNumber && " border-4 border-red-300"} w-full rounded-md border border-orange-500 p-2`}
+              className={`${errors.contactNumber && " border-4 border-red-300"} w-full rounded-md border border-red-500 p-2`}
               
               />
             </div>
@@ -125,7 +125,7 @@ const CourierDetailsForm = () => {
               </label>
               <input 
               
-              className={`${errors.itemsDetails && " border-4 border-red-300"} w-full rounded-md border border-orange-500 p-2`}
+              className={`${errors.itemsDetails && " border-4 border-red-300"} w-full rounded-md border border-red-500 p-2`}
               
               />
             </div>
@@ -135,7 +135,7 @@ const CourierDetailsForm = () => {
               </label>
               <input 
               
-              className={`${errors.vehicle && " border-4 border-red-300"} w-full rounded-md border border-orange-500 p-2`}
+              className={`${errors.vehicle && " border-4 border-red-300"} w-full rounded-md border border-red-500 p-2`}
               
               
               />
@@ -147,7 +147,7 @@ const CourierDetailsForm = () => {
               <textarea
                 cols={10}
                 rows={10}
-                className="w-full rounded-md border border-orange-500 p-2"
+                className="w-full rounded-md border border-red-500 p-2"
               />
             </div>
           </div>
@@ -159,7 +159,7 @@ const CourierDetailsForm = () => {
                 Company Name (Delivery)*
               </label>
               <input
-                className={`${errors.DeliveryCompanyName && " border-4 border-red-300"} w-full rounded-md border border-orange-500 p-2`}
+                className={`${errors.DeliveryCompanyName && " border-4 border-red-300"} w-full rounded-md border border-red-500 p-2`}
 
                 
                 id="CompanyName"
@@ -173,7 +173,7 @@ const CourierDetailsForm = () => {
               <input 
               
               
-              className={`${errors.DeliveryCollectionAddress && " border-4 border-red-300"} w-full rounded-md border border-orange-500 p-2`}
+              className={`${errors.DeliveryCollectionAddress && " border-4 border-red-300"} w-full rounded-md border border-red-500 p-2`}
               
               />
             </div>
@@ -184,7 +184,7 @@ const CourierDetailsForm = () => {
               <input 
               
               
-              className={`${errors.DeliveryPOstCode && " border-4 border-red-300"} w-full rounded-md border border-orange-500 p-2`}
+              className={`${errors.DeliveryPOstCode && " border-4 border-red-300"} w-full rounded-md border border-red-500 p-2`}
               
               />
             </div>
@@ -194,7 +194,7 @@ const CourierDetailsForm = () => {
               </label>
               <input 
               
-              className={`${errors.DeliveryCollectionDate && " border-4 border-red-300"} w-full rounded-md border border-orange-500 p-2`}
+              className={`${errors.DeliveryCollectionDate && " border-4 border-red-300"} w-full rounded-md border border-red-500 p-2`}
               
               />
             </div>
@@ -205,7 +205,7 @@ const CourierDetailsForm = () => {
               <input 
               
               
-              className={`${errors.DeliverycontactName && " border-4 border-red-300"} w-full rounded-md border border-orange-500 p-2`}
+              className={`${errors.DeliverycontactName && " border-4 border-red-300"} w-full rounded-md border border-red-500 p-2`}
               
               />
             </div>
@@ -215,7 +215,7 @@ const CourierDetailsForm = () => {
               </label>
               <input
               
-              className={`${errors.DeliverycontactNumber && " border-4 border-red-300"} w-full rounded-md border border-orange-500 p-2`}
+              className={`${errors.DeliverycontactNumber && " border-4 border-red-300"} w-full rounded-md border border-red-500 p-2`}
               
               />
             </div>
@@ -225,7 +225,7 @@ const CourierDetailsForm = () => {
               </label>
               <input 
               
-              className={`${errors.DeliveryBookerName && " border-4 border-red-300"} w-full rounded-md border border-orange-500 p-2`}
+              className={`${errors.DeliveryBookerName && " border-4 border-red-300"} w-full rounded-md border border-red-500 p-2`}
               
               />
             </div>
@@ -236,7 +236,7 @@ const CourierDetailsForm = () => {
               <input 
               
               
-              className={`${errors.DeliveryBookertNumber && " border-4 border-red-300"} w-full rounded-md border border-orange-500 p-2`}
+              className={`${errors.DeliveryBookertNumber && " border-4 border-red-300"} w-full rounded-md border border-red-500 p-2`}
               
               />
             </div>
@@ -244,7 +244,11 @@ const CourierDetailsForm = () => {
               <label htmlFor="" className="ps-2">
                 Booker Email ID*
               </label>
-              <input className="w-full rounded-md border border-orange-500 p-2" />
+              <input 
+              
+              className={`${errors.DeliveryBookertNumber && " border-4 border-red-300"} w-full rounded-md border border-red-500 p-2`}
+              
+              />
             </div>
 
             <div className=" space-y-1 py-2 font-semibold ">
@@ -254,7 +258,7 @@ const CourierDetailsForm = () => {
               <textarea
                 cols={10}
                 rows={10}
-                className="w-full rounded-md border border-orange-500 p-2"
+                className="w-full rounded-md border border-red-500 p-2"
               />
             </div>
           </div>

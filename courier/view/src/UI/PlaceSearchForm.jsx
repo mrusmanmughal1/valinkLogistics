@@ -2,12 +2,19 @@
 import { SearchplaceForm } from "@/app/helpers/FormsValidations";
 import { useJsApiLoader , Autocomplete } from "@react-google-maps/api";
 import { useFormik } from "formik";
+import Loader from "./Loader";
+import { useState } from "react";
 
 const PlaceSearchForm = () => {
+
+  const [direction , setdirection] = useState(null)
+  const [dstance, setdstance] = useState('')
+
   const SearchData = {
     CollectionPostCode: "",
     DeliveryPostalCode: "",
   };
+
    const { isLoaded } = useJsApiLoader({
     googleMapsApiKey:'AIzaSyAMQas2m1Fbq6JYpDf78c8RWHjH6uB4WRs',
     libraries:['places'],
@@ -17,14 +24,13 @@ const PlaceSearchForm = () => {
       initialValues: SearchData,
       onSubmit: (values, action) => {
         action.resetForm();
-        console.log(values);
       },
       validationSchema: SearchplaceForm,
     });
 
 
   if(!isLoaded){
-    return <h1> is loading </h1>
+    return  <Loader/>
   }
   
   return (
