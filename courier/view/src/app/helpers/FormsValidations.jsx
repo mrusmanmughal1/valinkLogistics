@@ -1,8 +1,10 @@
 import * as Yup from "yup";
 
 export const SearchplaceForm = Yup.object({
-  CollectionPostCode: Yup.string().required("Please Enter Collection Postal Code "),
-  DeliveryPostalCode: Yup.string().required(
+  collectionaddress: Yup.string().required(
+    "Please Enter Collection Postal Code "
+  ),
+  destinationAddress: Yup.string().required(
     "Please Enter Delivery Postal Code"
   ),
 });
@@ -25,10 +27,8 @@ export const ProvideDetails = Yup.object({
   DeliveryTime: Yup.string().required(" "),
   DeliverycontactName: Yup.string().required(" "),
   DeliveryBookerName: Yup.string().required(" "),
-  DeliverycontactNumber:Yup.string().required(" "),
+  DeliverycontactNumber: Yup.string().required(" "),
   DeliveryBookertNumber: Yup.string().required(" "),
   DeliveryitemsDetails: Yup.string().required(" "),
   Deliveryvehicle: Yup.string().required(" "),
 });
-
-
