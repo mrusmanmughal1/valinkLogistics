@@ -1,11 +1,12 @@
 import mongoose from "mongoose";
-const AutoIncrement = require("mongoose-sequence")(mongoose);
+import Inc from "mongoose-sequence";
+const AutoIncrement = Inc(mongoose);
 
 const QuotationFormSchema = new mongoose.Schema(
   {
     userID: {
       type: mongoose.Schema.Types.ObjectId,
-      required: true,
+      required: false,
       ref: "User",
     },
     collectionName: {
@@ -86,7 +87,8 @@ const QuotationFormSchema = new mongoose.Schema(
       required: true,
     },
     quoteJobStatus: {
-      type: String,
+      type: Boolean,
+      default: false,
     },
   },
   {
@@ -94,10 +96,10 @@ const QuotationFormSchema = new mongoose.Schema(
   }
 );
 QuotationFormSchema.plugin(AutoIncrement, {
-  inc_field: "ticket",
-  id: "ticetNums",
+  inc_field: "quote",
+  id: "quoteNumber",
   start_seq: 500,
 });
 
-const QuotationForm = mongoose.model("Vehicle", QuotationFormSchema);
+const QuotationForm = mongoose.model("QuotationForm", QuotationFormSchema);
 export default QuotationForm;
