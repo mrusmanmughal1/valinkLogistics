@@ -30,9 +30,9 @@ const NavLinks = ({ style }) => {
     <div className="  ">
       <ul className={`flex  gap-1 `}>
         
-        {Links.map((val)=>{
+        {Links.map((val , i)=>{
           const {name , Path} = val ;
-          return <li  key={val} className={`${pathname !== Path && 'hover:-translate-y-1 transition-all duration-700'  }  `}>
+          return <li  key={i} className={`${pathname !== Path && 'hover:-translate-y-1 transition-all duration-700'  }  `}>
             
             <Link href={`${Path}`}  className={`  p-4 ${
               pathname === Path ? "activeLink " : ""

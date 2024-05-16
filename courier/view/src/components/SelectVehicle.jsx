@@ -1,35 +1,23 @@
+"use client";
+
 import PlaceSearchForm from "@/UI/PlaceSearchForm";
 import Image from "next/image";
-import React from "react";
+import { ALL_Vehicles_API } from "@/Config/Constants";
+import { useState } from "react";
 
-const SelectVehicle = () => {
-  const Vehicles = [
-    {
-      img: "",
-      name: "",
-      details: "",
-    },
-    {
-      img: "",
-      name: "",
-      details: "",
-    },
-    {
-      img: "",
-      name: "",
-      details: "",
-    },
-    {
-      img: "",
-      name: "",
-      details: "",
-    },
-    {
-      img: "",
-      name: "",
-      details: "",
-    },
-  ];
+async function getData() {
+  const res = await fetch(ALL_Vehicles_API);
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+const SelectVehicle =  () => {
+  const [selectedCar, setSelectedCar] = useState(null);
+  const data = getData();
+
   return (
     <div className=" py-10 px-4 md:py-20 md:px-20 bg-orange-200">
       <div className="w-11/12 mx-auto space-y-10">
@@ -40,73 +28,28 @@ const SelectVehicle = () => {
         </div>
 
         <div className="flex md:flex-row flex-col md:flex-wrap lg:flex-nowrap justify-around ">
-          <div className="space-y-4 text-center hover:bg-orange-600 hover:text-white rounded-md py-4 px-8">
-            <div className="hover:-translate-y-3 transition-all duration-700 flex flex-col justify-center items-center">
-              <Image
-                src="https://www.couriernet.co.uk/wp-content/uploads/2019/12/car-bg-preview-300-n.png"
-                width={250}
-                height={150}
-                alt="Car"
-                className="drop-shadow-lg"
-              />
-              <p className=" text-lg font-semibold">Car</p>
-              <p className="text-xs font-semibold  ">Small Parcels Only</p>
-            </div>
-          </div>
-          <div className="space-y-4 text-center hover:bg-orange-600 hover:text-white rounded-md py-4 px-8 ">
-            <div className="hover:-translate-y-3 transition-all duration-700 flex flex-col justify-center items-center ">
-              <Image
-                src="https://www.couriernet.co.uk/wp-content/uploads/2019/12/car-bg-preview-300-n.png"
-                width={250}
-                height={150}
-                alt="Car"
-                className="drop-shadow-lg"
-              />
-              <p className=" text-lg font-semibold ">Small Van </p>
-              <p className="text-xs font-semibold  ">Up to 1.3 Meters</p>
-            </div>
-          </div>
-          <div className="space-y-4 text-center hover:bg-orange-600 hover:text-white rounded-md py-4 px-8">
-            <div className="hover:-translate-y-3 transition-all duration-700 flex flex-col justify-center items-center">
-              <Image
-                src="https://www.couriernet.co.uk/wp-content/uploads/2019/12/van-bg-preview300b.png"
-                width={250}
-                height={150}
-                alt="Car"
-                className="drop-shadow-lg"
-              />
-              <p className=" text-lg font-semibold">Large Van</p>
-              <p className="text-xs font-semibold  ">Up to 3 Meter</p>
-            </div>
-          </div>
-          <div className="space-y-4 text-center hover:bg-orange-600 hover:text-white rounded-md py-4 px-8">
-            <div className="hover:-translate-y-3 transition-all duration-700 flex flex-col justify-center items-center">
-              <Image
-                src="https://www.couriernet.co.uk/wp-content/uploads/2019/12/van-bg-preview300b.png"
-                width={250}
-                height={150}
-                alt="Car"
-                className="drop-shadow-lg"
-              />
-              <p className=" text-lg font-semibold"> Extra Large Van</p>
-              <p className="text-xs font-semibold  ">Up To 4 Meter</p>
-            </div>
-          </div>
-          <div className="space-y-4 text-center hover:bg-orange-600 hover:text-white  rounded-md py-4 px-8">
-            <div className="hover:-translate-y-3 transition-all duration-700 flex flex-col justify-center items-center">
-              <Image
-                src="https://www.couriernet.co.uk/wp-content/uploads/2019/12/van-bg-preview300b.png"
-                width={250}
-                height={150}
-                alt="Car"
-                className="drop-shadow-lg"
-              />
-              <p className=" text-lg font-semibold"> Luton Van</p>
-              <p className="text-xs font-semibold  ">
-                Up To 4.1 Meter + Tail Lift
-              </p>
-            </div>
-          </div>
+          {data.map((val, i) => {
+            const { typeofVan, idealUses } = val;
+            return (
+              <div
+                key={i}
+                onClick={() => alert(val)}
+                className="space-y-4 text-center hover:bg-orange-600 hover:text-white rounded-md py-4 px-8"
+              >
+                <div className="hover:-translate-y-3 transition-all duration-700 flex flex-col justify-center items-center">
+                  <Image
+                    src="https://www.couriernet.co.uk/wp-content/uploads/2019/12/car-bg-preview-300-n.png"
+                    width={250}
+                    height={150}
+                    alt="Car"
+                    className="drop-shadow-lg"
+                  />
+                  <p className=" text-lg font-semibold">{typeofVan}</p>
+                  <p className="text-xs font-semibold  ">{idealUses}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
         <div className="">
           <PlaceSearchForm />
