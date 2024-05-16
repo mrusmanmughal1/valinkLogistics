@@ -8,6 +8,7 @@ import { configDotenv } from "dotenv";
 import morgan from "morgan";
 /* Import Route Modules */
 import vehicleRoutes from "./routes/vehicleRoutes.js";
+import quotesRoutes from "./routes/quotesRoutes.js";
 
 /* Configuration */
 
@@ -23,6 +24,7 @@ app.use(cors());
 /* Routes */
 
 app.use("/vehicles", vehicleRoutes);
+app.use("/quotation", quotesRoutes);
 
 /* Mongoose and Server Setup */
 
