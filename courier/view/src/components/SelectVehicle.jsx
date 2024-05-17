@@ -4,19 +4,36 @@ import PlaceSearchForm from "@/UI/PlaceSearchForm";
 import Image from "next/image";
 import { ALL_Vehicles_API } from "@/Config/Constants";
 import { useState } from "react";
+import { useEffect } from "react";
 
-async function getData() {
-  const res = await fetch(ALL_Vehicles_API);
+// async function getData() {
+//   const res = await fetch(ALL_Vehicles_API);
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
+//   if (!res.ok) {
+//     throw new Error("Failed to fetch data");
+//   }
 
-  return res.json();
-}
-const SelectVehicle =  () => {
-  const [selectedCar, setSelectedCar] = useState(null);
-  const data = getData();
+//   return res.json();
+// }
+const SelectVehicle = () => {
+  // const [selectedCar, setSelectedCar] = useState(null);
+  // const data = getData();
+  // console.log("🚀 ~ SelectVehicle ~ data:", data);
+  const [data, setData] = useState(null);
+  const [isLoading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch(ALL_Vehicles_API)
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+      });
+  }, []);
+
+  if (isLoading) return <p>Loading...</p>;
+  if (!data) return <p>No profile data</p>;
+  console.log(data);
 
   return (
     <div className=" py-10 px-4 md:py-20 md:px-20 bg-orange-200">
