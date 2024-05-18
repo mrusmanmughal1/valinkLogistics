@@ -5,10 +5,9 @@ import { useFormik } from "formik";
 import Loader from "./Loader";
 import { useRef, useState } from "react";
 
-const PlaceSearchForm = () => {
+const PlaceSearchForm = ({selected , setDIstance}) => {
   const [collectionaddress, setcollectionaddress] = useState(null);
   const [destinationAddress, setdestinationAddress] = useState(null);
-  const [Distance, setDistance] = useState("");
 
   const SearchData = {
     collectionaddress :collectionaddress,
@@ -38,7 +37,7 @@ const PlaceSearchForm = () => {
     console.log(result , 'results');
     setcollectionaddress(result.request.origin.query);
     setdestinationAddress(result.request.destination.query)
-    setDistance(result.routes[0]?.legs[0]?.distance.text);
+    setDIstance(result.routes[0]?.legs[0]?.distance.text);
   }
 
   const { isLoaded } = useJsApiLoader({
@@ -116,8 +115,8 @@ const PlaceSearchForm = () => {
           </div>
           <div className="text-center">
             <button
-            type="submit"
-              className="text-white bg-orange-600 py-4 px-6 rounded-md font-semibold"
+            type="submit" disabled={!Boolean(selected)}
+              className="text-white bg-orange-600 py-4 px-6 rounded-md font-semibold disabled:bg-orange-300"
             >
               Get a Quote
             </button>

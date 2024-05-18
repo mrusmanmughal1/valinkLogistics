@@ -1,5 +1,9 @@
-
-const EstimationUI = () => {
+"use Client";
+const EstimationUI = ({ setProcessToForm, setform }) => {
+  const handleClick = () => {
+    setProcessToForm(true);
+    setform(false);
+  };
   return (
     <div className="bg-orange-200 p-10 md:p-20  border-2">
       <div className="flex justify-center items-center   ">
@@ -7,7 +11,7 @@ const EstimationUI = () => {
           <div className="text-bold rounded-t-md  font-bold  bg-white text-orange-600  drop-shadow-md text-center ext-lg  md:text-2xl p-4">
             QUOTE DETAILS
           </div>
-      <span className="animate-ping absolute inline-flex h-5  w-5 right-0 top-0  rounded-full bg-orange-800 opacity-75"></span>
+          <span className="animate-ping absolute inline-flex h-5  w-5 right-0 top-0  rounded-full bg-orange-800 opacity-75"></span>
 
           <div className=" space-y-2 bg-white  rounded-b-md drop-shadow-md  border-2 p-10 text-lg md:text-2xl text-center font-semibold">
             <p>The Quote Will be Delivered on Same Day </p>
@@ -19,8 +23,15 @@ const EstimationUI = () => {
       </div>
       <div className="py-10">
         <div className="flex justify-center gap-8 items-center">
-            <button className="bg-orange-600 text-white rounded-md p-4">Previous</button>
-            <button className="bg-orange-600 text-white rounded-md p-4 ">Next</button>
+          <button className="bg-orange-600 text-white rounded-md p-4">
+            Previous
+          </button>
+          <button
+            className="bg-orange-600 text-white rounded-md p-4 "
+            onClick={handleClick}
+          >
+            Next
+          </button>
         </div>
       </div>
     </div>
