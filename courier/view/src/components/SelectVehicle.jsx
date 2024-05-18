@@ -14,9 +14,9 @@ async function getData() {
 
   return res.json();
 }
-const SelectVehicle =  () => {
+const SelectVehicle = async () => {
   const [selectedCar, setSelectedCar] = useState(null);
-  const data = getData();
+  const data = await getData();
 
   return (
     <div className=" py-10 px-4 md:py-20 md:px-20 bg-orange-200">
@@ -29,6 +29,7 @@ const SelectVehicle =  () => {
 
         <div className="flex md:flex-row flex-col md:flex-wrap lg:flex-nowrap justify-around ">
           {data.map((val, i) => {
+            console.log(val);
             const { typeofVan, idealUses } = val;
             return (
               <div
