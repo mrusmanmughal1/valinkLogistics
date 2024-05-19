@@ -4,19 +4,45 @@ import { useFormik } from "formik";
 import { ProvideDetails } from "@/app/helpers/FormsValidations";
 
 const CourierDetailsForm = () => {
+
+
+  // collectionName: Yup.string().required(" "), 
+  // collectionAddress: Yup.string().required(" "),
+  // collectionPostCode: Yup.string().required(" "),
+  // collectionDate: Yup.string().required(" "),
+  // collectionTime: Yup.string().required(" "),
+  // collectionContact: Yup.string().required(" "),
+  // collectionNumber: Yup.string().required(" "),
+  // collectionDetail: Yup.string().required(" "),
+  // collectionInstruction: Yup.string().required(" "),
+  // selectedVan: Yup.string().required(" "),
+  // //delivery
+  // deliveryName: Yup.string().required(" "),
+  // deliveryAddress: Yup.string().required(" "),
+  // deliveryPostCode: Yup.string().required(" "),
+  // deliveryDate: Yup.string().required(" "),
+  // deliveryTime: Yup.string().required(" "),
+  // deliveryContact: Yup.string().required(" "),
+  // deliveryNumber: Yup.string().required(" "),
+  // deliveryDetail: Yup.string().required(" "),
+  // deliveryInstruction: Yup.string().required(" "),
+  // DeliveryitemsDetails: Yup.string().required(" "),
+  // Deliveryvehicle: Yup.string().required(" "),
   const CourierDetails = {
-    CompanyName: "",
-    CollectionAddress: "",
+    userID:'',
+    collectionName: "",
+    collectionAddress: "",
     CollectionPostCode: "",
-    POstCode: "",
-    CollectionDate: "",
-    Time: "",
-    contactName: "",
-    contactNumber: "",
-    itemsDetails: "",
+    collectionDate: "",
+    collectionTime: "",
+    collectionContact:'',
+    collectionNumber:'',
+    collectionDetail: "",
+    collectionInstruction: "",
+    selectedVan: "",
     vehicle: "",
 
-    DeliveryCompanyName: "",
+    DeliverycollectionName: "",
     DeliveryCollectionAddress: "",
     DeliveryPOstCode: "",
     DeliveryCollectionDate: "",
@@ -51,11 +77,11 @@ const CourierDetailsForm = () => {
               </label>
               <input
                 className={`${
-                  errors.CompanyName && " border-4 border-red-300"
+                  errors.collectionName && " border-4 border-red-300"
                 } w-full rounded-md border border-red-500 p-2`}
                 onChange={handleChange}
-                id="CompanyName"
-                name="CompanyName"
+                id="collectionName"
+                name="collectionName"
               />
             </div>
             <div className=" space-y-1 py-2 font-semibold ">
@@ -159,11 +185,11 @@ const CourierDetailsForm = () => {
                 Company Name (Delivery)*
               </label>
               <input
-                className={`${errors.DeliveryCompanyName && " border-4 border-red-300"} w-full rounded-md border border-red-500 p-2`}
+                className={`${errors.DeliverycollectionName && " border-4 border-red-300"} w-full rounded-md border border-red-500 p-2`}
 
                 
-                id="CompanyName"
-                name="CompanyName"
+                id="collectionName"
+                name="collectionName"
               />
             </div>
             <div className=" space-y-1 py-2 font-semibold ">

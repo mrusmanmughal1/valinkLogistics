@@ -1,9 +1,18 @@
 "use Client";
-const EstimationUI = ({ setProcessToForm, setform }) => {
+const EstimationUI = ({
+  setProcessToForm,
+  setform,
+  distanceValue,
+  selected = "",
+}) => {
+  const { mileRate, minCharge } = selected;
   const handleClick = () => {
     setProcessToForm(true);
     setform(false);
   };
+
+  const calulateRate = distanceValue * mileRate;
+  console.log(calulateRate, "usman");
   return (
     <div className="bg-orange-200 p-10 md:p-20  border-2">
       <div className="flex justify-center items-center   ">
@@ -15,7 +24,10 @@ const EstimationUI = ({ setProcessToForm, setform }) => {
 
           <div className=" space-y-2 bg-white  rounded-b-md drop-shadow-md  border-2 p-10 text-lg md:text-2xl text-center font-semibold">
             <p>The Quote Will be Delivered on Same Day </p>
-            <p className="text-orange-700">Cost will be : $45.00</p>
+            <p className="text-orange-700">
+              Cost will be :
+              {calulateRate < minCharge ? minCharge : calulateRate} $
+            </p>
             <p>(Quote Extending vat)</p>
             <p>Collection in 60 Minutes</p>
           </div>

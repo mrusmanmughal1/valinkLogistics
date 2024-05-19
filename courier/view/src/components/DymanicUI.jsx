@@ -24,7 +24,7 @@ const DymanicUI = () => {
         />
       )}
       {distanceValue  && showform ? (
-        <EstimationUI setProcessToForm={setProcessToForm}  setform={setform}/>
+        <EstimationUI setProcessToForm={setProcessToForm} selected={selected}  distanceValue={distanceValue} setform={setform} distanceValue={distanceValue}/>
       ) : null}
       {ProcessToForm && <CourierDetailsForm />}
     </div>
