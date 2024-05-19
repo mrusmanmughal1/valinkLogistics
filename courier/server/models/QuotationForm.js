@@ -78,7 +78,15 @@ const QuotationFormSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    deliveryDetail: {
+    bookerName: {
+      type: String,
+      required: true,
+    },
+    bookerNumber: {
+      type: String,
+      required: true,
+    },
+    bookerEmail: {
       type: String,
       required: true,
     },

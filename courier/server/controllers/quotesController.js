@@ -46,7 +46,9 @@ export const createNewQuote = asyncHander(async (req, res) => {
     deliveryTime,
     deliveryContact,
     deliveryNumber,
-    deliveryDetail,
+    bookerName,
+    bookerNumber,
+    bookerEmail,
     deliveryInstruction,
   } = req.body;
   if (
@@ -67,7 +69,9 @@ export const createNewQuote = asyncHander(async (req, res) => {
     !deliveryTime ||
     !deliveryContact ||
     !deliveryNumber ||
-    !deliveryDetail ||
+    !bookerName ||
+    !bookerNumber ||
+    !bookerEmail ||
     !deliveryInstruction
   ) {
     return res.status(400).json({ message: "All field are required" });
@@ -92,7 +96,9 @@ export const createNewQuote = asyncHander(async (req, res) => {
     deliveryTime,
     deliveryContact,
     deliveryNumber,
-    deliveryDetail,
+    bookerName,
+    bookerNumber,
+    bookerEmail,
     deliveryInstruction,
   };
   const quote = await QuotationForm.create(quoteObject);
@@ -128,7 +134,9 @@ export const updateQuote = asyncHander(async (req, res) => {
     deliveryTime,
     deliveryContact,
     deliveryNumber,
-    deliveryDetail,
+    bookerName,
+    bookerNumber,
+    bookerEmail,
     deliveryInstruction,
     quoteJobStatus,
   } = req.body;
@@ -152,7 +160,9 @@ export const updateQuote = asyncHander(async (req, res) => {
     !deliveryTime ||
     !deliveryContact ||
     !deliveryNumber ||
-    !deliveryDetail ||
+    !bookerName ||
+    !bookerNumber ||
+    !bookerEmail ||
     !deliveryInstruction ||
     !quoteJobStatus
   ) {
@@ -180,7 +190,9 @@ export const updateQuote = asyncHander(async (req, res) => {
   quote.deliveryTime = deliveryTime;
   quote.deliveryContact = deliveryContact;
   quote.deliveryNumber = deliveryNumber;
-  quote.deliveryDetail = deliveryDetail;
+  quote.bookerName = bookerName;
+  quote.bookerEmail = bookerEmail;
+  quote.bookerNumber = bookerNumber;
   quote.deliveryInstruction = deliveryInstruction;
   quote.quoteJobStatus = quoteJobStatus;
   const result = await quote.save();
