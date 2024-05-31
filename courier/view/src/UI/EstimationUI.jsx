@@ -1,18 +1,46 @@
 "use Client";
+
+import { useEffect, useState } from "react";
+import Loader from "./Loader";
+
 const EstimationUI = ({
-  setProcessToForm,
-  setform,
-  distanceValue,
+   
+  Distance,
+  setPage,
   selected = "",
 }) => {
+  const [Km, SetKm] = useState();
+  // charges
   const { mileRate, minCharge } = selected;
-  const handleClick = () => {
-    setProcessToForm(true);
-    setform(false);
+
+  const handleClick = (val) => {
+    setPage(val);
   };
 
-  const calulateRate = distanceValue * mileRate;
-  console.log(calulateRate, "usman");
+  const distanceValue = parseInt(Distance?.match(/\d+/)[0], 10);
+
+  // if value is  Km then cover to miles
+  const ToMiles = (val) => {
+    const hasKiloMetters = val?.includes("km");
+
+    if (hasKiloMetters) {
+      const distanceValue = parseInt(val?.match(/\d+/)[0], 10);
+
+      const DistanceInMiles = distanceValue * 0.621371;
+      SetKm(DistanceInMiles.toFixed());
+    } else {
+      const distanceValue = parseInt(val?.match(/\d+/)[0], 10);
+      return SetKm(distanceValue);
+    }
+  };
+
+  useEffect(() => {
+    ToMiles(Distance);
+  }, []);
+  const calulateRate = Km * mileRate;
+  const rate = calulateRate.toFixed(1);
+
+  if (!distanceValue) return <Loader />;
   return (
     <div className="bg-orange-200 p-10 md:p-20  border-2">
       <div className="flex justify-center items-center   ">
@@ -25,8 +53,7 @@ const EstimationUI = ({
           <div className=" space-y-2 bg-white  rounded-b-md drop-shadow-md  border-2 p-10 text-lg md:text-2xl text-center font-semibold">
             <p>The Quote Will be Delivered on Same Day </p>
             <p className="text-orange-700">
-              Cost will be :
-              {calulateRate < minCharge ? minCharge : calulateRate} $
+              Cost will be :{rate < minCharge ? minCharge : rate} $
             </p>
             <p>(Quote Extending vat)</p>
             <p>Collection in 60 Minutes</p>
@@ -35,12 +62,15 @@ const EstimationUI = ({
       </div>
       <div className="py-10">
         <div className="flex justify-center gap-8 items-center">
-          <button className="bg-orange-600 text-white rounded-md p-4">
+          <button
+            className="bg-orange-600 text-white rounded-md p-4"
+            onClick={() => handleClick(1)}
+          >
             Previous
           </button>
           <button
             className="bg-orange-600 text-white rounded-md p-4 "
-            onClick={handleClick}
+            onClick={() => handleClick(3)}
           >
             Next
           </button>

@@ -5,21 +5,18 @@ import { useFormik } from "formik";
 import Loader from "./Loader";
 import { useRef, useState } from "react";
 
-const PlaceSearchForm = ({selected , setDIstance}) => {
+const PlaceSearchForm = ({ selected, setDIstance , setPage }) => {
   const [collectionaddress, setcollectionaddress] = useState(null);
   const [destinationAddress, setdestinationAddress] = useState(null);
 
   const SearchData = {
-    collectionaddress :collectionaddress,
-    destinationAddress : destinationAddress
+    collectionaddress: collectionaddress,
+    destinationAddress: destinationAddress,
   };
-
   const currentLocationRef = useRef();
   const DelevryLocation = useRef();
-  
 
   async function calculateRoute() {
-    console.log(currentLocationRef.current.value)
     if (
       currentLocationRef.current.value == "" &&
       DelevryLocation.current.value == ""
@@ -34,10 +31,10 @@ const PlaceSearchForm = ({selected , setDIstance}) => {
       travelMode: google.maps.TravelMode.DRIVING,
     });
 
-    console.log(result , 'results');
     setcollectionaddress(result.request.origin.query);
-    setdestinationAddress(result.request.destination.query)
+    setdestinationAddress(result.request.destination.query);
     setDIstance(result.routes[0]?.legs[0]?.distance.text);
+    console.log(result,'result')
   }
 
   const { isLoaded } = useJsApiLoader({
@@ -49,15 +46,15 @@ const PlaceSearchForm = ({selected , setDIstance}) => {
       initialValues: SearchData,
       onSubmit: (values, action) => {
         calculateRoute();
-        console.log("first")
+        setPage(2);
+
       },
-      validationSchema:SearchplaceForm,
+      validationSchema: SearchplaceForm,
     });
 
   if (!isLoaded) {
     return <Loader />;
   }
-
   return (
     <div className=" w-11/12 lg:w-1/2   mx-auto">
       <form onSubmit={handleSubmit}>
@@ -69,9 +66,8 @@ const PlaceSearchForm = ({selected , setDIstance}) => {
               </label>
               <Autocomplete className="w-full">
                 <input
-
                   ref={currentLocationRef}
-                  value={values.collectionaddress}
+                  value={currentLocationRef?.current?.value}
                   onChange={handleChange}
                   type="text"
                   className={`p-2 w-full rounded-md outline-orange-300 ${
@@ -94,9 +90,8 @@ const PlaceSearchForm = ({selected , setDIstance}) => {
               <Autocomplete>
                 <input
                   ref={DelevryLocation}
-                  value={values.destinationAddress}
+                  value={DelevryLocation?.current?.value}
                   onChange={handleChange}
-
                   type="text"
                   className={`p-2 w-full rounded-md outline-orange-300 ${
                     errors.destinationAddress && "border-2 border-red-600"
@@ -115,7 +110,8 @@ const PlaceSearchForm = ({selected , setDIstance}) => {
           </div>
           <div className="text-center">
             <button
-            type="submit" disabled={!Boolean(selected)}
+              type="submit"
+              disabled={!Boolean(selected)}
               className="text-white bg-orange-600 py-4 px-6 rounded-md font-semibold disabled:bg-orange-300"
             >
               Get a Quote

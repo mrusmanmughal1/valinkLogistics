@@ -7,27 +7,32 @@ import EstimationUI from "@/UI/EstimationUI";
 import CourierDetailsForm from "@/UI/CourierDetailsForm";
 
 const DymanicUI = () => {
+  const [page, setPage] = useState(1);
   const [selected, setSelected] = useState(null);
   const [Distance, setDIstance] = useState(null);
-  const [showform, setform] = useState(true);
 
-  const [ProcessToForm, setProcessToForm] = useState(false);
 
-  const distanceValue = parseInt(Distance?.match(/\d+/)[0], 10);
   return (
-    <div>
-      {!distanceValue && (
+    <section id="quote">
+      {page == 1 && (
         <SelectVehicle
           setVehicle={setSelected}
           selected={selected}
           setDIstance={setDIstance}
+          setPage={setPage}
         />
       )}
-      {distanceValue  && showform ? (
-        <EstimationUI setProcessToForm={setProcessToForm} selected={selected}  distanceValue={distanceValue} setform={setform} distanceValue={distanceValue}/>
-      ) : null}
-      {ProcessToForm && <CourierDetailsForm />}
-    </div>
+      {page == 2 && (
+        <EstimationUI
+          selected={selected}
+          Distance={Distance}
+          setPage={setPage}
+        />
+      )}
+      {page == 3 && (
+        <CourierDetailsForm setPage={setPage} selected={selected} />
+      )}
+    </section>
   );
 };
 

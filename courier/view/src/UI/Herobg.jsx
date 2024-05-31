@@ -27,9 +27,9 @@ const Herobg = () => {
             covered. Entrust us with your deliveries for prompt and reliable
             service. Contact us now to book or get a quote."
           </p>
-          <button className="bg-orange-600 rounded-md py-4 shadow-xl text-white font-semibold">
-            Get A Quote
-          </button>
+          <a href="#quote"  className="bg-orange-600 rounded-md py-4  text-center uppercase shadow-xl text-white font-semibold">
+            Get a Quote
+          </a>
         </div>
       </div>
     </div>

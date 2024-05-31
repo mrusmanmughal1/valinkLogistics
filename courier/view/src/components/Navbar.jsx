@@ -48,9 +48,9 @@ const Navbar = () => {
       <div className="w-full bg-orange-600 text-white py-2 hidden md:block ">
         <nav>
           <div className="flex      items-center  w-11/12 mx-auto   ">
-            <div className="shadow-2xl  bg-orange-900 rounded-lg p-2 pt-">
+            <Link href={'/'} className="shadow-2xl  bg-orange-900 rounded-lg p-2 pt-">
               <Image src={logo} width={90} height={90} alt="Logo" />
-            </div>
+            </Link>
 
             <div className="flex    justify-end w-full gap-10 items-center">
               <div className="relative">
