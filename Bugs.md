@@ -12,7 +12,7 @@
 - [ ] Sign Up button in Service page should redirect client to the registration request portal/Client Area.
 - [ ] Google Map location should be updated to this address Vanlink , 4th floors, 84 Salop St, Wolverhampton.
 - [ ] Van name is not appearing on the job request form.
-- [ ] Phone Number should be redirected to 404 page. You can turn it into unclickable or you could use calling action.
+- [ ] Phone Number should not be redirected to 404 page. You can turn it into unclickable or you could use calling action.
 
 ### Things to Add
 
