@@ -11,7 +11,6 @@ const DymanicUI = () => {
   const [selected, setSelected] = useState(null);
   const [Distance, setDIstance] = useState(null);
 
-
   return (
     <section id="quote">
       {page == 1 && (
