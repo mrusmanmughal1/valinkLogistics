@@ -196,7 +196,7 @@ const CourierDetailsForm = ({ selected , setPage }) => {
             </div>
             <div className=" space-y-1 py-2 font-semibold ">
               <label htmlFor="" className="ps-2">
-                Collections Instructionns *
+                Collections Instructions *
               </label>
               <textarea
                 name="collectionInstruction"
@@ -352,7 +352,7 @@ const CourierDetailsForm = ({ selected , setPage }) => {
               <textarea
                 name="deliveryInstruction"
                 cols={10}
-                rows={10}
+                rows={6}
                 onChange={handleChange}
                 value={values.deliveryInstruction}
                 className={`${

@@ -7,7 +7,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Loader from "@/UI/Loader";
 
-const SelectVehicle = ({ setVehicle, selected, setDIstance ,setPage }) => {
+const SelectVehicle = ({ setVehicle, selected, setDIstance ,setPage ,setPostalCodes }) => {
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(true);
 
@@ -84,7 +84,7 @@ const SelectVehicle = ({ setVehicle, selected, setDIstance ,setPage }) => {
           })}
         </div>
         <div className="">
-          <PlaceSearchForm   setPage={setPage} setDIstance={setDIstance} selected={selected} />
+          <PlaceSearchForm   setPostalCodes={setPostalCodes} setPage={setPage} setDIstance={setDIstance} selected={selected} />
         </div>
       </div>
     </div>

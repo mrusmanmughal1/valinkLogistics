@@ -5,11 +5,13 @@ import React from "react";
 import SelectVehicle from "./SelectVehicle";
 import EstimationUI from "@/UI/EstimationUI";
 import CourierDetailsForm from "@/UI/CourierDetailsForm";
+import { PostalCodeProvider } from "@/Context/PostalCodeContext";
 
 const DymanicUI = () => {
   const [page, setPage] = useState(1);
   const [selected, setSelected] = useState(null);
   const [Distance, setDIstance] = useState(null);
+  const [PostalCodes, setPostalCodes] = useState();
 
   return (
     <section id="quote">
@@ -19,6 +21,7 @@ const DymanicUI = () => {
           selected={selected}
           setDIstance={setDIstance}
           setPage={setPage}
+          setPostalCodes={setPostalCodes}
         />
       )}
       {page == 2 && (

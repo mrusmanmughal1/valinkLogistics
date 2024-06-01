@@ -5,7 +5,12 @@ import { useFormik } from "formik";
 import Loader from "./Loader";
 import { useRef, useState } from "react";
 
-const PlaceSearchForm = ({ selected, setDIstance , setPage }) => {
+const PlaceSearchForm = ({
+  selected,
+  setDIstance,
+  setPage,
+  setPostalCodes,
+}) => {
   const [collectionaddress, setcollectionaddress] = useState(null);
   const [destinationAddress, setdestinationAddress] = useState(null);
 
@@ -34,7 +39,10 @@ const PlaceSearchForm = ({ selected, setDIstance , setPage }) => {
     setcollectionaddress(result.request.origin.query);
     setdestinationAddress(result.request.destination.query);
     setDIstance(result.routes[0]?.legs[0]?.distance.text);
-    console.log(result,'result')
+    setPostalCodes({
+      Delivery: collectionaddress,
+      Collection: collectionaddress,
+    });
   }
 
   const { isLoaded } = useJsApiLoader({
@@ -47,7 +55,10 @@ const PlaceSearchForm = ({ selected, setDIstance , setPage }) => {
       onSubmit: (values, action) => {
         calculateRoute();
         setPage(2);
-
+        setPostalCodes({
+          Delivery: 'sss',
+          Collection: 'collectionaddress',
+        });
       },
       validationSchema: SearchplaceForm,
     });
