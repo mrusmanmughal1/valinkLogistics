@@ -2,6 +2,7 @@
 
 - [ ] Logos should be finalize ASAP.
 - [ ] Van Image should be finalize ASAP.
+- [ ] All API routes should be defined in .env file.
 
 ### Bugs Needs to fixed ASAP
 
