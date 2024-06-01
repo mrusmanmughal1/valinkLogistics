@@ -8,6 +8,8 @@ const EstimationUI = ({ Distance = "", setPage, selected = "" }) => {
   // charges
   const { mileRate, minCharge } = selected;
 
+
+  console.log('selected' , mileRate , minCharge)
   const handleClick = (val) => {
     setPage(val);
   };
@@ -24,7 +26,7 @@ const EstimationUI = ({ Distance = "", setPage, selected = "" }) => {
         const distanceValue = parseInt(val?.match(/\d+/)[0], 10);
 
         const DistanceInMiles = distanceValue * 0.621371;
-        console.log(DistanceInMiles, " if");
+        console.log(DistanceInMiles, " distanice in miles");
         SetKm(DistanceInMiles.toFixed());
       } else {
         const distanceValue = parseInt(val?.match(/\d+/)[0], 10);
@@ -53,7 +55,7 @@ const EstimationUI = ({ Distance = "", setPage, selected = "" }) => {
           <div className=" space-y-2 bg-white  rounded-b-md drop-shadow-md  border-2 p-10 text-lg md:text-2xl text-center font-semibold">
             <p>The Quote Will be Delivered on Same Day </p>
             <p className="text-orange-700">
-              Cost will be :{rate < minCharge ? minCharge : rate} $
+              Cost will be :£{rate < minCharge ? minCharge : rate} 
             </p>
             <p>(Quote Extending vat)</p>
             <p>Collection in 60 Minutes</p>

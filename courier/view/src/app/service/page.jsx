@@ -1,6 +1,7 @@
 import React from "react";
 import sercice from "../../Assets/9.jpg";
 import Image from "next/image";
+import Link from "next/link";
 
 const service = () => {
   return (
@@ -76,12 +77,12 @@ const service = () => {
             </p>
           </div>
           <div className="text-center">
-            <a
-              href=""
+            <Link
+              href="/client"
               className="text-white font-semibold bg-orange-500 p-5 px-8 rounded-md"
             >
               Sign Up
-            </a>
+            </Link>
           </div>
         </div>
       </div>

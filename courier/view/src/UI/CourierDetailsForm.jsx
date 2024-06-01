@@ -5,6 +5,9 @@ import { ProvideDetails } from "@/app/helpers/FormsValidations";
 import { POST_QUOTATION_FORM } from "@/Config/Constants";
 
 const CourierDetailsForm = ({ selected , setPage }) => {
+  console.log(selected)
+  const {typeofVan , _id
+} = selected;
   const CourierDetails = {
     collectionName: "",
     collectionAddress: "",
@@ -15,7 +18,7 @@ const CourierDetailsForm = ({ selected , setPage }) => {
     collectionNumber: "",
     collectionDetail: "",
     collectionInstruction: "",
-    selectedVan: " ssss",
+    selectedVan: _id,
     deliveryName: "",
     deliveryAddress: "",
     deliveryPostCode: "",
@@ -181,11 +184,11 @@ const CourierDetailsForm = ({ selected , setPage }) => {
             </div>
             <div className=" space-y-1 py-2 font-semibold ">
               <label htmlFor="" className="ps-2">
-                selectedVan*
+                selected Van*
               </label>
               <input
                 disabled={true}
-                value={values.selectedVan}
+                value={typeofVan}
                 className={`${
                   errors.selectedVan && " border-4 border-red-300"
                 } w-full rounded-md border border-red-500 p-2`}
