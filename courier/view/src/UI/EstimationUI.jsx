@@ -17,7 +17,7 @@ const EstimationUI = ({
     setPage(val);
   };
 
-  const distanceValue = parseInt(Distance?.match(/\d+/)[0], 10);
+  // const distanceValue = parseInt(Distance?.match(/\d+/)[0], 10);
 
   // if value is  Km then cover to miles
   const ToMiles = (val) => {
@@ -37,8 +37,10 @@ const EstimationUI = ({
   useEffect(() => {
     ToMiles(Distance);
   }, []);
+  console.log()
   const calulateRate = Km * mileRate;
-  const rate = calulateRate.toFixed(1);
+  const rate = calulateRate?.toFixed(1);
+  console.log(rate, 'rate')
 
   if (!distanceValue) return <Loader />;
   return (
