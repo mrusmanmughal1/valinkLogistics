@@ -3,12 +3,7 @@
 import { useEffect, useState } from "react";
 import Loader from "./Loader";
 
-const EstimationUI = ({
-   
-  Distance,
-  setPage,
-  selected = "",
-}) => {
+const EstimationUI = ({ Distance = "", setPage, selected = "" }) => {
   const [Km, SetKm] = useState();
   // charges
   const { mileRate, minCharge } = selected;
@@ -17,32 +12,35 @@ const EstimationUI = ({
     setPage(val);
   };
 
-  // const distanceValue = parseInt(Distance?.match(/\d+/)[0], 10);
-
-  // if value is  Km then cover to miles
-  const ToMiles = (val) => {
-    const hasKiloMetters = val?.includes("km");
-
-    if (hasKiloMetters) {
-      const distanceValue = parseInt(val?.match(/\d+/)[0], 10);
-
-      const DistanceInMiles = distanceValue * 0.621371;
-      SetKm(DistanceInMiles.toFixed());
-    } else {
-      const distanceValue = parseInt(val?.match(/\d+/)[0], 10);
-      return SetKm(distanceValue);
-    }
-  };
+  console.log(Distance, "distance ");
 
   useEffect(() => {
+    // if value is  Km then cover to miles
+    const ToMiles = (val) => {
+      console.log("if working");
+      const hasKiloMetters = val?.includes("km");
+
+      if (hasKiloMetters) {
+        const distanceValue = parseInt(val?.match(/\d+/)[0], 10);
+
+        const DistanceInMiles = distanceValue * 0.621371;
+        console.log(DistanceInMiles, " if");
+        SetKm(DistanceInMiles.toFixed());
+      } else {
+        const distanceValue = parseInt(val?.match(/\d+/)[0], 10);
+        console.log(distanceValue, " if not ");
+
+        return SetKm(distanceValue);
+      }
+    };
+
     ToMiles(Distance);
-  }, []);
-  console.log()
+  });
+
   const calulateRate = Km * mileRate;
   const rate = calulateRate?.toFixed(1);
-  console.log(rate, 'rate')
 
-  if (!distanceValue) return <Loader />;
+  if (!Distance) return <Loader />;
   return (
     <div className="bg-orange-200 p-10 md:p-20  border-2">
       <div className="flex justify-center items-center   ">
