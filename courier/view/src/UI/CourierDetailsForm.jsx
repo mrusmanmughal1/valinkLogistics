@@ -3,15 +3,21 @@ import React from "react";
 import { useFormik } from "formik";
 import { ProvideDetails } from "@/app/helpers/FormsValidations";
 import { POST_QUOTATION_FORM } from "@/Config/Constants";
+import { ListPostalCodes } from "@/Context/PostalCodeContext";
 
-const CourierDetailsForm = ({ selected , setPage }) => {
-  console.log(selected)
-  const {typeofVan , _id
-} = selected;
+const CourierDetailsForm = ({ selected, setPage }) => {
+  console.log(selected);
+  const { typeofVan, _id } = selected;
+
+
+
+  const { ALLPostalCodes } = ListPostalCodes();
+const {Collection, Delivery} = ALLPostalCodes;
+
   const CourierDetails = {
     collectionName: "",
     collectionAddress: "",
-    CollectionPostCode: "",
+    CollectionPostCode: Collection,
     collectionDate: "",
     collectionTime: "",
     collectionContact: "",
@@ -21,7 +27,7 @@ const CourierDetailsForm = ({ selected , setPage }) => {
     selectedVan: _id,
     deliveryName: "",
     deliveryAddress: "",
-    deliveryPostCode: "",
+    deliveryPostCode: Delivery,
     deliveryDate: "",
     deliveryTime: "",
     deliveryContact: "",
@@ -32,10 +38,12 @@ const CourierDetailsForm = ({ selected , setPage }) => {
     deliveryInstruction: "",
   };
 
-  const handleclick = (val) =>{
+  const handleclick = (val) => {
+    setPage(val);
+  };
 
-    setPage(val)
-  }
+// 
+  
 
   const handleSubmitt = async () => {
     try {
@@ -110,6 +118,8 @@ const CourierDetailsForm = ({ selected , setPage }) => {
               </label>
               <input
                 name="CollectionPostCode"
+                disabled={true}
+
                 onChange={handleChange}
                 value={values.CollectionPostCode}
                 className={`${
@@ -246,6 +256,7 @@ const CourierDetailsForm = ({ selected , setPage }) => {
               </label>
               <input
                 name="deliveryPostCode"
+                disabled={true}
                 className={`${
                   errors.deliveryPostCode && " border-4 border-red-300"
                 } w-full rounded-md border border-red-500 p-2`}
@@ -363,16 +374,18 @@ const CourierDetailsForm = ({ selected , setPage }) => {
           </div>
         </div>
         <div className=" flex flex-row gap-4 font-semibold justify-center">
-          <button className="text-white bg-orange-600 p-4 rounded-md" onClick={()=>handleclick(2)}>
+          <button
+            className="text-white bg-orange-600 p-4 rounded-md"
+            onClick={() => handleclick(2)}
+          >
             Previous
           </button>
           <button
             type="submit"
-            className="text-white bg-orange-600 p-4 rounded-md"
+            className="text-white bg-orange-600 p-4 rounded-md px-8"
           >
             Next
           </button>
-         
         </div>
       </form>
     </div>

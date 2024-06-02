@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Loader from "./Loader";
+ 
 
 const EstimationUI = ({ Distance = "", setPage, selected = "" }) => {
   const [Km, SetKm] = useState();
@@ -39,6 +40,8 @@ const EstimationUI = ({ Distance = "", setPage, selected = "" }) => {
     ToMiles(Distance);
   });
 
+  
+
   const calulateRate = Km * mileRate;
   const rate = calulateRate?.toFixed(1);
 
@@ -55,7 +58,7 @@ const EstimationUI = ({ Distance = "", setPage, selected = "" }) => {
           <div className=" space-y-2 bg-white  rounded-b-md drop-shadow-md  border-2 p-10 text-lg md:text-2xl text-center font-semibold">
             <p>The Quote Will be Delivered on Same Day </p>
             <p className="text-orange-700">
-              Cost will be :£{rate < minCharge ? minCharge : rate} 
+              Cost will be : £ {rate < minCharge ? minCharge : rate} 
             </p>
             <p>(Quote Extending vat)</p>
             <p>Collection in 60 Minutes</p>
@@ -71,7 +74,7 @@ const EstimationUI = ({ Distance = "", setPage, selected = "" }) => {
             Previous
           </button>
           <button
-            className="bg-orange-600 text-white rounded-md p-4 "
+            className="bg-orange-600 text-white rounded-md p-4 px-8 "
             onClick={() => handleClick(3)}
           >
             Next

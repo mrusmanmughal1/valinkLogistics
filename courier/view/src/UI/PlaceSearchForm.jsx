@@ -4,16 +4,12 @@ import { useJsApiLoader, Autocomplete } from "@react-google-maps/api";
 import { useFormik } from "formik";
 import Loader from "./Loader";
 import { useRef, useState } from "react";
+import { ListPostalCodes } from "@/Context/PostalCodeContext";
 
-const PlaceSearchForm = ({
-  selected,
-  setDIstance,
-  setPage,
-  setPostalCodes,
-}) => {
+const PlaceSearchForm = ({ selected, setDIstance, setPage }) => {
   const [collectionaddress, setcollectionaddress] = useState(null);
   const [destinationAddress, setdestinationAddress] = useState(null);
-
+  const { setPostalCOdes } = ListPostalCodes();
   const SearchData = {
     collectionaddress: collectionaddress,
     destinationAddress: destinationAddress,
@@ -39,10 +35,10 @@ const PlaceSearchForm = ({
     setcollectionaddress(result.request.origin.query);
     setdestinationAddress(result.request.destination.query);
     setDIstance(result.routes[0]?.legs[0]?.distance.text);
-    setPostalCodes({
-      Delivery: collectionaddress,
-      Collection: collectionaddress,
-    });
+    // setPostalCOdes({
+    //   Delivery: currentLocationRef.current.value,
+    //   destination: DelevryLocation.current.value,
+    // });
   }
 
   const { isLoaded } = useJsApiLoader({
@@ -55,9 +51,9 @@ const PlaceSearchForm = ({
       onSubmit: (values, action) => {
         calculateRoute();
         setPage(2);
-        setPostalCodes({
-          Delivery: 'sss',
-          Collection: 'collectionaddress',
+        setPostalCOdes({
+          Delivery: currentLocationRef.current.value,
+          Collection: DelevryLocation.current.value,
         });
       },
       validationSchema: SearchplaceForm,

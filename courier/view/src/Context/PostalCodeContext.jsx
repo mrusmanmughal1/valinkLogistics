@@ -1,16 +1,20 @@
-import { useState } from "react";
-import { createContext } from "react";
+import { createContext, useContext, useState } from "react";
 
-const PostalCodes = createContext();
+const MainPostalCodes = createContext();
 
 const PostalCodeProvider = ({ children }) => {
-  const [PostalCodes, setPostalCOdes] = useState('sss');
+  const [ALLPostalCodes, setPostalCOdes] = useState({});  
 
   return (
-    <PostalCodes.Provider value={{ PostalCodes, setPostalCOdes }}>
+    <MainPostalCodes.Provider value={{ ALLPostalCodes, setPostalCOdes }}>
       {children}
-    </PostalCodes.Provider>
+    </MainPostalCodes.Provider>
   );
 };
 
-export { PostalCodeProvider, PostalCodes };
+const ListPostalCodes = () => {
+  const AllCodes = useContext(MainPostalCodes);
+  return AllCodes;
+};
+
+export { PostalCodeProvider, ListPostalCodes };
