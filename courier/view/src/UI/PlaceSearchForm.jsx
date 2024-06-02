@@ -46,7 +46,7 @@ const PlaceSearchForm = ({
   }
 
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: "AIzaSyAMQas2m1Fbq6JYpDf78c8RWHjH6uB4WRs",
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLEMAPSAPIKEY,
     libraries: ["places"],
   });
   const { values, errors, touched, handleChange, handleSubmit, handleBlur } =
