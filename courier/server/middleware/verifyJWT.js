@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 
-const verifyJWT = (req, res, next) => {
+export const verifyJWT = (req, res, next) => {
   const authHeader = req.headers.authorization || req.headers.Authorization;
 
   if (!authHeader?.startsWith("Bearer ")) {
@@ -16,5 +16,3 @@ const verifyJWT = (req, res, next) => {
     next();
   });
 };
-
-module.exports = verifyJWT;

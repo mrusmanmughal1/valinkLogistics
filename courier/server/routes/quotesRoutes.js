@@ -6,14 +6,15 @@ import {
   deleteQuote,
 } from "../controllers/quotesController.js";
 import { requestLimiter } from "../middleware/requestLimiter.js";
+import { verifyJWT } from "../middleware/verifyJWT.js";
 
 const router = express.Router();
 
 router
   .route("/")
-  .get(getAllQuotes)
+  .get(verifyJWT, getAllQuotes)
   .post(requestLimiter, createNewQuote)
-  .patch(updateQuote)
-  .delete(deleteQuote);
+  .patch(verifyJWT, updateQuote)
+  .delete(verifyJWT, deleteQuote);
 
 export default router;

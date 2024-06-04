@@ -5,14 +5,15 @@ import {
   updateVehicle,
   deleteVehicle,
 } from "../controllers/vehicleController.js";
+import { verifyJWT } from "../middleware/verifyJWT.js";
 
 const router = express.Router();
 
 router
   .route("/")
   .get(getAllVehicle)
-  .post(createNewVehicle)
-  .patch(updateVehicle)
-  .delete(deleteVehicle);
+  .post(verifyJWT, createNewVehicle)
+  .patch(verifyJWT, updateVehicle)
+  .delete(verifyJWT, deleteVehicle);
 
 export default router;
