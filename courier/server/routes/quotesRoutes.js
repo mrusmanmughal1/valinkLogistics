@@ -5,12 +5,14 @@ import {
   updateQuote,
   deleteQuote,
 } from "../controllers/quotesController.js";
+import { requestLimiter } from "../middleware/requestLimiter.js";
+
 const router = express.Router();
 
 router
   .route("/")
   .get(getAllQuotes)
-  .post(createNewQuote)
+  .post(requestLimiter, createNewQuote)
   .patch(updateQuote)
   .delete(deleteQuote);
 
