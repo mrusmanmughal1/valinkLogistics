@@ -23,7 +23,7 @@ const service = () => {
       <div className=" py-20 ">
         <div className="w-11/12 mx-auto text-center space-y-4">
           <div className="text-bold font-serif text-3xl text-orange-500 drop-shadow-xl ">
-            One Booking Portal, Three Different Services
+          Fast & Reliable Same Day Delivery: Choose the Perfect Service for You (UK).
           </div>
           <div className="">
             <p className="text-xl font-semibold drop-shadow-sm">

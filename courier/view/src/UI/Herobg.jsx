@@ -23,9 +23,7 @@ const Herobg = () => {
             />
           </p>
           <p className="text-justify text-white text-lg  capitalize  ">
-            "Seeking a swift sameday courier service? VanLink Logistics  has you
-            covered. Entrust us with your deliveries for prompt and reliable
-            service. Contact us now to book or get a quote."
+            "Need Urgent Delivery? Get It There Today! Nationwide Same Day Courier Service Across the UK."
           </p>
           <a href="#quote"  className="bg-orange-600 rounded-md py-4  text-center uppercase shadow-xl text-white font-semibold">
             Get a Quote

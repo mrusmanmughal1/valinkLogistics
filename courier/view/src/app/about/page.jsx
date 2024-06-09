@@ -8,7 +8,11 @@ const about = () => {
     <div>
       <div className="">
         <div className=" h-screen overflow-hidden relative">
-          <Image src={aboutsecond} alt="About us page " className="  w-full h-screen object-cover" />
+          <Image
+            src={aboutsecond}
+            alt="About us page "
+            className="  w-full h-screen object-cover"
+          />
           <div className=" text-2xl text-center  Font-semibold   font-serif   font-semibold absolute top-[33%] left-[%] rounded-lg text-white ">
             <div className=" relative uppercase    font-semibold  sidetip p-4 rounded-r-2xl  ">
               <p className=" p-4 drop-shadow-xl   rounded-md">
@@ -30,24 +34,35 @@ const about = () => {
               </div>
               <div className="text-justify py-3">
                 <p>
-                  VANLINK LOGISTICS is highly professional skilled & reliable
-                  Courier Service Provider Company which has been classified for
-                  courier delivery service for any destination in Pakistan and
-                  abroad.
+                  From Urgent Deliveries to Manufacturing Support: VanLink
+                  Logistics was born in 2019 with a mission to keep the UK's
+                  manufacturing industry moving. We started by providing
+                  refrigerated van services to KFC, and quickly expanded our
+                  fleet to support a wider range of needs. Today, we deliver
+                  everything from single documents to full pallets, ensuring
+                  critical items reach their destinations swiftly and securely.
+                  Your Reliable Same Day Delivery Experts: Our highly skilled
+                  and professional team is dedicated to exceeding your
+                  expectations. Every member utilizes personal protective
+                  equipment for safety, and our entire fleet is covered by
+                  comprehensive goods in transit insurance for peace of mind.
                 </p>
                 <p>
                   {" "}
-                  Our Organization is not only one of the biggest, but also one
-                  of the most trusted in Pakistan. ECL has been providing
-                  excellent courier services since 1992.
+                  Experience the VanLink Difference: We offer a variety of
+                  services to cater to your specific needs:
                 </p>
                 <p>
                   {" "}
-                  Head office Based in Karachi with regional offices Lahore and
-                  Islamabad. VANLINK LOGISTICS – Offering
-                  (Overnight-Overland-COD SERVICES) our Presence 300 Locations
-                  in Pakistan & Overseas – UAE, Saudi Arabia, Bangladesh, Sri
-                  Lanka, Hong Kong, Singapore, China.
+                  Full, Part, and Consolidated Loads: Our dedicated fleet
+                  handles deliveries of all sizes, ensuring efficient
+                  transportation across the UK. Palletforce Expertise: Sending
+                  smaller pallet shipments can be expensive. VanLink Logistics
+                  provides cost-effective solutions for your smaller freight
+                  needs. Customer-Centric Approach: At VanLink Logistics, our
+                  customers are our top priority. We treat each client with the
+                  utmost respect and strive to exceed expectations on every
+                  delivery.
                 </p>
               </div>
             </div>
@@ -99,8 +114,8 @@ const about = () => {
                 <p>
                   {" "}
                   We will deliver your items on the same day, anywhere in the
-                  United Kingdom, we are committed to providing you with
-                  the greatest transport and logistics services.
+                  United Kingdom, we are committed to providing you with the
+                  greatest transport and logistics services.
                 </p>
               </div>
               <div className=" p-6 rounded-md bg-orange-200 hover:bg-orange-100 hover:shadow-md">

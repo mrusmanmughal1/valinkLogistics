@@ -15,15 +15,14 @@ const Footer = () => {
         <div className="w-11/12   mx-auto ">
           <div className=" flex py-10  flex-col md:flex-row gap-3  md:px-2  justify-between items-center ">
             <div className="  flex flex-col gap-3  md:gap-6 ">
-              <p className="flex items-center gap-1 t ">
-                {" "}
+              <a  href="tel:01217900800" className="flex items-center gap-1 t ">
                 <FaSquarePhone className="text-2xl" />
-                +44 (0)7860 246773
-              </p>
-              <p className="flex items-center gap-1 ">
-                {" "}
+                +44 (0)1217 900800
+                
+              </a>
+              <a  href="mailto:info@vanlinklogitics.co.uk" className="flex items-center gap-1 ">
                 <IoMail className="text-2xl" /> info@vanlinklogitics.co.uk
-              </p>
+              </a>
             </div>
             <div className="hidden md:block">
               <Image src={logo} width={100} className="drop-shadow-2xl shadow-md" />
@@ -42,7 +41,7 @@ const Footer = () => {
       </div>
       <div className="bg-orange-600  py-6  md:py-4    text-white">
         <div className=" w-11/12  md:text-base    mx-auto flex  flex-col md:flex-row gap-5 md:gap-0 items-center justify-between ">
-          <Link href={"#"} className=" p-4 rounded-md shadow-md border w-full md:w-auto text-center order-1 lg:order-none">
+          <Link href={"/#quote"} className=" p-4 rounded-md shadow-md border w-full md:w-auto text-center order-1 lg:order-none">
             Request a Quote{" "}
           </Link>
           <div className="  ">

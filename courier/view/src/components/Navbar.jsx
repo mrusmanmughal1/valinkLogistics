@@ -17,12 +17,12 @@ const Navbar = () => {
           <div className=" flex items-center   gap-1">
             {" "}
             <FaSquarePhone className="md:text-lg text-xs" />
-            <a href="tel:01217900800" > +44 (0)1217 900800</a>
+            <a href="tel:01217900800"> +44 (0)1217 900800</a>
           </div>
           <div className=" flex items-center   gap-1">
             {" "}
             <IoMail className="text-lg" />
-            <a href="mailto:office@couriernet.co.uk">
+            <a href="mailto:info@vanlinklogitics.co.uk">
               {" "}
               info@vanlinklogitics.co.uk
             </a>
@@ -48,7 +48,10 @@ const Navbar = () => {
       <div className="w-full bg-orange-600 text-white py-2 hidden md:block ">
         <nav>
           <div className="flex      items-center  w-11/12 mx-auto   ">
-            <Link href={'/'} className="shadow-2xl  bg-orange-900 rounded-lg p-2 pt-">
+            <Link
+              href={"/"}
+              className="shadow-2xl  bg-orange-900 rounded-lg p-2 pt-"
+            >
               <Image src={logo} width={90} height={90} alt="Logo" />
             </Link>
 
@@ -69,7 +72,7 @@ const Navbar = () => {
 
       {/* mobile nav */}
       <div className="block md:hidden">
-      <Mobilenav/>
+        <Mobilenav />
       </div>
     </>
   );

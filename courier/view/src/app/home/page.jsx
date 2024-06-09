@@ -45,22 +45,21 @@ const home = () => {
               </h1>
               <div className="text-justify text-lg xl:text-lg leading-9">
                 <p className="">
-                  Experience a better way to deliver parcels throughout the
-                  United Kingdom. VANLINK LOGISTICS is London, England’s
-                  premier on-demand, same-day courier service that uses
-                  cutting-edge technologies to ensure the secure delivery of
-                  your packages. We employ only the best people in the industry
-                  to handle your deliveries today and every day; on time, every
-                  time.
+                  Fast, Reliable Same Day Delivery: One-hour collection ensures
+                  your urgent parcel or pallet reaches its destination
+                  efficiently, either the same day or by the very next day. No
+                  more disruptions to your business operations! VanLink
+                  Logistics keeps the UK moving – we understand the
+                  time-sensitive nature of your needs.
                 </p>
                 <br />
                 <p>
-                  We believe the supplier-vendor relationship to be an
-                  important, strong and long term partnership. Both the client
-                  and the logistics partners will concentrate on their lead
-                  competencies and work closely together with the common aim to
-                  be a leader in each other’s sector. We want to service you in
-                  a reliable, efficient and flexible manner .
+                  Real-Time Peace of Mind: Our drivers leverage cutting-edge
+                  technology for secure deliveries you can track every step of
+                  the way. Monitor your shipment's progress in real-time and
+                  ensure it arrives on time, every time. Eliminate delivery
+                  anxiety and focus on what matters most – running your
+                  business.
                 </p>
               </div>
             </div>
@@ -91,25 +90,8 @@ const home = () => {
               </h1>
               <div className="space-y-6 text-lg xl:text-lg leading-9 text-justify ">
                 <p className="">
-                  We have developed according to our clients’ needs from a
-                  traditional freight forwarding company to a full service
-                  logistics provider. We provide all the necessary services for
-                  highly-engineered supply chain solutions and combine these
-                  with a range of warehousing and freight forwarding services to
-                  provide a complete solution.
+                Your Trusted Partner in Speed: Don't let slow deliveries become a bottleneck in your supply chain. Imagine a world where urgent deliveries are a breeze, not a burden. VanLink Logistics is your trusted partner for keeping your production running smoothly. We offer a seamless same-day courier service designed to meet your urgent delivery needs and exceed your expectations. Our reliable one-hour collection window ensures your critical parcels and pallets get picked up promptly, and our cutting-edge tracking technology allows you to monitor their progress in real-time, eliminating any delivery anxiety. Focus on what you do best – running your business – and leave the fast, secure deliveries to us. VanLink Logistics is the key to keeping your operations running like clockwork.
                 </p>
-                <p>
-                  When time is of the essence, and you need your Courier
-                  delivered promptly within Birmingham, look no further than
-                  VanLink Logistics. Our dedicated same day courier service is
-                  designed to meet your urgent courier delivery needs, ensuring
-                  your items reach their destination quickly and securely.
-                </p>
-                <p>
-                  If you run a small business in London, we offer a 20% discount
-                  for the first 3 months when you create an account. For more
-                  information, give us a call on 02033711919 or email us at
-                  office@VANLINK LOGISTICS                </p>
               </div>
             </div>
           </div>
@@ -125,7 +107,6 @@ const home = () => {
           </Link>
         </div>
       </div>
-     
     </div>
   );
 };
