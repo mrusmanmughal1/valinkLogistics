@@ -9,6 +9,8 @@ import morgan from "morgan";
 /* Import Route Modules */
 import vehicleRoutes from "./routes/vehicleRoutes.js";
 import quotesRoutes from "./routes/quotesRoutes.js";
+import userRoutes from "./routes/usersRoutes.js";
+import authRoutes from "./routes/authRoutes.js";
 
 /* Configuration */
 
@@ -25,6 +27,8 @@ app.use(cors());
 
 app.use("/vehicles", vehicleRoutes);
 app.use("/quotation", quotesRoutes);
+app.use("/user", userRoutes);
+app.use("/auth", authRoutes);
 
 /* Mongoose and Server Setup */
 
