@@ -90,7 +90,19 @@ const home = () => {
               </h1>
               <div className="space-y-6 text-lg xl:text-lg leading-9 text-justify ">
                 <p className="">
-                Your Trusted Partner in Speed: Don't let slow deliveries become a bottleneck in your supply chain. Imagine a world where urgent deliveries are a breeze, not a burden. VanLink Logistics is your trusted partner for keeping your production running smoothly. We offer a seamless same-day courier service designed to meet your urgent delivery needs and exceed your expectations. Our reliable one-hour collection window ensures your critical parcels and pallets get picked up promptly, and our cutting-edge tracking technology allows you to monitor their progress in real-time, eliminating any delivery anxiety. Focus on what you do best – running your business – and leave the fast, secure deliveries to us. VanLink Logistics is the key to keeping your operations running like clockwork.
+                  Your Trusted Partner in Speed: Don't let slow deliveries
+                  become a bottleneck in your supply chain. Imagine a world
+                  where urgent deliveries are a breeze, not a burden. VanLink
+                  Logistics is your trusted partner for keeping your production
+                  running smoothly. We offer a seamless same-day courier service
+                  designed to meet your urgent delivery needs and exceed your
+                  expectations. Our reliable one-hour collection window ensures
+                  your critical parcels and pallets get picked up promptly, and
+                  our cutting-edge tracking technology allows you to monitor
+                  their progress in real-time, eliminating any delivery anxiety.
+                  Focus on what you do best – running your business – and leave
+                  the fast, secure deliveries to us. VanLink Logistics is the
+                  key to keeping your operations running like clockwork.
                 </p>
               </div>
             </div>

@@ -23,7 +23,8 @@ const service = () => {
       <div className=" py-20 ">
         <div className="w-11/12 mx-auto text-center space-y-4">
           <div className="text-bold font-serif text-3xl text-orange-500 drop-shadow-xl ">
-          Fast & Reliable Same Day Delivery: Choose the Perfect Service for You (UK).
+            Fast & Reliable Same Day Delivery: Choose the Perfect Service for
+            You (UK).
           </div>
           <div className="">
             <p className="text-xl font-semibold drop-shadow-sm">
@@ -65,15 +66,29 @@ const service = () => {
             Why Choose Us?
           </p>
           <div className="text-center  ">
-            <p className="  drop-shadow-xl capitalize text-lg py-2 font-serif">
-              At VANLINK LOGISTICS, we're dedicated to providing top-notch
-              courier solutions tailored to your business needs, all at
-              competitive prices. Continuously innovating with new delivery
-              sources and technologies, we aim to streamline your delivery
-              requirements, eliminating stress from the process. For a partner
-              who genuinely cares about your business, choose VANLINK LOGISTICS.
-              Get in touch with us in London, England, to discover how we can
-              serve you better
+            <p className="  drop-shadow-xl capitalize text-lg py-2 font-serif  text-justify">
+              We Deliver When You Need It: VanLink Logistics offers a
+              comprehensive range of same-day delivery options to fit your
+              specific needs and budget. Whether you require urgent delivery
+              within hours or prefer next-day service for less time-sensitive
+              shipments, we have you covered. You can even schedule deliveries
+              in advance for future peace of mind. The Right Vehicle for Every
+              Delivery: Our diverse fleet includes cars, small vans, SWB, MWB,
+              LWB vans, and Luton vans, ensuring we have the perfect vehicle for
+              your parcel or pallet, regardless of size or weight. Get a quote
+              and specify your requirements to see which option best suits your
+              needs! Transparent Pricing: We believe in upfront and transparent
+              pricing. Our quote system considers factors like distance,
+              urgency, and vehicle size to provide an accurate estimate before
+              you book. No hidden fees, just reliable delivery at a competitive
+              price. Specialized Handling: We understand that some deliveries
+              require extra care. Our team is experienced in handling fragile
+              items and medical supplies, ensuring your shipment arrives safely
+              and securely. Let us know your specific requirements, and we'll
+              tailor our service accordingly. Get a Quote & Real-Time Support:
+              Our user-friendly online quote system provides instant pricing
+              based on your delivery details. Need help or have questions? Our
+              real-time customer support team is always available to assist you.
             </p>
           </div>
           <div className="text-center">

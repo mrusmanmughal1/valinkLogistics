@@ -24,7 +24,7 @@ const about = () => {
           </div>
         </div>
         <div className="bg-orange-100">
-          <div className="flex  flex-col md:flex-row gap-10 md:gap-20 p-10 py-20 w-11/12 mx-auto">
+          <div className="flex  items-center flex-col md:flex-row gap-10 md:gap-20 p-10 py-20 w-11/12 mx-auto">
             <div className="w-full">
               <div className="space-y-1">
                 <p>WE STARTED WITH A SIMPLE IDEA.</p>

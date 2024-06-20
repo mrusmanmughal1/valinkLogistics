@@ -6,20 +6,44 @@ import { ALL_Vehicles_API } from "@/Config/Constants";
 import { useState } from "react";
 import { useEffect } from "react";
 import Loader from "@/UI/Loader";
+import one from "../Assets/Cars/1.png";
+import two from "../Assets/Cars/2.png";
+import three from "../Assets/Cars/3.png";
+import four from "../Assets/Cars/4.png";
+import five from "../Assets/Cars/5.png";
 
-const SelectVehicle = ({ setVehicle, selected, setDIstance ,setPage  }) => {
+const SelectVehicle = ({ setVehicle, selected, setDIstance, setPage }) => {
+  const cars = [one, two, three, four, five];
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(ALL_Vehicles_API)
-      .then((res) => res.json())
-      .then((data) => {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    const fetchData = async () => {
+      try {
+        const response = await fetch(ALL_Vehicles_API, { signal });
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
         setData(data);
+      } catch (err) {
+        if (err.name !== "AbortError") {
+          setError(err.message);
+        }
+      } finally {
         setLoading(false);
-      });
+      }
+    };
+
+    fetchData();
+
+    return () => {
+      controller.abort();
+    };
   }, []);
-  // space-y-4 text-center hover:bg-orange-600 hover:text-white rounded-md py-4 px-8
 
   if (isLoading)
     return (
@@ -28,8 +52,7 @@ const SelectVehicle = ({ setVehicle, selected, setDIstance ,setPage  }) => {
         <Loader />
       </div>
     );
-  if (!data) return <p>No profile data</p>;
-  console.log(data);
+  if (!data) return <p className="text-center  text-4xl font-bold  flex justify-center items-center  py-20 uppercase text-orange-500">Server Busy. Try Again Later , Thank You</p>;
 
   return (
     <div className=" py-10 px-4 md:py-20 md:px-20 bg-orange-200">
@@ -58,7 +81,7 @@ const SelectVehicle = ({ setVehicle, selected, setDIstance ,setPage  }) => {
                   } hover:-translate-y-3 transition-all duration-700 flex flex-col justify-center items-center`}
                 >
                   <Image
-                    src="https://www.couriernet.co.uk/wp-content/uploads/2019/12/car-bg-preview-300-n.png"
+                    src={cars[i]}
                     width={250}
                     height={150}
                     alt="Car"
@@ -84,7 +107,11 @@ const SelectVehicle = ({ setVehicle, selected, setDIstance ,setPage  }) => {
           })}
         </div>
         <div className="">
-          <PlaceSearchForm     setPage={setPage} setDIstance={setDIstance} selected={selected} />
+          <PlaceSearchForm
+            setPage={setPage}
+            setDIstance={setDIstance}
+            selected={selected}
+          />
         </div>
       </div>
     </div>
