@@ -12,9 +12,9 @@ router.use(verifyJWT);
 
 router
   .route("/")
-  .get(getAllUsers)
+  .get(verifyJWT, getAllUsers)
   .post(createNewUser)
-  .patch(updateUser)
-  .delete(deleteUser);
+  .patch(verifyJWT, updateUser)
+  .delete(verifyJWT, deleteUser);
 
 export default router;
