@@ -4,9 +4,10 @@ import SelectVehicle from "./SelectVehicle";
 import EstimationUI from "@/UI/EstimationUI";
 import CourierDetailsForm from "@/UI/CourierDetailsForm";
 import { PostalCodeProvider } from "@/Context/PostalCodeContext";
+import ResponseMessage from "@/UI/ResponseMessage";
 
 const DymanicUI = () => {
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(4);
   const [selected, setSelected] = useState(null);
   const [Distance, setDIstance] = useState(null);
   
@@ -31,6 +32,9 @@ const DymanicUI = () => {
           )}
           {page == 3 && (
             <CourierDetailsForm setPage={setPage} selected={selected} />
+          )}
+            {page == 4 && (
+            <ResponseMessage setPage={setPage} selected={selected} />
           )}
         </section>
       </PostalCodeProvider>

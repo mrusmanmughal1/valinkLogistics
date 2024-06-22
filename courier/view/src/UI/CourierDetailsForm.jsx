@@ -79,8 +79,8 @@ const {Collection, Delivery} = ALLPostalCodes;
   });
 
   return (
-    <div className=" p-10 md:p-20  bg-orange-200">
-      <div className=" text-center font-extrabold text-3xl uppercase text-orange-600 drop-shadow-md p-4 md:p-4">
+    <div className=" p-10 md:p-20  bg-blue-100">
+      <div className=" text-center font-extrabold text-3xl uppercase text-blue-primary drop-shadow-md p-4 md:p-4">
         Please Provide Detail's
       </div>
       <form onSubmit={handleSubmit}>
@@ -93,7 +93,7 @@ const {Collection, Delivery} = ALLPostalCodes;
               <input
                 className={`${
                   errors.collectionName && " border-4 border-red-300"
-                } w-full rounded-md border border-red-500 p-2`}
+                } w-full rounded-md border border-blue-200 p-2`}
                 onChange={handleChange}
                 value={values.collectionName}
                 name="collectionName"
@@ -109,7 +109,7 @@ const {Collection, Delivery} = ALLPostalCodes;
                 value={values.collectionAddress}
                 className={`${
                   errors.collectionAddress && " border-4 border-red-300"
-                } w-full rounded-md border border-red-500 p-2`}
+                } w-full rounded-md border border-blue-200 p-2`}
               />
             </div>
             <div className=" space-y-1 py-2 font-semibold ">
@@ -124,7 +124,7 @@ const {Collection, Delivery} = ALLPostalCodes;
                 value={values.CollectionPostCode}
                 className={`${
                   errors.CollectionPostCode && " border-4 border-red-300"
-                } w-full rounded-md border border-red-500 p-2`}
+                } w-full rounded-md border border-blue-200 p-2`}
               />
             </div>
             <div className=" space-y-1 py-2 font-semibold ">
@@ -137,7 +137,7 @@ const {Collection, Delivery} = ALLPostalCodes;
                 value={values.collectionDate}
                 className={`${
                   errors.collectionDate && " border-4 border-red-300"
-                } w-full rounded-md border border-red-500 p-2`}
+                } w-full rounded-md border border-blue-200 p-2`}
               />
             </div>
             <div className=" space-y-1 py-2 font-semibold ">
@@ -150,7 +150,7 @@ const {Collection, Delivery} = ALLPostalCodes;
                 value={values.collectionTime}
                 className={`${
                   errors.collectionTime && " border-4 border-red-300"
-                } w-full rounded-md border border-red-500 p-2`}
+                } w-full rounded-md border border-blue-200 p-2`}
               />
             </div>
             <div className=" space-y-1 py-2 font-semibold ">
@@ -163,7 +163,7 @@ const {Collection, Delivery} = ALLPostalCodes;
                 value={values.collectionContact}
                 className={`${
                   errors.collectionContact && " border-4 border-red-300"
-                } w-full rounded-md border border-red-500 p-2`}
+                } w-full rounded-md border border-blue-200 p-2`}
               />
             </div>
             <div className=" space-y-1 py-2 font-semibold ">
@@ -176,7 +176,7 @@ const {Collection, Delivery} = ALLPostalCodes;
                 value={values.collectionNumber}
                 className={`${
                   errors.collectionNumber && " border-4 border-red-300"
-                } w-full rounded-md border border-red-500 p-2`}
+                } w-full rounded-md border border-blue-200 p-2`}
               />
             </div>
             <div className=" space-y-1 py-2 font-semibold ">
@@ -189,7 +189,7 @@ const {Collection, Delivery} = ALLPostalCodes;
                 value={values.collectionDetail}
                 className={`${
                   errors.collectionDetail && " border-4 border-red-300"
-                } w-full rounded-md border border-red-500 p-2`}
+                } w-full rounded-md border border-blue-200 p-2`}
               />
             </div>
             <div className=" space-y-1 py-2 font-semibold ">
@@ -201,7 +201,7 @@ const {Collection, Delivery} = ALLPostalCodes;
                 value={typeofVan}
                 className={`${
                   errors.selectedVan && " border-4 border-red-300"
-                } w-full rounded-md border border-red-500 p-2`}
+                } w-full rounded-md border border-blue-200 p-2`}
               />
             </div>
             <div className=" space-y-1 py-2 font-semibold ">
@@ -216,7 +216,7 @@ const {Collection, Delivery} = ALLPostalCodes;
                 value={values.collectionInstruction}
                 className={`${
                   errors.collectionInstruction && " border-4 border-red-300"
-                } w-full rounded-md border border-red-500 p-2`}
+                } w-full rounded-md border border-blue-200 p-2`}
               />
             </div>
           </div>
@@ -231,7 +231,7 @@ const {Collection, Delivery} = ALLPostalCodes;
               <input
                 className={`${
                   errors.deliveryName && " border-4 border-red-300"
-                } w-full rounded-md border border-red-500 p-2`}
+                } w-full rounded-md border border-blue-200 p-2`}
                 name="deliveryName"
                 onChange={handleChange}
                 value={values.deliveryName}
@@ -244,7 +244,7 @@ const {Collection, Delivery} = ALLPostalCodes;
               <input
                 className={`${
                   errors.deliveryAddress && " border-4 border-red-300"
-                } w-full rounded-md border border-red-500 p-2`}
+                } w-full rounded-md border border-blue-200 p-2`}
                 name="deliveryAddress"
                 onChange={handleChange}
                 value={values.deliveryAddress}
@@ -259,7 +259,7 @@ const {Collection, Delivery} = ALLPostalCodes;
                 disabled={true}
                 className={`${
                   errors.deliveryPostCode && " border-4 border-red-300"
-                } w-full rounded-md border border-red-500 p-2`}
+                } w-full rounded-md border border-blue-200 p-2`}
                 onChange={handleChange}
                 value={values.deliveryPostCode}
               />
@@ -272,7 +272,7 @@ const {Collection, Delivery} = ALLPostalCodes;
                 name="deliveryDate"
                 className={`${
                   errors.deliveryDate && " border-4 border-red-300"
-                } w-full rounded-md border border-red-500 p-2`}
+                } w-full rounded-md border border-blue-200 p-2`}
                 onChange={handleChange}
                 value={values.deliveryDate}
               />
@@ -285,7 +285,7 @@ const {Collection, Delivery} = ALLPostalCodes;
                 name="deliveryTime"
                 className={`${
                   errors.deliveryTime && " border-4 border-red-300"
-                } w-full rounded-md border border-red-500 p-2`}
+                } w-full rounded-md border border-blue-200 p-2`}
                 onChange={handleChange}
                 value={values.deliveryTime}
               />
@@ -300,7 +300,7 @@ const {Collection, Delivery} = ALLPostalCodes;
                 name="deliveryContact"
                 className={`${
                   errors.deliveryContact && " border-4 border-red-300"
-                } w-full rounded-md border border-red-500 p-2`}
+                } w-full rounded-md border border-blue-200 p-2`}
               />
             </div>
             <div className=" space-y-1 py-2 font-semibold ">
@@ -313,7 +313,7 @@ const {Collection, Delivery} = ALLPostalCodes;
                 name="deliveryNumber"
                 className={`${
                   errors.deliveryNumber && " border-4 border-red-300"
-                } w-full rounded-md border border-red-500 p-2`}
+                } w-full rounded-md border border-blue-200 p-2`}
               />
             </div>
             <div className=" space-y-1 py-2 font-semibold ">
@@ -324,7 +324,7 @@ const {Collection, Delivery} = ALLPostalCodes;
                 name="bookerName"
                 className={`${
                   errors.bookerName && " border-4 border-red-300"
-                } w-full rounded-md border border-red-500 p-2`}
+                } w-full rounded-md border border-blue-200 p-2`}
                 onChange={handleChange}
                 value={values.bookerName}
               />
@@ -337,7 +337,7 @@ const {Collection, Delivery} = ALLPostalCodes;
                 name="bookerNumber"
                 className={`${
                   errors.bookerNumber && " border-4 border-red-300"
-                } w-full rounded-md border border-red-500 p-2`}
+                } w-full rounded-md border border-blue-200 p-2`}
                 onChange={handleChange}
                 value={values.bookerNumber}
               />
@@ -350,7 +350,7 @@ const {Collection, Delivery} = ALLPostalCodes;
                 name="bookerEmail"
                 className={`${
                   errors.bookerEmail && " border-4 border-red-300"
-                } w-full rounded-md border border-red-500 p-2`}
+                } w-full rounded-md border border-blue-200 p-2`}
                 onChange={handleChange}
                 value={values.bookerEmail}
               />
@@ -368,21 +368,21 @@ const {Collection, Delivery} = ALLPostalCodes;
                 value={values.deliveryInstruction}
                 className={`${
                   errors.deliveryInstruction && " border-4 border-red-300"
-                } w-full rounded-md border border-red-500 p-2`}
+                } w-full rounded-md border border-blue-200 p-2`}
               />
             </div>
           </div>
         </div>
         <div className=" flex flex-row gap-4 font-semibold justify-center">
           <button
-            className="text-white bg-orange-600 p-4 rounded-md"
+            className="text-white bg-blue-primary p-4 rounded-md"
             onClick={() => handleclick(2)}
           >
             Previous
           </button>
           <button
             type="submit"
-            className="text-white bg-orange-600 p-4 rounded-md px-8"
+            className="text-white bg-blue-primary p-4 rounded-md px-8"
           >
             Next
           </button>
