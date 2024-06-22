@@ -26,14 +26,14 @@ const company = () => {
             </div>
           </div>
         </div>
-        <div className="py-20 bg-orange-50">
+        <div className="py-20 bg-blue-50">
           <div className="flex p-10 flex-col md:flex-row gap-10 w-11/12 mx-auto">
             <div className="w-full">
               <Image src={companyprofile} alt="About us page " />
             </div>
             <div className="w-full space-y-4">
               <div className="space-y-2">
-                <p className="text-orange-500 drop-shadow-xl    uppercase text-2xl font-bold">
+                <p className="text-blue-primary drop-shadow-xl    uppercase text-2xl font-bold">
                   Company Profile
                 </p>
                 <p>
@@ -75,7 +75,7 @@ const company = () => {
         </div>
         <div className="">
           <div className="p-20   company-bg  flex justify-center relative text-white text-center h-60">
-            <div className="absolute inset-0 bg-orange-400  opacity-60 "></div>
+            <div className="absolute inset-0 bg-blue-400  opacity-60 "></div>
             <div className="  w-8/12 mx-auto space-y-4 absolute">
               <p className="text-2xl font-semibold ">
                 Client Satisfaction is Must !
@@ -88,7 +88,7 @@ const company = () => {
             </div>
           </div>
         </div>
-        <div className="bg-orange-300">
+        <div className="bg-blue-primary">
           <Contactform />
         </div>
         <div className=" bg-orange-50 relative    justify-center">

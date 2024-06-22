@@ -59,7 +59,7 @@ const Navbar = () => {
               <div className="relative">
                 <Link
                   href="/"
-                  className="p-4 bg-[#0F2441] shadow-lg animate-bounce text-white  font-semibold border-2 text-sm  text-center rounded-md w-40"
+                  className="p-4 bg-[#0F2441] border-yellowcolor shadow-lg animate-bounce text-white  font-semibold border-2 text-sm  text-center rounded-md w-40"
                 >
                   Get a Quote
                 </Link>

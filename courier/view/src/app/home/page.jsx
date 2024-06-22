@@ -29,7 +29,7 @@ const home = () => {
 
       {/* second section  */}
 
-      <div className="  py-20     bg-orange-50 ">
+      <div className="  py-20     bg-blue-50 ">
         <div className="flex flex-col gap-8   lg:flex-row w-11/12 mx-auto ">
           <div className="w-full  text-center flex justify-center">
             <Image
@@ -40,7 +40,7 @@ const home = () => {
           </div>
           <div className="w-full flex  justify-center">
             <div className="w-full lg:w-3/4 space-y-4">
-              <h1 className="text-lg   font-bold text-orange-500 xl:text-3xl drop-shadow-xl   ">
+              <h1 className="text-lg   font-bold text-blue-primary xl:text-3xl drop-shadow-xl   ">
                 Welcome to VANLINK LOGISTICS
               </h1>
               <div className="text-justify text-lg xl:text-lg leading-9">
@@ -67,11 +67,11 @@ const home = () => {
         </div>
       </div>
       {/* third  */}
-      <div className=" py-20 text-center bg-orange-200 space-y-2 ">
+      <div className=" py-20 text-center bg-blue-100 space-y-2 ">
         <p className="font-semibold">
           Barcodes, Inc. Same Day Courier Service in Birmingham to
         </p>
-        <p className="font-semibold text-orange-600 text-4xl drop-shadow-xl ">
+        <p className="font-semibold text-blue-primary text-4xl drop-shadow-xl ">
           {" "}
           Logistics Facilities & Technical Support
         </p>
@@ -81,11 +81,11 @@ const home = () => {
       </div>
 
       {/* fourth section  */}
-      <div className="  bg-orange-50 pt-20 pb-10 ">
+      <div className="  bg-blue-50 pt-20 pb-10 ">
         <div className="flex flex-col  gap-14 md:gap-32   md:flex-row w-11/12 mx-auto ">
           <div className="w-full flex  md:w-3/4  justify-center ">
             <div className="w-full space-y-4">
-              <h1 className="text-2xl font-bold text-orange-500 xl:text-[1.78rem] drop-shadow-xl  ">
+              <h1 className="text-2xl font-bold text-blue-primary xl:text-[1.78rem] drop-shadow-xl  ">
                 Reliable UK Transport Logistics
               </h1>
               <div className="space-y-6 text-lg xl:text-lg leading-9 text-justify ">
@@ -111,9 +111,9 @@ const home = () => {
             <Image src={home2} alt="" className="object-contain  w-full" />
           </div>
         </div>
-        <div className="bg-orange-50 text-center py-10">
+        <div className="bg-blue-50 text-center py-10">
           <Link href={"/more-about-us"}>
-            <button className="text-white font-sans font-semibold bg-orange-600 p-4 rounded-md">
+            <button className="text-white font-sans font-semibold bg-blue-primary p-4 rounded-md">
               More About Us{" "}
             </button>
           </Link>

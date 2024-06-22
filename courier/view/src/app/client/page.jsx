@@ -18,8 +18,8 @@ const page = () => {
           </div>
         </div>
       </div>
-      <div className=" text-center  bg-orange-50 py-20">
-        <p className="text-3xl font-bold text-orange-500 uppercase drop-shadow-md">
+      <div className=" text-center  bg-blue-50 py-20">
+        <p className="text-3xl font-bold text-blue-primary uppercase drop-shadow-md">
           Create an Account
         </p>
         <div className="">

@@ -23,12 +23,12 @@ const about = () => {
             </div>
           </div>
         </div>
-        <div className="bg-orange-100">
+        <div className="bg-blue-50">
           <div className="flex  items-center flex-col md:flex-row gap-10 md:gap-20 p-10 py-20 w-11/12 mx-auto">
             <div className="w-full">
               <div className="space-y-1">
                 <p>WE STARTED WITH A SIMPLE IDEA.</p>
-                <p className="text-orange-600 font-bold text-3xl drop-shadow">
+                <p className="text-blue-primary font-bold text-3xl drop-shadow">
                   COMPANY OVERVIEW
                 </p>
               </div>
@@ -71,16 +71,16 @@ const about = () => {
             </div>
           </div>
         </div>
-        <div className="p-10 bg-orange-300">
+        <div className="p-10 bg-blue-primary">
           <div className=" w-11/12 mx-auto">
             <div className=" font-semibold text-center">
-              <p className="drop-shadow-xl "> OUR VALUES</p>
-              <p className="text-3xl drop-shadow-md ">
-                CORE <span className="text-orange-500">VALUES</span>
+              <p className="drop-shadow-xl text-white "> OUR VALUES</p>
+              <p className="text-3xl text-white drop-shadow-md ">
+                CORE <span className="text">VALUES</span>
               </p>
             </div>
             <div className=" py-10 grid md:grid-cols-2 grid-cols-1 gap-y-10 gap-x-20 ">
-              <div className=" p-6 rounded-md bg-orange-200 hover:bg-orange-100 hover:shadow-md">
+              <div className=" p-6 rounded-md bg-blue-100 hover:bg-blue-50 hover:shadow-md">
                 <p className="text-2xl font-bold">
                   Full, Part, and Consolidated Loads{" "}
                 </p>
@@ -89,7 +89,7 @@ const about = () => {
                   consolidated loads across every region of the UK.
                 </p>
               </div>
-              <div className=" p-6 rounded-md bg-orange-200 hover:bg-orange-100 hover:shadow-md">
+              <div className=" p-6 rounded-md bg-blue-100 hover:bg-blue-50 hover:shadow-md">
                 <p className="text-2xl font-bold">Palletforce Equipments </p>
                 <p>
                   Sending smaller shipments of fewer than 10 pallets used to be
@@ -97,7 +97,7 @@ const about = () => {
                   greatest alternatives,
                 </p>
               </div>
-              <div className=" p-6 rounded-md bg-orange-200 hover:bg-orange-100 hover:shadow-md">
+              <div className=" p-6 rounded-md bg-blue-100 hover:bg-blue-50 hover:shadow-md">
                 <p className="text-2xl font-bold">
                   European Transport Logistics
                 </p>
@@ -107,7 +107,7 @@ const about = () => {
                   can track them and receive them
                 </p>
               </div>
-              <div className=" p-6 rounded-md bg-orange-200 hover:bg-orange-100 hover:shadow-md">
+              <div className=" p-6 rounded-md bg-blue-100 hover:bg-blue-50 hover:shadow-md">
                 <p className="text-2xl font-bold">
                   Our customers is our top priority{" "}
                 </p>
@@ -118,7 +118,7 @@ const about = () => {
                   greatest transport and logistics services.
                 </p>
               </div>
-              <div className=" p-6 rounded-md bg-orange-200 hover:bg-orange-100 hover:shadow-md">
+              <div className=" p-6 rounded-md bg-blue-100 hover:bg-blue-50 hover:shadow-md">
                 <p className="text-2xl font-bold">
                   Transport Logistics service{" "}
                 </p>
@@ -127,7 +127,7 @@ const about = () => {
                   transport and logistics service in the entire United Kingdom.
                 </p>
               </div>
-              <div className=" p-6 rounded-md bg-orange-200 hover:bg-orange-100 hover:shadow-md">
+              <div className=" p-6 rounded-md bg-blue-100 hover:bg-blue-50 hover:shadow-md">
                 <p className="text-2xl font-bold">Customer Focus </p>
                 <p>We treat each customer as our only customer</p>
                 <p>We seek to exceed customer expectations</p>

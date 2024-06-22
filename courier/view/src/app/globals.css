@@ -29,7 +29,7 @@ html {
 }
 
 .activeLink {
-  @apply bg-orange-500   rounded-md shadow-md;
+  @apply bg-blue-primary text-white   rounded-md shadow-md;
 }
 
 @layer utilities {
@@ -61,9 +61,9 @@ html {
 
 .sidetip {
   background: linear-gradient(
-    107deg,
-    rgb(255, 67, 5) 11.1%,
-    rgb(245, 135, 0) 95.3%
+    200deg,
+    rgb(5, 26, 120) 11.1%,
+    rgb(25, 56, 102) 95.3%
   );
 }
 
