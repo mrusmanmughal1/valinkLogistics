@@ -7,7 +7,7 @@ import { PostalCodeProvider } from "@/Context/PostalCodeContext";
 import ResponseMessage from "@/UI/ResponseMessage";
 
 const DymanicUI = () => {
-  const [page, setPage] = useState(4);
+  const [page, setPage] = useState(1);
   const [selected, setSelected] = useState(null);
   const [Distance, setDIstance] = useState(null);
   
