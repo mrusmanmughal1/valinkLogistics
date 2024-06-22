@@ -119,7 +119,7 @@ const PlaceSearchForm = ({ selected, setDIstance, setPage }) => {
             <button
               type="submit"
               disabled={!Boolean(selected)}
-              className="text-white bg-orange-600 py-4 px-6 rounded-md font-semibold disabled:bg-orange-300"
+              className="text-white bg-yellowcolor py-4 px-6 rounded-md font-semibold disabled:bg-orange-300"
             >
               Get a Quote
             </button>

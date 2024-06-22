@@ -1,6 +1,6 @@
 import NavLinks from "@/UI/NavLinks";
 import Image from "next/image";
-import logo from "../Assets/Logo.png";
+import logo from "../Assets/Logo-01.png";
 import { FaSquarePhone } from "react-icons/fa6";
 import { IoMail } from "react-icons/io5";
 import Link from "next/link";
@@ -12,7 +12,7 @@ import Mobilenav from "@/UI/MobileNav";
 const Navbar = () => {
   return (
     <>
-      <div className="flex md:px-20 px-2   w-full items-center justify-between relative text-sm py-2 gap-2 bg-orange-500 text-white">
+      <div className="flex md:px-20 px-2   w-full items-center justify-between relative text-sm py-2 gap-2  text-white bg-[#052653]">
         <div className="flex gap-2  w-full justify-between md:justify-normal  md:flex-row text-xs font-semibold">
           <div className=" flex items-center   gap-1">
             {" "}
@@ -45,21 +45,21 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="w-full bg-orange-600 text-white py-2 hidden md:block ">
+      <div className="w-full  text-[#052653]   hidden md:block ">
         <nav>
           <div className="flex      items-center  w-11/12 mx-auto   ">
             <Link
               href={"/"}
-              className="shadow-2xl  bg-orange-900 rounded-lg p-2 pt-"
+              className=" p-2 pt-"
             >
-              <Image src={logo} width={90} height={90} alt="Logo" />
+              <Image src={logo} width={150}   alt="Logo" />
             </Link>
 
             <div className="flex    justify-end w-full gap-10 items-center">
               <div className="relative">
                 <Link
                   href="/"
-                  className="p-4 bg-orange-600 shadow-lg animate-bounce  font-semibold border-2 text-sm  text-center rounded-md w-40"
+                  className="p-4 bg-[#0F2441] shadow-lg animate-bounce text-white  font-semibold border-2 text-sm  text-center rounded-md w-40"
                 >
                   Get a Quote
                 </Link>

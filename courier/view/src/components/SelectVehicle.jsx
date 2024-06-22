@@ -6,7 +6,7 @@ import { ALL_Vehicles_API } from "@/Config/Constants";
 import { useState } from "react";
 import { useEffect } from "react";
 import Loader from "@/UI/Loader";
-import one from "../Assets/Cars/1.png";
+import one from "../Assets/Cars/cartest.png";
 import two from "../Assets/Cars/2.png";
 import three from "../Assets/Cars/3.png";
 import four from "../Assets/Cars/4.png";
@@ -55,10 +55,10 @@ const SelectVehicle = ({ setVehicle, selected, setDIstance, setPage }) => {
   if (!data) return <p className="text-center  text-4xl font-bold  flex justify-center items-center  py-20 uppercase text-orange-500">Server Busy. Try Again Later , Thank You</p>;
 
   return (
-    <div className=" py-10 px-4 md:py-20 md:px-20 bg-orange-200">
+    <div className=" py-10 px-4 md:py-20 md:px-20 bg-[#a2b7d423]">
       <div className="w-11/12 mx-auto space-y-10">
         <div className="flex justify-center flex-wrap">
-          <p className="text-white text-sm md:text-xl  px-10 rounded-md py-4 uppercase flex font-semibold text-center bg-orange-600">
+          <p className="text-white text-sm md:text-xl  px-10 rounded-md py-4 uppercase flex font-semibold text-center bg-blue-primary">
             Please Select The Vehicle You Need
           </p>
         </div>
@@ -72,8 +72,8 @@ const SelectVehicle = ({ setVehicle, selected, setDIstance, setPage }) => {
                 key={i}
                 onClick={() => setVehicle(val)}
                 className={`${
-                  selectedvan && "bg-orange-600 "
-                } space-y-4 text-center cursor-pointer hover:bg-orange-600 hover:text-white rounded-md py-4 px-8`}
+                  selectedvan && "bg-[#EDA802] "
+                } space-y-4 text-center cursor-pointer hover:bg-[#EDA802]   hover:text-white rounded-md py-4 px-8`}
               >
                 <div
                   className={` ${
@@ -81,7 +81,7 @@ const SelectVehicle = ({ setVehicle, selected, setDIstance, setPage }) => {
                   } hover:-translate-y-3 transition-all duration-700 flex flex-col justify-center items-center`}
                 >
                   <Image
-                    src={cars[i]}
+                    src={one}
                     width={250}
                     height={150}
                     alt="Car"
