@@ -22,7 +22,7 @@ const service = () => {
       </div>
       <div className=" py-20 ">
         <div className="w-11/12 mx-auto text-center space-y-4">
-          <div className="text-bold font-serif text-3xl text-orange-500 drop-shadow-xl ">
+          <div className="text-bold font-serif text-3xl text-blue-primary drop-shadow-xl ">
             Fast & Reliable Same Day Delivery: Choose the Perfect Service for
             You (UK).
           </div>
@@ -37,9 +37,9 @@ const service = () => {
           </div>
         </div>
       </div>
-      <div className="py-14 bg-orange-50">
+      <div className="py-14 bg-blue-50">
         <div className="w-3/4 flex justify-center flex-col md:flex-row gap-10 mx-auto">
-          <div className="border-orange-400   p-8    border-4 shadow-lg">
+          <div className="border-blue-primary    p-8    border-4 shadow-lg">
             <div className=" text-center space-y-3">
               <p className="text-2xl font-bold  ">Next Day Delivery</p>
               <p className="">
@@ -49,7 +49,7 @@ const service = () => {
               </p>
             </div>
           </div>
-          <div className="border-orange-400 p-8  shadow-lg   border-4">
+          <div className="border-blue-primary p-8  shadow-lg   border-4">
             <div className=" text-center space-y-3">
               <p className="text-2xl font-bold">Domestic Overnight Delivery</p>
               <p>
@@ -60,9 +60,9 @@ const service = () => {
           </div>
         </div>
       </div>
-      <div className="py-20 bg-orange-200">
+      <div className="py-20 bg-blu00">
         <div className="w-3/4 space-y-8 text-center  mx-auto p-8">
-          <p className="text-3xl font-semibold drop-shadow-lg text-orange-500 font-serif">
+          <p className="text-3xl font-semibold drop-shadow-lg text-blue-primary font-serif">
             Why Choose Us?
           </p>
           <div className="text-center  ">
@@ -94,7 +94,7 @@ const service = () => {
           <div className="text-center">
             <Link
               href="/client"
-              className="text-white font-semibold bg-orange-500 p-5 px-8 rounded-md"
+              className="text-white font-semibold bg-blue-primary p-5 px-8 rounded-md"
             >
               Sign Up
             </Link>

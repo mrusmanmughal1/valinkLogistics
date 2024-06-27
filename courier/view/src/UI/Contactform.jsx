@@ -10,7 +10,7 @@ const Contactform = () => {
         Contact Us
       </div>
       <div className="flex py-10 flex-col md:flex-row ">
-        <div className="w-full shadow-lg p-10 bg-blue-200 text-center flex-col justify-between flex ">
+        <div className="w-full shadow-lg p-10 bg-white text-center flex-col justify-between flex ">
             <div className="space-y-2">
 
                 <p className="text-2xl font-bold">Service Area</p>
@@ -65,6 +65,9 @@ const Contactform = () => {
                     className="w-full  border rounded-md"
                   />
                 </div>
+              </div>
+              <div className="text-center py-2">
+                <button type="submit" className="p-3 bg-blue-primary text-white rounded-md font-medium">Send Message</button>
               </div>
             </form>
           </div>
