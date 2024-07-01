@@ -13,30 +13,32 @@ const about = () => {
             alt="About us page "
             className="  w-full h-screen object-cover"
           />
-          <div className=" text-2xl text-center  Font-semibold   font-serif   font-semibold absolute top-[33%] left-[%] rounded-lg text-white ">
-            <div className=" relative uppercase    font-semibold  sidetip p-4 rounded-r-2xl  ">
+         
+        </div>
+        <div className=" text-2xl text-center  Font-semibold   font-serif   font-semibold      text-white ">
+            <div className=" relative uppercase    font-semibold  bg-blue-primary p-4     ">
               <p className=" p-4 drop-shadow-xl   rounded-md">
                 {" "}
-                Provide Services{" "}
+                Swift Deliveries{" "}
               </p>
-              <p className=" drop-shadow-xl  rounded-md">ALL Over Uk</p>
+              <p className=" drop-shadow-xl  rounded-md">
+                Fast and efficient delivery services across the UK.
+              </p>
             </div>
           </div>
-        </div>
         <div className="bg-">
           <div className="flex  items-center flex-col md:flex-row gap-10 md:gap-20 p-10 py-20 w-11/12 mx-auto">
             <div className="w-full">
               <div className="space-y-1">
                 <p>WE STARTED WITH A SIMPLE IDEA.</p>
                 <p className="text-blue-primary font-bold text-3xl drop-shadow">
-                  COMPANY OVERVIEW
+                  From Urgent Deliveries to Manufacturing Support
                 </p>
               </div>
               <div className="text-justify py-3">
                 <p>
-                  From Urgent Deliveries to Manufacturing Support: VanLink
-                  Logistics was born in 2019 with a mission to keep the UK's
-                  manufacturing industry moving. We started by providing
+                  VanLink Logistics was born in 2019 with a mission to keep the
+                  UK's manufacturing industry moving. We started by providing
                   refrigerated van services to KFC, and quickly expanded our
                   fleet to support a wider range of needs. Today, we deliver
                   everything from single documents to full pallets, ensuring
@@ -71,7 +73,7 @@ const about = () => {
             </div>
           </div>
         </div>
-        <div className="p-10 bg-blue-primary">
+        <div className="p-10 py-20 bg-blue-primary">
           <div className=" w-11/12 mx-auto">
             <div className=" font-semibold text-center">
               <p className="drop-shadow-xl text-white "> OUR VALUES</p>
@@ -80,7 +82,7 @@ const about = () => {
               </p>
             </div>
             <div className=" py-10 grid md:grid-cols-2 grid-cols-1 gap-y-10 gap-x-20 ">
-              <div className=" p-6 rounded-md bg-white hover:bg-blue-50 hover:shadow-md">
+              <div className=" p-6 rounded-md bg-white  hover:-translate-y-1 duration-500  hover:shadow-md">
                 <p className="text-2xl font-bold">
                   Full, Part, and Consolidated Loads{" "}
                 </p>
@@ -89,7 +91,7 @@ const about = () => {
                   consolidated loads across every region of the UK.
                 </p>
               </div>
-              <div className=" p-6 rounded-md bg-white hover:bg-bl hover:shadow-md">
+              <div className=" p-6 rounded-md bg-white hover:bg-bl hover:-translate-y-1 duration-500  hover:shadow-md">
                 <p className="text-2xl font-bold">Palletforce Equipments </p>
                 <p>
                   Sending smaller shipments of fewer than 10 pallets used to be
@@ -97,7 +99,7 @@ const about = () => {
                   greatest alternatives,
                 </p>
               </div>
-              <div className=" p-6 rounded-md bg-white hover:bg-bl hover:shadow-md">
+              <div className=" p-6 rounded-md bg-white hover:-translate-y-1 duration-500 ">
                 <p className="text-2xl font-bold">
                   European Transport Logistics
                 </p>
@@ -107,7 +109,7 @@ const about = () => {
                   can track them and receive them
                 </p>
               </div>
-              <div className=" p-6 rounded-md bg-white hover:bg-bl hover:shadow-md">
+              <div className=" p-6 rounded-md bg-white hover:-translate-y-1 duration-500 ">
                 <p className="text-2xl font-bold">
                   Our customers is our top priority{" "}
                 </p>
@@ -118,7 +120,7 @@ const about = () => {
                   greatest transport and logistics services.
                 </p>
               </div>
-              <div className=" p-6 rounded-md bg-white hover:bg-bl hover:shadow-md">
+              <div className=" p-6 rounded-md bg-white hover:-translate-y-1 duration-500 ">
                 <p className="text-2xl font-bold">
                   Transport Logistics service{" "}
                 </p>
@@ -127,7 +129,7 @@ const about = () => {
                   transport and logistics service in the entire United Kingdom.
                 </p>
               </div>
-              <div className=" p-6 rounded-md bg-white hover:bg-bl hover:shadow-md">
+              <div className=" p-6 rounded-md bg-white hover:-translate-y-1 duration-500 ">
                 <p className="text-2xl font-bold">Customer Focus </p>
                 <p>We treat each customer as our only customer</p>
                 <p>We seek to exceed customer expectations</p>

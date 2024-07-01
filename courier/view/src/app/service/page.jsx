@@ -8,8 +8,10 @@ const service = () => {
     <div>
       <div className="h-screen overflow-hidden relative ">
         <Image src={sercice} alt="" className="w-full h-screen object-cover" />
-        <div className=" text-2xl text-center  slide-right   Font-semibold   font-serif   font-semibold absolute top-[33%] left-[%] rounded-lg text-white ">
-          <div className=" relative uppercase  font-semibold sidetip  p-4 rounded-r-2xl  ">
+     
+      </div>
+      <div className=" text-2xl text-center  slide-right   Font-semibold   font-serif  bg-blue-primary  font-semibold   text-white ">
+          <div className=" relative uppercase  font-semibold    p-4   ">
             <p className=" p-4 drop-shadow-xl   rounded-md">
               {" "}
               We Care About Your Products{" "}
@@ -19,7 +21,6 @@ const service = () => {
             </p>
           </div>
         </div>
-      </div>
       <div className=" py-20 ">
         <div className="w-11/12 mx-auto text-center space-y-4">
           <div className="text-bold font-serif text-3xl text-blue-primary drop-shadow-xl ">
@@ -63,11 +64,11 @@ const service = () => {
       <div className="py-20 bg-blu00">
         <div className="w-3/4 space-y-8 text-center  mx-auto p-8">
           <p className="text-3xl font-semibold drop-shadow-lg text-blue-primary font-serif">
-            Why Choose Us?
+          We Deliver When You Need Its
           </p>
           <div className="text-center  ">
             <p className="  drop-shadow-xl capitalize text-lg py-2 font-serif  text-justify">
-              We Deliver When You Need It: VanLink Logistics offers a
+               VanLink Logistics offers a
               comprehensive range of same-day delivery options to fit your
               specific needs and budget. Whether you require urgent delivery
               within hours or prefer next-day service for less time-sensitive

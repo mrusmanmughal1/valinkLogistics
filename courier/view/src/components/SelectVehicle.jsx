@@ -11,9 +11,10 @@ import two from "../Assets/Cars/2.png";
 import three from "../Assets/Cars/3.png";
 import four from "../Assets/Cars/4.png";
 import five from "../Assets/Cars/5.png";
+import six from "../Assets/Cars/6.png"
 
 const SelectVehicle = ({ setVehicle, selected, setDIstance, setPage }) => {
-  const cars = [one, two, three, four, five];
+  const cars = [one, two, three, four, five , six];
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(true);
 
@@ -52,7 +53,7 @@ const SelectVehicle = ({ setVehicle, selected, setDIstance, setPage }) => {
         <Loader />
       </div>
     );
-  if (!data) return <p className="text-center  text-4xl font-bold  flex justify-center items-center  py-20 uppercase text-orange-500">Server Busy. Try Again Later , Thank You</p>;
+  if (!data) return <p className="text-center  text-4xl font-bold  flex justify-center items-center  py-32 capitalize text-blue-primary bg-slate-100">Server Busy. Try Again Later , Thank You</p>;
 
   return (
     <div className=" py-10 px-4 md:py-20 md:px-20 bg-[#a2b7d423]">
@@ -81,7 +82,7 @@ const SelectVehicle = ({ setVehicle, selected, setDIstance, setPage }) => {
                   } hover:-translate-y-3 transition-all duration-700 flex flex-col justify-center items-center`}
                 >
                   <Image
-                    src={one}
+                    src={cars[i]}
                     width={250}
                     height={150}
                     alt="Car"

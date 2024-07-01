@@ -7,15 +7,17 @@ import Link from "next/link";
 const home = () => {
   return (
     <div>
-      <div className="  md:h-screen overflow-hidden relative ">
+      <div className="  md:h-screen overflow-hidden relative object-top ">
         <Image
           src={hero}
           alt=""
           className="w-full  md:object-conta h-screen object-cover"
         />
 
-        <div className=" md:text-2xl  text-center  slide-right  Font-semibold    font-serif  font-semibold absolute top-[33%] left-[%] rounded-lg text-white ">
-          <div className=" relative uppercase  font-semibold  sidetip  p-4 rounded-r-2xl  ">
+      
+      </div>
+      <div className=" md:text-2xl  text-center    Font-semibold   bg-blue-primary  font-serif  font-semibold    text-white ">
+          <div className=" relative uppercase  font-semibold     p-4   ">
             <p className=" p-4  drop-shadow-xl rounded-md">
               {" "}
               Take the complexity out{" "}
@@ -25,7 +27,6 @@ const home = () => {
             </p>
           </div>
         </div>
-      </div>
 
       {/* second section  */}
 
@@ -39,22 +40,23 @@ const home = () => {
             />
           </div>
           <div className="w-full flex  justify-center">
-            <div className="w-full lg:w-3/4 space-y-4">
+            <div className="w-full lg:w-3/4 space-y-3">
               <h1 className="text-lg   font-bold text-blue-primary xl:text-3xl drop-shadow-xl   ">
-                Welcome to VANLINK LOGISTICS
+              Fast, Reliable Same Day Delivery
               </h1>
               <div className="text-justify text-lg xl:text-lg leading-9">
                 <p className="">
-                  Fast, Reliable Same Day Delivery: One-hour collection ensures
+               One-hour collection ensures
                   your urgent parcel or pallet reaches its destination
                   efficiently, either the same day or by the very next day. No
                   more disruptions to your business operations! VanLink
                   Logistics keeps the UK moving – we understand the
                   time-sensitive nature of your needs.
                 </p>
-                <br />
+                <div className="h-2"></div>
+                <h1 className="text-lg   font-bold text-blue-primary xl:text-2xl drop-shadow-xl   ">Real-Time Peace of Mind:</h1>
                 <p>
-                  Real-Time Peace of Mind: Our drivers leverage cutting-edge
+                   Our drivers leverage cutting-edge
                   technology for secure deliveries you can track every step of
                   the way. Monitor your shipment's progress in real-time and
                   ensure it arrives on time, every time. Eliminate delivery
@@ -86,11 +88,11 @@ const home = () => {
           <div className="w-full flex  md:w-3/4  justify-center ">
             <div className="w-full space-y-4">
               <h1 className="text-2xl font-bold text-blue-primary xl:text-[1.78rem] drop-shadow-xl  ">
-                Reliable UK Transport Logistics
+              Your Trusted Partner in Speed
               </h1>
               <div className="space-y-6 text-lg xl:text-lg leading-9 text-justify ">
                 <p className="">
-                  Your Trusted Partner in Speed: Don't let slow deliveries
+                  Don't let slow deliveries
                   become a bottleneck in your supply chain. Imagine a world
                   where urgent deliveries are a breeze, not a burden. VanLink
                   Logistics is your trusted partner for keeping your production
