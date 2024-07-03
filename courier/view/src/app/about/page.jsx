@@ -13,19 +13,18 @@ const about = () => {
             alt="About us page "
             className="  w-full h-screen object-cover"
           />
-         
         </div>
         <div className=" text-2xl text-center slide-right  Font-semibold   font-serif   font-semibold      text-white ">
-            <div className=" relative uppercase    font-semibold  bg-blue-primary p-4     ">
-              <p className=" p-4 drop-shadow-xl   rounded-md">
-                {" "}
-                Swift Deliveries{" "}
-              </p>
-              <p className=" drop-shadow-xl  rounded-md">
-                Fast and efficient delivery services across the UK.
-              </p>
-            </div>
+          <div className=" relative uppercase    font-semibold  bg-blue-primary p-4     ">
+            <p className=" p-4 drop-shadow-xl   rounded-md">
+              {" "}
+              Swift Deliveries{" "}
+            </p>
+            <p className=" drop-shadow-xl  rounded-md">
+              Fast and efficient delivery services across the UK.
+            </p>
           </div>
+        </div>
         <div className="bg-">
           <div className="flex  items-center flex-col md:flex-row gap-10 md:gap-20 p-10 py-20 w-11/12 mx-auto">
             <div className="w-full">
@@ -82,57 +81,41 @@ const about = () => {
               </p>
             </div>
             <div className=" py-10 grid md:grid-cols-2 grid-cols-1 gap-y-10 gap-x-20 ">
-              <div className=" p-6 rounded-md bg-white  hover:-translate-y-1 duration-500  hover:shadow-md">
+            
+              <div className=" p-6 rounded-md bg-white hover:bg-bl hover:-translate-y-1 duration-500  hover:shadow-md">
                 <p className="text-2xl font-bold">
                   Full, Part, and Consolidated Loads{" "}
                 </p>
                 <p>
-                  Our dedicated fleet of vehicles delivers full, partial, and
-                  consolidated loads across every region of the UK.
-                </p>
-              </div>
-              <div className=" p-6 rounded-md bg-white hover:bg-bl hover:-translate-y-1 duration-500  hover:shadow-md">
-                <p className="text-2xl font-bold">Palletforce Equipments </p>
-                <p>
-                  Sending smaller shipments of fewer than 10 pallets used to be
-                  an expensive business, but van link logistics provides the
-                  greatest alternatives,
+                  Our dedicated fleet handles deliveries of all sizes, ensuring
+                  efficient transportation across the UK.
                 </p>
               </div>
               <div className=" p-6 rounded-md bg-white hover:-translate-y-1 duration-500 ">
+                <p className="text-2xl font-bold">Palletforce Expertise</p>
+                <p>
+                  Sending smaller pallet shipments can be expensive. VanLink
+                  Logistics provides cost-effective solutions for your smaller
+                  freight needs.
+                </p>
+              </div>
+              <div className=" p-6 rounded-md bg-white  hover:-translate-y-1 duration-500  hover:shadow-md">
                 <p className="text-2xl font-bold">
-                  European Transport Logistics
+                  Experience the VanLink Difference
                 </p>
                 <p>
-                  With our trusted and well vetted network of partners, we
-                  commit to delivering your goods on the same day so that you
-                  can track them and receive them
+                  We offer a variety of services to cater to your specific
+                  needs.
                 </p>
               </div>
               <div className=" p-6 rounded-md bg-white hover:-translate-y-1 duration-500 ">
-                <p className="text-2xl font-bold">
-                  Our customers is our top priority{" "}
-                </p>
+                <p className="text-2xl font-bold">Customer-Centric Approach</p>
                 <p>
                   {" "}
-                  We will deliver your items on the same day, anywhere in the
-                  United Kingdom, we are committed to providing you with the
-                  greatest transport and logistics services.
+                  At VanLink Logistics, our customers are our top priority. We
+                  treat each client with the utmost respect and strive to exceed
+                  expectations on every delivery.
                 </p>
-              </div>
-              <div className=" p-6 rounded-md bg-white hover:-translate-y-1 duration-500 ">
-                <p className="text-2xl font-bold">
-                  Transport Logistics service{" "}
-                </p>
-                <p>
-                  Since 1973, Vanlink Logistics has been the most trustworthy
-                  transport and logistics service in the entire United Kingdom.
-                </p>
-              </div>
-              <div className=" p-6 rounded-md bg-white hover:-translate-y-1 duration-500 ">
-                <p className="text-2xl font-bold">Customer Focus </p>
-                <p>We treat each customer as our only customer</p>
-                <p>We seek to exceed customer expectations</p>
               </div>
             </div>
           </div>
