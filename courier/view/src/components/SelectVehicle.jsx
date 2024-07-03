@@ -6,7 +6,7 @@ import { ALL_Vehicles_API } from "@/Config/Constants";
 import { useState } from "react";
 import { useEffect } from "react";
 import Loader from "@/UI/Loader";
-import one from "../Assets/Cars/cartest.png";
+import one from "../Assets/Cars/1.png";
 import two from "../Assets/Cars/2.png";
 import three from "../Assets/Cars/3.png";
 import four from "../Assets/Cars/4.png";
@@ -58,6 +58,7 @@ const SelectVehicle = ({ setVehicle, selected, setDIstance, setPage }) => {
   return (
     <div className=" py-10 px-4 md:py-20 md:px-20 bg-[#a2b7d423]">
       <div className="w-11/12 mx-auto space-y-10">
+      <img src={cars} alt="" />
         <div className="flex justify-center flex-wrap">
           <p className="text-white text-sm md:text-xl  px-10 rounded-md py-4 uppercase flex font-semibold text-center bg-blue-primary">
             Please Select The Vehicle You Need

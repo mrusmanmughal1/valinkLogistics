@@ -16,7 +16,7 @@ const home = () => {
 
       
       </div>
-      <div className=" md:text-2xl  text-center    Font-semibold   bg-blue-primary  font-serif  font-semibold    text-white ">
+      <div className=" md:text-2xl  text-center  slide-right    Font-semibold   bg-blue-primary  font-serif  font-semibold    text-white ">
           <div className=" relative uppercase  font-semibold     p-4   ">
             <p className=" p-4  drop-shadow-xl rounded-md">
               {" "}

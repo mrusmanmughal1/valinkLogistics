@@ -48,7 +48,7 @@ html {
 }
 
 .slide-right {
-  animation: 2s slide-right;
+  animation: 3s slide-right;
 }
 @keyframes slide-right {
   from {

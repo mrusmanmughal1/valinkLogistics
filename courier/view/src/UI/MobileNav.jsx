@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../Assets/Logo.png";
+import logo from "../Assets/Logo-01.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
 import { useState } from "react";
@@ -10,7 +10,7 @@ const Mobilenav = () => {
 
   return (
     <div className="   text-white ">
-      <div className="bg-orange-600 relative py-2">
+      <div className="bg-white relative py-2">
         <div className="flex justify-between items-center px-4">
           <div className="">
             <Link href="/">
@@ -18,13 +18,13 @@ const Mobilenav = () => {
             </Link>
           </div>
           <div
-            className=" font-bold  text-2xl shadow-md text-white p-1"
+            className=" font-bold  text-2xl shadow-md text-blue-primary p-1"
             onClick={() => setshowMblNav(!showMblNav)}
           >
             {showMblNav ? <RxCross2 /> : <GiHamburgerMenu />}
           </div>
         </div>
-       {showMblNav && <div className="w-full absolute bg-orange-600 z-50">
+       {showMblNav && <div className="w-full absolute bg-white text-blue-primary border-t  z-50">
           <div className=" p-3 ">
             <ul className={`flex flex-col  gap-4 py-4 `}>
               <li className="" onClick={()=>setshowMblNav(false)}>

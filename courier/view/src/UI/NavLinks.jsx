@@ -28,7 +28,7 @@ const NavLinks = ({ style }) => {
   }]
   return (
     <div className="  ">
-      <ul className={`flex  font-bold gap-1 `}>
+      <ul className={`flex  font-semibold gap-1 `}>
         
         {Links.map((val , i)=>{
           const {name , Path} = val ;

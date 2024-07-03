@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import Slider from "react-slick";
-import img from "../Assets/Logo.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import img1 from "../Assets/trust/1.jpg";

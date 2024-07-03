@@ -16,7 +16,7 @@ const company = () => {
           />
        
         </div>
-        <div className=" text-2xl text-center     Font-semibold    font-serif   font-semibold  bg-blue-primary text-white ">
+        <div className=" text-2xl text-center  slide-right    Font-semibold    font-serif   font-semibold  bg-blue-primary text-white ">
             <div className=" relative uppercase  font-semibold    p-4   ">
               <p className=" p-4  drop-shadow-xl   ">
                 {" "}
