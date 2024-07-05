@@ -1,5 +1,4 @@
 "use client";
-
 import PlaceSearchForm from "@/UI/PlaceSearchForm";
 import Image from "next/image";
 import { ALL_Vehicles_API } from "@/Config/Constants";
@@ -11,10 +10,10 @@ import two from "../Assets/Cars/2.png";
 import three from "../Assets/Cars/3.png";
 import four from "../Assets/Cars/4.png";
 import five from "../Assets/Cars/5.png";
-import six from "../Assets/Cars/6.png"
+import six from "../Assets/Cars/6.png";
 
 const SelectVehicle = ({ setVehicle, selected, setDIstance, setPage }) => {
-  const cars = [one, two, three, four, five , six];
+  const cars = [one, two, three, four, five, six];
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(true);
 
@@ -53,12 +52,17 @@ const SelectVehicle = ({ setVehicle, selected, setDIstance, setPage }) => {
         <Loader />
       </div>
     );
-  if (!data) return <p className="text-center  text-4xl font-bold  flex justify-center items-center  py-32 capitalize text-blue-primary bg-slate-100">Server Busy. Try Again Later , Thank You</p>;
+  if (!data)
+    return (
+      <p className="text-center  text-4xl font-bold  flex justify-center items-center  py-32 capitalize text-blue-primary bg-slate-100">
+        Server Busy. Try Again Later , Thank You
+      </p>
+    );
 
   return (
     <div className=" py-10 px-4 md:py-20 md:px-20 bg-[#a2b7d423]">
       <div className="w-11/12 mx-auto space-y-10">
-      <img src={cars} alt="" />
+        <Image src={cars} alt="" />
         <div className="flex justify-center flex-wrap">
           <p className="text-white text-sm md:text-xl  px-10 rounded-md py-4 uppercase flex font-semibold text-center bg-blue-primary">
             Please Select The Vehicle You Need
@@ -108,13 +112,13 @@ const SelectVehicle = ({ setVehicle, selected, setDIstance, setPage }) => {
             );
           })}
         </div>
-        <div className="">
+     {selected &&   <div className="">
           <PlaceSearchForm
             setPage={setPage}
             setDIstance={setDIstance}
             selected={selected}
           />
-        </div>
+        </div>}
       </div>
     </div>
   );
