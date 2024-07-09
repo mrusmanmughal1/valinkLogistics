@@ -33,16 +33,16 @@ const page = () => {
             </div>
           </div>
         </div>
-        <div className="absolute inset-0 bg-orange-700  opacity-60 "></div>
+        <div className="absolute inset-0 bg-blue-900  opacity-60 "></div>
         <Image
           src={more1}
           alt=""
           className="w-full  md:object-conta h-screen object-cover"
         />
       </div>
-      <div className="  md:p-20 bg-orange-50">
-        <div className="w-11/12 mx-auto py-20">
-          <div className=" pb-8 text-center space-y-4  drop-shadow-md font-bold capitalize text-orange-600">
+      <div className="  md:p-20 bg-blue-100">
+        <div className="w-11/12 mx-auto pb-20 pt-10">
+          <div className=" pb-8 text-center space-y-4  drop-shadow-md font-bold capitalize text-blue-primary">
             <p className="text-4xl font-extrabold uppercase">
               VANLINK LOGISTICS
             </p>
@@ -50,8 +50,8 @@ const page = () => {
           </div>
           <div className=" w-11/12 mx-auto md:w-full ">
             <div className="grid md:grid-cols-2 grid-cols-1 gap-8   lg:gap-x-28">
-              <div className="p-10 space-y-4 bg-white shadow-sm">
-                <p className="font-bold">ISO ACCREDITATION</p>
+              <div className="p-10 space-y-4 bg-white shadow-sm hover:-translate-y-2 duration-500">
+                <p className="font-bold text-blue-primary">ISO ACCREDITATION</p>
                 <p>
                   In November 2016 after a lot of work Atlas Logistics UK Ltd
                   became ISO 9001 and ISO 27001 accredited, complying with The
@@ -59,15 +59,15 @@ const page = () => {
                   Services.
                 </p>
               </div>
-              <div className="p-10 space-y-4 bg-white shadow-sm">
-                <p className="font-bold">2016 RE BRAND</p>
+              <div className="p-10 space-y-4 bg-white shadow-sm hover:-translate-y-2 duration-500">
+                <p className="font-bold text-blue-primary">2016 RE BRAND</p>
                 <p>
                   New logo, new website, fresh new brand but still the same
                   reliable team. Follow our blog article for more information..
                 </p>
               </div>
-              <div className="p-10 space-y-4 bg-white shadow-sm">
-                <p className="font-bold">2013 BOTH OFFICES</p>
+              <div className="p-10 space-y-4 bg-white shadow-sm hover:-translate-y-2 duration-500">
+                <p className="font-bold text-blue-primary">2013 BOTH OFFICES</p>
                 <p>
                   In March 2013 both offices moved to larger premises, London
                   being strategically placed close to Heathrow Airport, and
@@ -75,16 +75,16 @@ const page = () => {
                   30,000 square feet of Logistics warehousing.
                 </p>
               </div>
-              <div className="p-10 space-y-4 bg-white shadow-sm">
-                <p className="font-bold">LOGISTICS PVT WERE</p>
+              <div className="p-10 space-y-4 bg-white shadow-sm hover:-translate-y-2 duration-500">
+                <p className="font-bold text-blue-primary">LOGISTICS PVT WERE</p>
                 <p>
                   {" "}
                   In September 2015 the shares of Logistics PVT were acquired by
                   the UK Company, meaning Atlas Logistics
                 </p>
               </div>
-              <div className="p-10 space-y-4 bg-white shadow-sm">
-                <p className="font-bold">COMPANY ACCREDITATION</p>
+              <div className="p-10 space-y-4 bg-white shadow-sm hover:-translate-y-2 duration-500">
+                <p className="font-bold text-blue-primary">COMPANY ACCREDITATION</p>
                 <p>
                   In MAY 2023 after a lot of work VANLINK LOGISTICS UK Ltd
                   became ISO 9001 and ISO 27001 accredited, complying with The
@@ -92,8 +92,8 @@ const page = () => {
                   Services
                 </p>
               </div>
-              <div className="p-10 space-y-4 bg-white shadow-sm">
-                <p className="font-bold">ISO ACCREDITATION</p>
+              <div className="p-10 space-y-4 bg-white shadow-sm hover:-translate-y-2 duration-500">
+                <p className="font-bold text-blue-primary">ISO ACCREDITATION</p>
                 <p>
                   In November 2016 after a lot of work Atlas Logistics UK Ltd
                   became ISO 9001 and ISO 27001 accredited, complying with The
@@ -109,8 +109,8 @@ const page = () => {
         <div className="w-1/2 ">
           <Image src={more2} alt=""  className="w-full h-full  hidden md:block  object-cover"/>
         </div>
-        <div className="w-full bg-orange-100  flex flex-col  justify-center items-center  p-8 md:p-20 text-justify space-y-10">
-          <p className="text-4xl font-extrabold text-center uppercase drop-shadow-sm text-orange-600">Transport Logistics in UK</p>
+        <div className="w-full bg-blue-50  flex flex-col  justify-center items-center  p-8 md:p-20 text-justify space-y-10">
+          <p className="text-4xl font-extrabold text-center uppercase drop-shadow-sm text-blue-primary">Transport Logistics in UK</p>
           <p className="capitalize font-thin">
             when ever your shipment has reached just inform us, we are here to
             provide you the best facilities, we know how to protect your goods

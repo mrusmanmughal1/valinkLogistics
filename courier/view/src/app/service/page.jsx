@@ -28,11 +28,9 @@ const service = () => {
             You (UK).
           </div>
           <div className="">
-            <p className="text-xl font-semibold drop-shadow-sm">
-              UK and Europe Same-Day Delivery
-            </p>
+            
             <p>
-              Covering London, the UK, and Europe, our same-day delivery service
+              Covering London, the UK, Birmingham , our same-day delivery service
               offers tailored solutions with a fleet to match your needs.
             </p>
           </div>
@@ -42,7 +40,7 @@ const service = () => {
         <div className="w-3/4 flex justify-center flex-col md:flex-row gap-10 mx-auto">
           <div className="border-blue-primary    p-8    border-4 shadow-lg">
             <div className=" text-center space-y-3">
-              <p className="text-2xl font-bold  ">Next Day Delivery</p>
+              <p className="text-2xl font-bold  ">Same Day Delivery</p>
               <p className="">
                 Explore global opportunities with our international shipping
                 services. Enjoy fast, reliable door-to-door delivery worldwide
@@ -52,7 +50,7 @@ const service = () => {
           </div>
           <div className="border-blue-primary p-8  shadow-lg   border-4">
             <div className=" text-center space-y-3">
-              <p className="text-2xl font-bold">Domestic Overnight Delivery</p>
+              <p className="text-2xl font-bold">Next Day Delivery</p>
               <p>
                 Aligning with your business hours, we offer late collections and
                 timed deliveries across the UK for the next day.
