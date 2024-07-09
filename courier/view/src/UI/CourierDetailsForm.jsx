@@ -88,7 +88,7 @@ const {Collection, Delivery} = ALLPostalCodes;
           <div className=" capitalize">
             <div className=" space-y-1 py-2 font-semibold ">
               <label htmlFor="" className="ps-2">
-                Collection Name *
+                Company Name
               </label>
               <input
                 className={`${
@@ -155,7 +155,7 @@ const {Collection, Delivery} = ALLPostalCodes;
             </div>
             <div className=" space-y-1 py-2 font-semibold ">
               <label htmlFor="" className="ps-2">
-                Collection Contact No
+               Person
               </label>
               <input
                 name="collectionContact"
@@ -226,7 +226,7 @@ const {Collection, Delivery} = ALLPostalCodes;
           <div className=" capitalize">
             <div className=" space-y-1 py-2 font-semibold ">
               <label htmlFor="" className="ps-2">
-                Delivery Name (Delivery)*
+                Company Name (Delivery)*
               </label>
               <input
                 className={`${
@@ -292,7 +292,7 @@ const {Collection, Delivery} = ALLPostalCodes;
             </div>
             <div className=" space-y-1 py-2 font-semibold ">
               <label htmlFor="" className="ps-2">
-                Delivery Contact
+                Delivery Person
               </label>
               <input
                 onChange={handleChange}

@@ -7,7 +7,7 @@ const Herobg = () => {
     <div className="h-screen overflow-hidden relative    ">
       <Image src={herobg} alt="" className="w-full h-screen object-cover  " />
       <div className="    h-full">
-        <div className="absolute w-3/4 shadow-2xl  bg-yellowcolor p-8 rounded-md md:w-1/4 right-[12%] flex flex-col gap-3 top-[43%] md:top-[15%]  ">
+        <div className="absolute w-3/4 shadow-2xl  bg-yellowcolor p-8 rounded-md md:w-[30%]  right-[12%] flex flex-col gap-3 top-[43%] md:top-[15%]  ">
           <p className="text-3xl text-blue-primary  font-semibold  uppercase    font-serif     ">
             <Typewriter
               words={[

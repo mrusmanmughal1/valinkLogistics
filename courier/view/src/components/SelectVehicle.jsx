@@ -30,9 +30,8 @@ const SelectVehicle = ({ setVehicle, selected, setDIstance, setPage }) => {
         const data = await response.json();
         setData(data);
       } catch (err) {
-        if (err.name !== "AbortError") {
-          setError(err.message);
-        }
+        console.log(err.message)
+        
       } finally {
         setLoading(false);
       }
