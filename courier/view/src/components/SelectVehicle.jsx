@@ -13,7 +13,7 @@ import five from "../Assets/Cars/5.png";
 import six from "../Assets/Cars/6.png";
 
 const SelectVehicle = ({ setVehicle, selected, setDIstance, setPage }) => {
-  const cars = [one, two, three, four, five, six];
+  const cars = [one, five, three, four,  two , six];
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(true);
 
