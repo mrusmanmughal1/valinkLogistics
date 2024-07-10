@@ -6,13 +6,10 @@ import { POST_QUOTATION_FORM } from "@/Config/Constants";
 import { ListPostalCodes } from "@/Context/PostalCodeContext";
 
 const CourierDetailsForm = ({ selected, setPage }) => {
-  console.log(selected);
   const { typeofVan, _id } = selected;
 
-
-
   const { ALLPostalCodes } = ListPostalCodes();
-const {Collection, Delivery} = ALLPostalCodes;
+  const { Collection, Delivery } = ALLPostalCodes;
 
   const CourierDetails = {
     collectionName: "",
@@ -42,8 +39,7 @@ const {Collection, Delivery} = ALLPostalCodes;
     setPage(val);
   };
 
-// 
-  
+  //
 
   const handleSubmitt = async () => {
     try {
@@ -67,17 +63,17 @@ const {Collection, Delivery} = ALLPostalCodes;
       // Handle error (e.g., display an error message)
     }
   };
-
   const { values, errors, handleChange, handleSubmit } = useFormik({
     initialValues: CourierDetails,
     onSubmit: (values, action) => {
+      console.log(errors , 'susms')
       console.log(values);
+      
       // action.resetForm();
       handleSubmitt();
     },
     validationSchema: ProvideDetails,
   });
-
   return (
     <div className=" p-10 md:p-20  bg-blue-100">
       <div className=" text-center font-extrabold text-3xl uppercase text-blue-primary drop-shadow-md p-4 md:p-4">
@@ -88,11 +84,11 @@ const {Collection, Delivery} = ALLPostalCodes;
           <div className=" capitalize">
             <div className=" space-y-1 py-2 font-semibold ">
               <label htmlFor="" className="ps-2">
-                Company Name
+                Company Name(Collection)
               </label>
               <input
                 className={`${
-                  errors.collectionName && " border-4 border-red-300"
+                  errors.collectionName && " border-4 border-red-600"
                 } w-full rounded-md border border-blue-200 p-2`}
                 onChange={handleChange}
                 value={values.collectionName}
@@ -108,7 +104,7 @@ const {Collection, Delivery} = ALLPostalCodes;
                 onChange={handleChange}
                 value={values.collectionAddress}
                 className={`${
-                  errors.collectionAddress && " border-4 border-red-300"
+                  errors.collectionAddress && " border-4 border-red-600"
                 } w-full rounded-md border border-blue-200 p-2`}
               />
             </div>
@@ -119,11 +115,10 @@ const {Collection, Delivery} = ALLPostalCodes;
               <input
                 name="CollectionPostCode"
                 disabled={true}
-
                 onChange={handleChange}
                 value={values.CollectionPostCode}
                 className={`${
-                  errors.CollectionPostCode && " border-4 border-red-300"
+                  errors.CollectionPostCode && " border-4 border-red-600"
                 } w-full rounded-md border border-blue-200 p-2`}
               />
             </div>
@@ -132,11 +127,12 @@ const {Collection, Delivery} = ALLPostalCodes;
                 Collection Date*
               </label>
               <input
+                type="date"
                 name="collectionDate"
                 onChange={handleChange}
                 value={values.collectionDate}
                 className={`${
-                  errors.collectionDate && " border-4 border-red-300"
+                  errors.collectionDate && " border-4 border-red-600"
                 } w-full rounded-md border border-blue-200 p-2`}
               />
             </div>
@@ -145,24 +141,25 @@ const {Collection, Delivery} = ALLPostalCodes;
                 Collection Time*
               </label>
               <input
+                type="time"
                 name="collectionTime"
                 onChange={handleChange}
                 value={values.collectionTime}
                 className={`${
-                  errors.collectionTime && " border-4 border-red-300"
+                  errors.collectionTime && " border-4 border-red-600"
                 } w-full rounded-md border border-blue-200 p-2`}
               />
             </div>
             <div className=" space-y-1 py-2 font-semibold ">
               <label htmlFor="" className="ps-2">
-               Person
+                Contact Name (Collection)
               </label>
               <input
                 name="collectionContact"
                 onChange={handleChange}
                 value={values.collectionContact}
                 className={`${
-                  errors.collectionContact && " border-4 border-red-300"
+                  errors.collectionContact && " border-4 border-red-600"
                 } w-full rounded-md border border-blue-200 p-2`}
               />
             </div>
@@ -175,7 +172,7 @@ const {Collection, Delivery} = ALLPostalCodes;
                 onChange={handleChange}
                 value={values.collectionNumber}
                 className={`${
-                  errors.collectionNumber && " border-4 border-red-300"
+                  errors.collectionNumber && " border-4 border-red-600"
                 } w-full rounded-md border border-blue-200 p-2`}
               />
             </div>
@@ -188,7 +185,7 @@ const {Collection, Delivery} = ALLPostalCodes;
                 onChange={handleChange}
                 value={values.collectionDetail}
                 className={`${
-                  errors.collectionDetail && " border-4 border-red-300"
+                  errors.collectionDetail && " border-4 border-red-600"
                 } w-full rounded-md border border-blue-200 p-2`}
               />
             </div>
@@ -200,7 +197,7 @@ const {Collection, Delivery} = ALLPostalCodes;
                 disabled={true}
                 value={typeofVan}
                 className={`${
-                  errors.selectedVan && " border-4 border-red-300"
+                  errors.selectedVan && " border-4 border-red-600"
                 } w-full rounded-md border border-blue-200 p-2`}
               />
             </div>
@@ -215,7 +212,7 @@ const {Collection, Delivery} = ALLPostalCodes;
                 onChange={handleChange}
                 value={values.collectionInstruction}
                 className={`${
-                  errors.collectionInstruction && " border-4 border-red-300"
+                  errors.collectionInstruction && " border-4 border-red-600"
                 } w-full rounded-md border border-blue-200 p-2`}
               />
             </div>
@@ -230,7 +227,7 @@ const {Collection, Delivery} = ALLPostalCodes;
               </label>
               <input
                 className={`${
-                  errors.deliveryName && " border-4 border-red-300"
+                  errors.deliveryName && " border-4 border-red-600"
                 } w-full rounded-md border border-blue-200 p-2`}
                 name="deliveryName"
                 onChange={handleChange}
@@ -239,11 +236,11 @@ const {Collection, Delivery} = ALLPostalCodes;
             </div>
             <div className=" space-y-1 py-2 font-semibold ">
               <label htmlFor="" className="ps-2">
-                Address (Delivery)*
+                Delivery Address*
               </label>
               <input
                 className={`${
-                  errors.deliveryAddress && " border-4 border-red-300"
+                  errors.deliveryAddress && " border-4 border-red-600"
                 } w-full rounded-md border border-blue-200 p-2`}
                 name="deliveryAddress"
                 onChange={handleChange}
@@ -258,7 +255,7 @@ const {Collection, Delivery} = ALLPostalCodes;
                 name="deliveryPostCode"
                 disabled={true}
                 className={`${
-                  errors.deliveryPostCode && " border-4 border-red-300"
+                  errors.deliveryPostCode && " border-4 border-red-600"
                 } w-full rounded-md border border-blue-200 p-2`}
                 onChange={handleChange}
                 value={values.deliveryPostCode}
@@ -269,9 +266,10 @@ const {Collection, Delivery} = ALLPostalCodes;
                 Delivery Date*
               </label>
               <input
+                type="date"
                 name="deliveryDate"
                 className={`${
-                  errors.deliveryDate && " border-4 border-red-300"
+                  errors.deliveryDate && " border-4 border-red-600"
                 } w-full rounded-md border border-blue-200 p-2`}
                 onChange={handleChange}
                 value={values.deliveryDate}
@@ -282,9 +280,10 @@ const {Collection, Delivery} = ALLPostalCodes;
                 Delivery Time *
               </label>
               <input
+                type="time"
                 name="deliveryTime"
                 className={`${
-                  errors.deliveryTime && " border-4 border-red-300"
+                  errors.deliveryTime && " border-4 border-red-600"
                 } w-full rounded-md border border-blue-200 p-2`}
                 onChange={handleChange}
                 value={values.deliveryTime}
@@ -292,14 +291,14 @@ const {Collection, Delivery} = ALLPostalCodes;
             </div>
             <div className=" space-y-1 py-2 font-semibold ">
               <label htmlFor="" className="ps-2">
-                Delivery Person
+                Delivery Person Name
               </label>
               <input
                 onChange={handleChange}
                 value={values.deliveryContact}
                 name="deliveryContact"
                 className={`${
-                  errors.deliveryContact && " border-4 border-red-300"
+                  errors.deliveryContact && " border-4 border-red-600"
                 } w-full rounded-md border border-blue-200 p-2`}
               />
             </div>
@@ -312,7 +311,7 @@ const {Collection, Delivery} = ALLPostalCodes;
                 value={values.deliveryNumber}
                 name="deliveryNumber"
                 className={`${
-                  errors.deliveryNumber && " border-4 border-red-300"
+                  errors.deliveryNumber && " border-4 border-red-600"
                 } w-full rounded-md border border-blue-200 p-2`}
               />
             </div>
@@ -323,7 +322,7 @@ const {Collection, Delivery} = ALLPostalCodes;
               <input
                 name="bookerName"
                 className={`${
-                  errors.bookerName && " border-4 border-red-300"
+                  errors.bookerName && " border-4 border-red-600"
                 } w-full rounded-md border border-blue-200 p-2`}
                 onChange={handleChange}
                 value={values.bookerName}
@@ -336,7 +335,7 @@ const {Collection, Delivery} = ALLPostalCodes;
               <input
                 name="bookerNumber"
                 className={`${
-                  errors.bookerNumber && " border-4 border-red-300"
+                  errors.bookerNumber && " border-4 border-red-600"
                 } w-full rounded-md border border-blue-200 p-2`}
                 onChange={handleChange}
                 value={values.bookerNumber}
@@ -349,7 +348,7 @@ const {Collection, Delivery} = ALLPostalCodes;
               <input
                 name="bookerEmail"
                 className={`${
-                  errors.bookerEmail && " border-4 border-red-300"
+                  errors.bookerEmail && " border-4 border-red-600"
                 } w-full rounded-md border border-blue-200 p-2`}
                 onChange={handleChange}
                 value={values.bookerEmail}
@@ -367,12 +366,22 @@ const {Collection, Delivery} = ALLPostalCodes;
                 onChange={handleChange}
                 value={values.deliveryInstruction}
                 className={`${
-                  errors.deliveryInstruction && " border-4 border-red-300"
+                  errors.deliveryInstruction && " border-4 border-red-600"
                 } w-full rounded-md border border-blue-200 p-2`}
               />
             </div>
           </div>
         </div>
+        {errors == {} && <p>ss</p>}
+        {Object.keys(errors).length  && (
+          <div
+            className=" text-center
+        pb-2 font-semibold text-red-700"
+          >
+            * Please Fill All the Missing Fields
+          </div>
+        )}
+
         <div className=" flex flex-row gap-4 font-semibold justify-center">
           <button
             className="text-white bg-blue-primary p-4 rounded-md"

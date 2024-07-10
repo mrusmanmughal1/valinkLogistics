@@ -58,6 +58,9 @@ const PlaceSearchForm = ({ selected, setDIstance, setPage }) => {
       },
       validationSchema: SearchplaceForm,
     });
+    const autocompleteOptions = {
+      componentRestrictions: { country: "GB" }, // Restrict to UK
+    };
 
   if (!isLoaded) {
     return <Loader />;
@@ -71,7 +74,7 @@ const PlaceSearchForm = ({ selected, setDIstance, setPage }) => {
               <label htmlFor="" className="font-semibold text-sm">
                 Full Collection Postcode*
               </label>
-              <Autocomplete className="w-full">
+              <Autocomplete options={autocompleteOptions} className="w-full">
                 <input
                   ref={currentLocationRef}
                   value={currentLocationRef?.current?.value}
@@ -94,7 +97,7 @@ const PlaceSearchForm = ({ selected, setDIstance, setPage }) => {
               <label htmlFor="" className="font-semibold text-sm">
                 Full Delivery Postcode*
               </label>
-              <Autocomplete>
+              <Autocomplete options={autocompleteOptions}>
                 <input
                   ref={DelevryLocation}
                   value={DelevryLocation?.current?.value}

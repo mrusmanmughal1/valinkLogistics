@@ -64,7 +64,7 @@ const EstimationUI = ({ Distance = "", setPage, selected = "" }) => {
                 <p className="text-blue-primary text-3xl font-bold">
                   Total Cost : £{rate < minCharge ? minCharge : rate}
                 </p>
-                <p className="text-xs ">(Quote Extending vat)</p>
+                <p className="text-xs ">(Quote Excluding vat)</p>
                 <p className="text-base text-yellowcolor  p-2">
                   Collection in 60 Minutes
                 </p>
