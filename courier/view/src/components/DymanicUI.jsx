@@ -10,7 +10,7 @@ const DymanicUI = () => {
   const [page, setPage] = useState(1);
   const [selected, setSelected] = useState(null);
   const [Distance, setDIstance] = useState(null);
-  
+  console.log(selected , 'kkk')
   return (
     <>
       <PostalCodeProvider>

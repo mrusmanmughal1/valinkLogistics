@@ -12,7 +12,7 @@ import four from "../Assets/Cars/4.png";
 import five from "../Assets/Cars/5.png";
 import six from "../Assets/Cars/6.png";
 
-const SelectVehicle = ({ setVehicle, selected, setDIstance, setPage }) => {
+const SelectVehicle = ({ setVehicle, selected, setDIstance, setPage , setcar }) => {
   const cars = [one, five, three, four,  two , six];
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(true);
@@ -75,7 +75,7 @@ const SelectVehicle = ({ setVehicle, selected, setDIstance, setPage }) => {
             return (
               <div
                 key={i}
-                onClick={() => setVehicle(val)}
+                onClick={() => setVehicle({ ...val, image: cars[i] })}
                 className={`${
                   selectedvan && "bg-[#EDA802] "
                 } space-y-4 text-center cursor-pointer hover:bg-[#EDA802]   hover:text-white rounded-md py-4 px-8`}
