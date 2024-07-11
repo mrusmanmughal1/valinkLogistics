@@ -71,14 +71,17 @@ const home = () => {
       {/* third  */}
       <div className=" py-20 text-center bg-blue-100 space-y-2 ">
         <p className="font-semibold">
-          Barcodes, Inc. Same Day Courier Service in Birmingham to
+        Start Your Delivery Today!
+
         </p>
         <p className="font-semibold text-blue-primary text-4xl drop-shadow-xl ">
-          {" "}
-          Logistics Facilities & Technical Support
+        Quick Quotes for Quick Deliveries!
+
+        {" "}
         </p>
         <p className="font-semibold">
-          to Continue Operations as Essential Services
+        Simply Enter Your Details and Get a Quote Instantly!
+
         </p>
       </div>
 

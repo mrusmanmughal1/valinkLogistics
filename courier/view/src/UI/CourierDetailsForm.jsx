@@ -41,14 +41,14 @@ const CourierDetailsForm = ({ selected, setPage }) => {
 
   //
 
-  const handleSubmitt = async () => {
+  const handleSubmitt = async (val) => {
     try {
       const response = await fetch(POST_QUOTATION_FORM, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(CourierDetails),
+        body: JSON.stringify(val),
       });
 
       if (!response.ok) {
@@ -66,11 +66,10 @@ const CourierDetailsForm = ({ selected, setPage }) => {
   const { values, errors, handleChange, handleSubmit } = useFormik({
     initialValues: CourierDetails,
     onSubmit: (values, action) => {
-      console.log(errors , 'susms')
-      console.log(values);
+      console.log(values , 'ssssss');
       
       // action.resetForm();
-      handleSubmitt();
+      handleSubmitt(values);
     },
     validationSchema: ProvideDetails,
   });
