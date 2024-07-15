@@ -6,6 +6,7 @@ import cors from "cors";
 import helmet from "helmet";
 import { configDotenv } from "dotenv";
 import morgan from "morgan";
+import cookieParser from "cookie-parser";
 /* Import Route Modules */
 import vehicleRoutes from "./routes/vehicleRoutes.js";
 import quotesRoutes from "./routes/quotesRoutes.js";
@@ -19,6 +20,7 @@ const app = express();
 app.use(express.json());
 app.use(helmet());
 app.use(morgan("common"));
+app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());

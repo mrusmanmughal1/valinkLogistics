@@ -139,6 +139,7 @@ export const updateQuote = asyncHander(async (req, res) => {
     bookerEmail,
     deliveryInstruction,
     quoteJobStatus,
+    quotePayStatus,
   } = req.body;
   if (
     !id ||
@@ -164,7 +165,8 @@ export const updateQuote = asyncHander(async (req, res) => {
     !bookerNumber ||
     !bookerEmail ||
     !deliveryInstruction ||
-    !quoteJobStatus
+    !quoteJobStatus ||
+    !quotePayStatus
   ) {
     return res.status(400).json({ message: "All field are required" });
   }
@@ -195,6 +197,7 @@ export const updateQuote = asyncHander(async (req, res) => {
   quote.bookerNumber = bookerNumber;
   quote.deliveryInstruction = deliveryInstruction;
   quote.quoteJobStatus = quoteJobStatus;
+  quote.quotePayStatus = quotePayStatus;
   const result = await quote.save();
   res.json({ message: "Quote form has been updated" });
 });

@@ -95,6 +95,10 @@ const QuotationFormSchema = new mongoose.Schema(
       required: true,
     },
     quoteJobStatus: {
+      type: String,
+      default: "Pending",
+    },
+    quotePayStatus: {
       type: Boolean,
       default: false,
     },

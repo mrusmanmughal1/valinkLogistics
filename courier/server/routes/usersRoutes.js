@@ -8,11 +8,11 @@ import {
 const router = express.Router();
 import { verifyJWT } from "../middleware/verifyJWT.js";
 
-router.use(verifyJWT);
+//router.use(verifyJWT);
 
 router
   .route("/")
-  .get(verifyJWT, getAllUsers)
+  .get(getAllUsers)
   .post(createNewUser)
   .patch(verifyJWT, updateUser)
   .delete(verifyJWT, deleteUser);
