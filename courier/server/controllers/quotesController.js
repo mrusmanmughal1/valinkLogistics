@@ -101,10 +101,11 @@ export const createNewQuote = asyncHander(async (req, res) => {
     bookerEmail,
     deliveryInstruction,
   };
-  const quote = await QuotationForm.create(quoteObject);
-  if (quote) {
+  const newQuote = await QuotationForm.create(quoteObject);
+  const quoteId = newQuote._id;
+  if (newQuote) {
     res.status(201).json({
-      message: `Job from ${quote.collectionName} to ${quote.deliveryName} is added.`,
+      quoteId,
     });
   } else {
     res.status(400).json({ message: "Invalid data" });

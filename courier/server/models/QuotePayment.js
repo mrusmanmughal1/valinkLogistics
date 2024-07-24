@@ -1,9 +1,8 @@
-const mongoose = require("mongoose");
-const UserSchema = new mongoose.Schema(
+import mongoose from "mongoose";
+const QuotePaymentSchema = new mongoose.Schema(
   {
     userID: {
       type: mongoose.Schema.Types.ObjectId,
-      required: true,
       ref: "User",
     },
     formID: {
@@ -13,11 +12,15 @@ const UserSchema = new mongoose.Schema(
     },
     paymentStatus: {
       type: Boolean,
-      required: true,
+    },
+    paymentMethod: {
+      type: String,
+    },
+    paymentAmount: {
+      type: Number,
     },
     paymentReference: {
       type: String,
-      required: true,
     },
   },
   {
@@ -25,5 +28,5 @@ const UserSchema = new mongoose.Schema(
   }
 );
 
-const User = mongoose.model("User", UserSchema);
-export default User;
+const QuotePayment = mongoose.model("QuotePayment", QuotePaymentSchema);
+export default QuotePayment;

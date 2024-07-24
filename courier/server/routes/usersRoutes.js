@@ -12,8 +12,8 @@ import { verifyJWT } from "../middleware/verifyJWT.js";
 
 router
   .route("/")
-  .get(getAllUsers)
-  .post(createNewUser)
+  .get(verifyJWT, getAllUsers)
+  .post(verifyJWT, createNewUser)
   .patch(verifyJWT, updateUser)
   .delete(verifyJWT, deleteUser);
 

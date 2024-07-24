@@ -108,9 +108,9 @@ const QuotationFormSchema = new mongoose.Schema(
   }
 );
 QuotationFormSchema.plugin(AutoIncrement, {
-  inc_field: "quote",
+  inc_field: "quoteNum",
   id: "quoteNumber",
-  start_seq: 500,
+  start_seq: 14256,
 });
 
 const QuotationForm = mongoose.model("QuotationForm", QuotationFormSchema);

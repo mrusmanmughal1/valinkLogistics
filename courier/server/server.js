@@ -12,6 +12,7 @@ import vehicleRoutes from "./routes/vehicleRoutes.js";
 import quotesRoutes from "./routes/quotesRoutes.js";
 import userRoutes from "./routes/usersRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
+import paymentRoutes from "./routes/paymentRoutes.js";
 
 /* Configuration */
 
@@ -31,6 +32,7 @@ app.use("/vehicles", vehicleRoutes);
 app.use("/quotation", quotesRoutes);
 app.use("/user", userRoutes);
 app.use("/auth", authRoutes);
+app.use("/payment", paymentRoutes);
 
 /* Mongoose and Server Setup */
 
