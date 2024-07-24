@@ -2,6 +2,7 @@ import QuotationForm from "../models/QuotationForm.js";
 import User from "../models/User.js";
 import Vehicle from "../models/Vehicle.js";
 import asyncHander from "express-async-handler";
+import QuotePayment from "../models/QuotePayment.js";
 
 /* Fetch all Quotes */
 
@@ -13,12 +14,24 @@ export const getAllQuotes = asyncHander(async (req, res) => {
   const quoteWithVehicle = await Promise.all(
     quotes.map(async (quote) => {
       const van = await Vehicle.findById(quote.selectedVan).lean().exec();
+      const payment = await QuotePayment.find({ formID: quote._id }).lean();
+      const p = payment ? payment : { nothing: "nothing" };
       const { userId } = req.body;
       if (userId) {
         const user = await User.findById(quote.userID).lean().exec();
-        return { ...quote, selectedVan: van.typeofVan, userID: user.userName };
+        return {
+          ...quote,
+          selectedVan: van.typeofVan,
+          userID: user.userName,
+          ...p[0],
+        };
       }
-      return { ...quote, selectedVan: van.typeofVan, userID: "Guest" };
+      return {
+        ...quote,
+        selectedVan: van.typeofVan,
+        userID: "Guest",
+        ...p[0],
+      };
     })
   );
   res.json(quoteWithVehicle);
