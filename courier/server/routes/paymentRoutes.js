@@ -12,7 +12,7 @@ const router = express.Router();
 router
   .route("/")
   .get(verifyJWT, getAllPayments)
-  .post(verifyJWT, createPayment)
+  .post(createPayment)
   .patch(verifyJWT, updatePayment)
   .delete(verifyJWT, deletePayment);
 
