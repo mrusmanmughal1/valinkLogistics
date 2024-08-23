@@ -4,6 +4,7 @@ import {
   createNewQuote,
   updateQuote,
   deleteQuote,
+  getQuoteById,
 } from "../controllers/quotesController.js";
 import { requestLimiter } from "../middleware/requestLimiter.js";
 import { verifyJWT } from "../middleware/verifyJWT.js";
@@ -16,5 +17,5 @@ router
   .post(requestLimiter, createNewQuote)
   .patch(updateQuote)
   .delete(deleteQuote);
-
+router.route("/:id").get(getQuoteById);
 export default router;

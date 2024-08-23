@@ -1,5 +1,5 @@
 import express from "express";
-import { login, refresh, logout } from "../controllers/authControler.js";
+import { login, refresh, logout } from "../controllers/authController.js";
 import { requestLimiter } from "../middleware/requestLimiter.js";
 const router = express.Router();
 

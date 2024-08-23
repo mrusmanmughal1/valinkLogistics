@@ -1,13 +1,21 @@
 import QuotationForm from "../models/QuotationForm.js";
-import User from "../models/User.js";
-import Vehicle from "../models/Vehicle.js";
 import asyncHandler from "express-async-handler";
-import QuotePayment from "../models/QuotePayment.js";
-import { faker } from "@faker-js/faker";
 /* Fetch all Quotes */
 
 export const getAllQuotes = asyncHandler(async (req, res) => {
   const quotes = await QuotationForm.find()
+    .populate("selectedVan", "typeofVan")
+    .populate("userID", "userName")
+    .lean();
+
+  if (!quotes.length) {
+    return res.status(404).json({ message: "No quotes found" });
+  }
+  res.json(quotes);
+});
+export const getQuoteById = asyncHandler(async (req, res) => {
+  const id = req.params;
+  const quotes = await QuotationForm.findById(id)
     .populate("selectedVan", "typeofVan")
     .populate("userID", "userName")
     .lean();
