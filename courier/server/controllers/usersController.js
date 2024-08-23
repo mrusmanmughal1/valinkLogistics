@@ -19,27 +19,23 @@ export const createNewUser = asyncHandler(async (req, res) => {
     address,
     city,
     postCode,
+    phoneNumber,
     roles,
   } = req.body;
-  if (
-    !userName ||
-    !userEmail ||
-    !password ||
-    !companyName ||
-    !address ||
-    !city ||
-    !postCode ||
-    !Array.isArray(roles) ||
-    !roles.length
-  ) {
-    return res.status(400).json({ message: "Some fields are mandatory" });
+
+  // Validate required fields
+  if (!userName || !userEmail || !password || !roles?.length) {
+    return res.status(400).json({ message: "Required fields are missing" });
   }
 
-  const duplicate = await User.findOne({ userName }).lean().exec();
-  if (duplicate) {
-    return res.status(409).json({ message: "Duplicate Username" });
+  const duplicateEmail = await User.findOne({ userEmail }).lean().exec();
+  if (duplicateEmail) {
+    return res.status(409).json({ message: "Email already in use" });
   }
+
+  // Hash password
   const hashedPWD = await bcrypt.hash(password, 10);
+
   const userObject = {
     userName,
     userEmail,
@@ -48,70 +44,73 @@ export const createNewUser = asyncHandler(async (req, res) => {
     address,
     city,
     postCode,
+    phoneNumber,
     roles,
   };
+
   const user = await User.create(userObject);
+
   if (user) {
     return res.status(201).json({ message: `New user ${userName} created.` });
   } else {
-    return res.status(400).json({ message: "Invalid user Data recieved." });
+    return res.status(400).json({ message: "Invalid user data received." });
   }
 });
 
 export const updateUser = asyncHandler(async (req, res) => {
-  const {
-    id,
-    userName,
-    userEmail,
-    companyName,
-    address,
-    city,
-    postCode,
-    roles,
-    active,
-  } = req.body;
-  if (
-    !id ||
-    !userName ||
-    !userEmail ||
-    !password ||
-    !companyName ||
-    !city ||
-    !address ||
-    !postCode ||
-    !Array.isArray(roles) ||
-    !roles.length ||
-    typeof active !== "boolean"
-  ) {
-    return res.status(400).json({ message: "Some fields are mandatory" });
+  const { id, ...updateData } = req.body;
+
+  // Validate ID and updateData presence
+  if (!id || !Object.keys(updateData).length) {
+    return res
+      .status(400)
+      .json({ message: "ID and fields to update are required" });
   }
+
+  // Handle duplicate email check only if email is being updated
+  if (updateData.userEmail) {
+    const duplicateEmail = await User.findOne({
+      userEmail: updateData.userEmail,
+    })
+      .lean()
+      .exec();
+    if (duplicateEmail && duplicateEmail._id.toString() !== id) {
+      return res.status(409).json({ message: "Email already in use" });
+    }
+  }
+
   const user = await User.findById(id).exec();
-  const duplicate = await User.findOne({ userName }).lean().exec();
-  if (duplicate && duplicate?._id.toString() !== id) {
-    return res.status(409).json({ message: "Duplicate Username" });
+  if (!user) {
+    return res.status(404).json({ message: "User not found" });
   }
-  user.userName = userName;
-  user.userEmail = userEmail;
-  user.companyName = companyName;
-  user.address = address;
-  user.city = city;
-  user.postCode = postCode;
-  user.roles = roles;
-  user.active = active;
+
+  // Hash password if it's being updated
+  if (updateData.password) {
+    updateData.password = await bcrypt.hash(updateData.password, 10);
+  }
+
+  // Update user document
+  Object.assign(user, updateData);
   const updatedUser = await user.save();
-  return res.json({ message: `${updatedUser.userName} updated` });
+
+  return res.json({ message: `${updatedUser.userName} updated successfully` });
 });
 
 export const deleteUser = asyncHandler(async (req, res) => {
   const { id } = req.body;
+
   if (!id) {
-    return res.status(400).json({ message: "user ID required" });
+    return res.status(400).json({ message: "User ID required" });
   }
+
   const user = await User.findById(id).exec();
   if (!user) {
-    return res.status(400).json({ message: "No users found" });
+    return res.json({
+      message: `User with ID ${id} not found. Assuming already deleted.`,
+    }); // Idempotent
   }
-  const result = await user.deleteOne();
-  const reply = `Username ${user.username} with ID ${user._id} deleted`;
-  return res.json(reply);
+
+  await user.deleteOne();
+
+  res.json({ message: `User ${user.userName} with ID ${user._id} deleted` });
 });

@@ -12,9 +12,9 @@ import { verifyJWT } from "../middleware/verifyJWT.js";
 
 router
   .route("/")
-  .get(verifyJWT, getAllUsers)
-  .post(verifyJWT, createNewUser)
-  .patch(verifyJWT, updateUser)
-  .delete(verifyJWT, deleteUser);
+  .get(getAllUsers)
+  .post(createNewUser)
+  .patch(updateUser)
+  .delete(deleteUser);
 
 export default router;

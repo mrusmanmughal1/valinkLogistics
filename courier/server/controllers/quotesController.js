@@ -1,232 +1,115 @@
 import QuotationForm from "../models/QuotationForm.js";
 import User from "../models/User.js";
 import Vehicle from "../models/Vehicle.js";
-import asyncHander from "express-async-handler";
+import asyncHandler from "express-async-handler";
 import QuotePayment from "../models/QuotePayment.js";
-
+import { faker } from "@faker-js/faker";
 /* Fetch all Quotes */
 
-export const getAllQuotes = asyncHander(async (req, res) => {
-  const quotes = await QuotationForm.find().lean();
-  if (!quotes.length) {
-    return res.status(400).json({ message: "No quotes found" });
-  }
-  const quoteWithVehicle = await Promise.all(
-    quotes.map(async (quote) => {
-      const van = await Vehicle.findById(quote.selectedVan).lean().exec();
-      const payment = await QuotePayment.find({ formID: quote._id }).lean();
-      const p = payment ? payment : { nothing: "nothing" };
-      const { userId } = req.body;
-      if (userId) {
-        const user = await User.findById(quote.userID).lean().exec();
-        return {
-          ...quote,
-          selectedVan: van.typeofVan,
-          userID: user.userName,
-          ...p[0],
-        };
-      }
-      return {
-        ...quote,
-        selectedVan: van.typeofVan,
-        userID: "Guest",
-        ...p[0],
-      };
-    })
-  );
-  res.json(quoteWithVehicle);
-});
+export const getAllQuotes = asyncHandler(async (req, res) => {
+  const quotes = await QuotationForm.find()
+    .populate("selectedVan", "typeofVan")
+    .populate("userID", "userName")
+    .lean();
 
+  if (!quotes.length) {
+    return res.status(404).json({ message: "No quotes found" });
+  }
+  res.json(quotes);
+});
 /* Create a new Quote */
 
-export const createNewQuote = asyncHander(async (req, res) => {
+export const createNewQuote = asyncHandler(async (req, res) => {
   const {
     userID,
-    collectionName,
-    collectionAddress,
-    collectionPostCode,
-    collectionDate,
-    collectionTime,
-    collectionContact,
-    collectionNumber,
-    collectionDetail,
-    collectionInstruction,
+    collectionDetails,
+    deliveryDetails,
+    bookerDetails,
     selectedVan,
-    deliveryName,
-    deliveryAddress,
-    deliveryPostCode,
-    deliveryDate,
-    deliveryTime,
-    deliveryContact,
-    deliveryNumber,
-    bookerName,
-    bookerNumber,
-    bookerEmail,
-    deliveryInstruction,
+    notes,
   } = req.body;
+
+  // Validate required fields for nested objects
   if (
-    !collectionName ||
-    !collectionAddress ||
-    !collectionPostCode ||
-    !collectionDate ||
-    !collectionTime ||
-    !collectionContact ||
-    !collectionNumber ||
-    !collectionDetail ||
-    !collectionInstruction ||
+    !collectionDetails ||
+    !deliveryDetails ||
+    !bookerDetails ||
     !selectedVan ||
-    !deliveryName ||
-    !deliveryAddress ||
-    !deliveryPostCode ||
-    !deliveryDate ||
-    !deliveryTime ||
-    !deliveryContact ||
-    !deliveryNumber ||
-    !bookerName ||
-    !bookerNumber ||
-    !bookerEmail ||
-    !deliveryInstruction
+    !collectionDetails.name ||
+    !deliveryDetails.name ||
+    !bookerDetails.name ||
+    !bookerDetails.email
   ) {
-    return res.status(400).json({ message: "All field are required" });
+    return res
+      .status(400)
+      .json({ message: "Some required fields are missing" });
   }
-  const newuserID = userID ? userID : null;
+
   const quoteObject = {
-    userID: newuserID,
-    collectionName,
-    collectionAddress,
-    collectionPostCode,
-    collectionDate,
-    collectionTime,
-    collectionContact,
-    collectionNumber,
-    collectionDetail,
-    collectionInstruction,
+    userID: userID || null, // Allow for guest users
+    collectionDetails,
+    deliveryDetails,
+    bookerDetails,
     selectedVan,
-    deliveryName,
-    deliveryAddress,
-    deliveryPostCode,
-    deliveryDate,
-    deliveryTime,
-    deliveryContact,
-    deliveryNumber,
-    bookerName,
-    bookerNumber,
-    bookerEmail,
-    deliveryInstruction,
+    notes,
   };
+
   const newQuote = await QuotationForm.create(quoteObject);
-  const quoteId = newQuote._id;
+
   if (newQuote) {
     res.status(201).json({
-      quoteId,
+      message: "New quote created",
+      quoteId: newQuote._id,
     });
   } else {
-    res.status(400).json({ message: "Invalid data" });
+    res.status(400).json({ message: "Invalid quote data received" });
   }
 });
 
 /* Update existing Quote */
 
-export const updateQuote = asyncHander(async (req, res) => {
-  const {
-    id,
-    userID,
-    collectionName,
-    collectionAddress,
-    collectionPostCode,
-    collectionDate,
-    collectionTime,
-    collectionContact,
-    collectionNumber,
-    collectionDetail,
-    collectionInstruction,
-    selectedVan,
-    deliveryName,
-    deliveryAddress,
-    deliveryPostCode,
-    deliveryDate,
-    deliveryTime,
-    deliveryContact,
-    deliveryNumber,
-    bookerName,
-    bookerNumber,
-    bookerEmail,
-    deliveryInstruction,
-    quoteJobStatus,
-    quotePayStatus,
-  } = req.body;
-  if (
-    !id ||
-    !userID ||
-    !collectionName ||
-    !collectionAddress ||
-    !collectionPostCode ||
-    !collectionDate ||
-    !collectionTime ||
-    !collectionContact ||
-    !collectionNumber ||
-    !collectionDetail ||
-    !collectionInstruction ||
-    !selectedVan ||
-    !deliveryName ||
-    !deliveryAddress ||
-    !deliveryPostCode ||
-    !deliveryDate ||
-    !deliveryTime ||
-    !deliveryContact ||
-    !deliveryNumber ||
-    !bookerName ||
-    !bookerNumber ||
-    !bookerEmail ||
-    !deliveryInstruction ||
-    !quoteJobStatus ||
-    !quotePayStatus
-  ) {
-    return res.status(400).json({ message: "All field are required" });
+export const updateQuote = asyncHandler(async (req, res) => {
+  const { id, ...updateData } = req.body;
+
+  if (!id) {
+    return res.status(400).json({ message: "Quote ID is required" });
   }
+
   const quote = await QuotationForm.findById(id).exec();
+
   if (!quote) {
-    return res.status(400).json({ message: "Quote not found" });
+    return res.status(404).json({ message: "Quote not found" });
   }
-  quote.userID = userID;
-  quote.collectionName = collectionName;
-  quote.collectionAddress = collectionAddress;
-  quote.collectionPostCode = collectionPostCode;
-  quote.collectionDate = collectionDate;
-  quote.collectionTime = collectionTime;
-  quote.collectionContact = collectionContact;
-  quote.collectionNumber = collectionNumber;
-  quote.collectionDetail = collectionDetail;
-  quote.collectionInstruction = collectionInstruction;
-  quote.selectedVan = selectedVan;
-  quote.deliveryName = deliveryName;
-  quote.deliveryAddress = deliveryAddress;
-  quote.deliveryPostCode = deliveryPostCode;
-  quote.deliveryDate = deliveryDate;
-  quote.deliveryTime = deliveryTime;
-  quote.deliveryContact = deliveryContact;
-  quote.deliveryNumber = deliveryNumber;
-  quote.bookerName = bookerName;
-  quote.bookerEmail = bookerEmail;
-  quote.bookerNumber = bookerNumber;
-  quote.deliveryInstruction = deliveryInstruction;
-  quote.quoteJobStatus = quoteJobStatus;
-  quote.quotePayStatus = quotePayStatus;
-  const result = await quote.save();
-  res.json({ message: "Quote form has been updated" });
+
+  // Update only provided fields
+  Object.assign(quote, updateData);
+
+  const updatedQuote = await quote.save();
+
+  res.json({
+    message: "Quote updated successfully",
+    updatedQuote,
+  });
 });
 
 /* Delete Quote */
 
-export const deleteQuote = asyncHander(async (req, res) => {
+export const deleteQuote = asyncHandler(async (req, res) => {
   const { id } = req.body;
+
   if (!id) {
-    return res.status(409).json({ message: "Id is not required" });
+    return res.status(400).json({ message: "Quote ID is required" });
   }
+
   const quote = await QuotationForm.findById(id).exec();
+
   if (!quote) {
-    return res.status(400).json({ message: "Quote not found" });
+    return res.json({
+      message: "Quote not found. It might have been deleted already.",
+    });
   }
-  const result = await quote.deleteOne();
+
+  await quote.deleteOne();
+
   res.json({ message: "Quote has been deleted" });
 });

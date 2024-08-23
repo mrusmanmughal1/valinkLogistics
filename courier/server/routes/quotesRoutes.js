@@ -12,9 +12,9 @@ const router = express.Router();
 
 router
   .route("/")
-  .get(verifyJWT, getAllQuotes)
+  .get(getAllQuotes)
   .post(requestLimiter, createNewQuote)
-  .patch(verifyJWT, updateQuote)
-  .delete(verifyJWT, deleteQuote);
+  .patch(updateQuote)
+  .delete(deleteQuote);
 
 export default router;
