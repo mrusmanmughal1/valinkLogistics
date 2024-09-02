@@ -3,11 +3,25 @@ import asyncHandler from "express-async-handler";
 import bcrypt from "bcrypt";
 
 export const getAllUsers = asyncHandler(async (req, res) => {
-  const users = await User.find().select("-password").lean();
-  if (!users?.length) {
-    return res.status(400).json({ message: "No users found" });
+  const { page = 1, limit = 10, active, roles } = req.query;
+  const query = {};
+  if (active !== undefined) query.active = active === "true";
+  if (roles) query.roles = { $elemMatch: { role: roles } };
+  const users = await User.find(query)
+    .select("-password")
+    .skip((page - 1) * limit)
+    .limit(Number(limit))
+    .lean();
+  const totalUsers = await User.countDocuments(query);
+  if (!users.length) {
+    return res.status(404).json({ message: "No users found" });
   }
-  res.json(users);
+  res.json({
+    totalUsers,
+    page: Number(page),
+    limit: Number(limit),
+    users,
+  });
 });
 
 export const createNewUser = asyncHandler(async (req, res) => {

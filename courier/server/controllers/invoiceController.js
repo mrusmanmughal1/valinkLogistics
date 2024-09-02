@@ -10,7 +10,6 @@ export const getAllInvoices = asyncHandler(async (req, res) => {
   if (!invoices.length) {
     return res.status(404).json({ message: "No invoices found" });
   }
-  invoice.userID = invoice.userID || "Guest";
 
   res.json(invoices);
 });

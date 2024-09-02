@@ -47,6 +47,10 @@ const QuotationFormSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    quoteDistance: {
+      type: Number,
+      required: true,
+    },
     quotePayStatus: {
       type: Boolean,
       default: false,
