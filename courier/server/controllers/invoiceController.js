@@ -42,14 +42,13 @@ export const getInvoiceByUserId = asyncHandler(async (req, res) => {
     .populate("quotationID", "quoteNum")
     .lean();
 
-  res.status(200).json(invoices);
 
-  if (!invoice) {
+  if (!invoices) {
     return res.status(404).json({ message: "Invoice not found" });
   }
-  invoice.userID = invoice.userID || "Guest";
 
-  res.json(invoice);
+  
+  res.status(200).json(invoices);
 });
 
 //Create New Payment
@@ -110,7 +109,7 @@ export const updateInvoice = asyncHandler(async (req, res) => {
 export const deleteInvoice = asyncHandler(async (req, res) => {
   const { id } = req.body;
   if (!id) {
-    return res.status(400).json({ message: "user ID required" });
+    return res.status(400).json({ message: "Invoice ID required" });
   }
   const invoice = await Invoice.findById(id).exec();
   const job = await QuotationForm.findById(invoice.quotationID).lean().exec();
