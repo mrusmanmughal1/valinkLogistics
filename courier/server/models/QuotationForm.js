@@ -6,111 +6,69 @@ const QuotationFormSchema = new mongoose.Schema(
   {
     userID: {
       type: mongoose.Schema.Types.ObjectId,
-      required: false,
       ref: "User",
     },
-    collectionName: {
-      type: String,
-      required: true,
+    collectionDetails: {
+      name: { type: String, required: true },
+      address: { type: String, required: true },
+      postCode: { type: String, required: true },
+      date: { type: Date, required: true },
+      time: { type: String, required: true },
+      contact: { type: String, required: true },
+      phoneNumber: { type: String, required: true },
+      additionalInstructions: { type: String },
     },
-    collectionAddress: {
-      type: String,
-      required: true,
+    deliveryDetails: {
+      name: { type: String, required: true },
+      address: { type: String, required: true },
+      postCode: { type: String, required: true },
+      date: { type: Date, required: true },
+      time: { type: String, required: true },
+      contact: { type: String, required: true },
+      phoneNumber: { type: String, required: true },
+      additionalInstructions: { type: String },
     },
-    collectionPostCode: {
-      type: String,
-      required: true,
-    },
-    collectionDate: {
-      type: String,
-      required: true,
-    },
-    collectionTime: {
-      type: String,
-      required: true,
-    },
-    collectionContact: {
-      type: String,
-      required: true,
-    },
-    collectionNumber: {
-      type: String,
-      required: true,
-    },
-    collectionDetail: {
-      type: String,
-      required: true,
-    },
-    collectionInstruction: {
-      type: String,
-      required: true,
+    bookerDetails: {
+      name: { type: String, required: true },
+      phoneNumber: { type: String, required: true },
+      email: { type: String, required: true },
     },
     selectedVan: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
       ref: "Vehicle",
     },
-    deliveryName: {
-      type: String,
-      required: true,
-    },
-    deliveryAddress: {
-      type: String,
-      required: true,
-    },
-    deliveryPostCode: {
-      type: String,
-      required: true,
-    },
-    deliveryDate: {
-      type: String,
-      required: true,
-    },
-    deliveryTime: {
-      type: String,
-      required: true,
-    },
-    deliveryContact: {
-      type: String,
-      required: true,
-    },
-    deliveryNumber: {
-      type: String,
-      required: true,
-    },
-    bookerName: {
-      type: String,
-      required: true,
-    },
-    bookerNumber: {
-      type: String,
-      required: true,
-    },
-    bookerEmail: {
-      type: String,
-      required: true,
-    },
-    deliveryInstruction: {
-      type: String,
-      required: true,
-    },
     quoteJobStatus: {
       type: String,
+      enum: ["Pending", "Accepted", "In Progress", "Completed", "Cancelled"],
       default: "Pending",
+    },
+    quoteAmmount: {
+      type: Number,
+      required: true,
+    },
+    quoteDistance: {
+      type: Number,
+      required: true,
     },
     quotePayStatus: {
       type: Boolean,
       default: false,
+    },
+    notes: {
+      // Optional field for any additional comments or internal notes
+      type: String,
     },
   },
   {
     timestamps: true,
   }
 );
+
 QuotationFormSchema.plugin(AutoIncrement, {
   inc_field: "quoteNum",
   id: "quoteNumber",
-  start_seq: 14256,
+  start_seq: 500,
 });
 
 const QuotationForm = mongoose.model("QuotationForm", QuotationFormSchema);
