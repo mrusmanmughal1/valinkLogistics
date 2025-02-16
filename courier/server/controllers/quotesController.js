@@ -3,26 +3,26 @@ import asyncHandler from "express-async-handler";
 /* Fetch all Quotes */
 
 export const getAllQuotes = asyncHandler(async (req, res) => {
-  // const quotes = await QuotationForm.find()
-  //   .populate("selectedVan", "typeofVan")
-  //   .populate("userID", "userName")
-  //   .lean();
+  const quotes = await QuotationForm.find()
+    .populate("selectedVan", "typeofVan")
+    .populate("userID", "userName")
+    .lean();
 
-  // if (!quotes.length) {
-  //   return res.status(404).json({ message: "No quotes found" });
-  // }
-  // for (quote in quotes) {
-  //   quote.quoteDistance;
-  // }
-  // res.json(quotes);
-  const result = await QuotationForm.updateMany(
-    {}, // Empty filter to match all documents
-    { $set: { quoteDistance: 234 } }
-  );
-  console.log(
-    `Successfully updated ${result.nModified} documents with quoteDistance: ${distanceValue}`
-  );
-  234;
+  if (!quotes.length) {
+    return res.status(404).json({ message: "No quotes found" });
+  }
+  for (let quote in quotes) {
+    quote.quoteDistance;
+  }
+  res.json(quotes);
+  // const result = await QuotationForm.updateMany(
+  //   {}, // Empty filter to match all documents
+  //   { $set: { quoteDistance: 234 } }
+  // );
+  // console.log(
+  //   `Successfully updated ${result.nModified} documents with quoteDistance: ${distanceValue}`
+  // );
+  // 234;
 });
 export const getQuoteById = asyncHandler(async (req, res) => {
   const id = req.params;
