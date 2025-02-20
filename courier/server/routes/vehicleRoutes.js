@@ -4,7 +4,7 @@ import {
   createNewVehicle,
   updateVehicle,
   deleteVehicle,
-} from "../controllers/vehicleController.js";
+} from "../controllers/vehicle/vehicleController.js";
 import { verifyJWT } from "../middleware/verifyJWT.js";
 
 const router = express.Router();

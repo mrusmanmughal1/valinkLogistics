@@ -1,6 +1,6 @@
-import Invoice from "../models/Invoice.js";
+import Invoice from "../../models/Invoice.js";
 import asyncHandler from "express-async-handler";
-import QuotationForm from "../models/QuotationForm.js";
+import QuotationForm from "../../models/QuotationForm.js";
 export const getAllInvoices = asyncHandler(async (req, res) => {
   const invoices = await Invoice.find()
     .populate("userID", "userName")
@@ -42,12 +42,10 @@ export const getInvoiceByUserId = asyncHandler(async (req, res) => {
     .populate("quotationID", "quoteNum")
     .lean();
 
-
   if (!invoices) {
     return res.status(404).json({ message: "Invoice not found" });
   }
 
-  
   res.status(200).json(invoices);
 });
 

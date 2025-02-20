@@ -4,7 +4,7 @@ import {
   createNewUser,
   updateUser,
   deleteUser,
-} from "../controllers/usersController.js";
+} from "../controllers/user/usersController.js";
 const router = express.Router();
 import { verifyJWT } from "../middleware/verifyJWT.js";
 

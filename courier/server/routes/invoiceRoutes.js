@@ -6,7 +6,7 @@ import {
   deleteInvoice,
   getInvoiceById,
   getInvoiceByUserId,
-} from "../controllers/invoiceController.js";
+} from "../controllers/invoice/invoiceController.js";
 import { verifyJWT } from "../middleware/verifyJWT.js";
 
 const router = express.Router();

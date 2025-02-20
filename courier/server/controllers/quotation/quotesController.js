@@ -1,9 +1,16 @@
-import QuotationForm from "../models/QuotationForm.js";
+import QuotationForm from "../../models/QuotationForm.js";
 import asyncHandler from "express-async-handler";
 /* Fetch all Quotes */
 
 export const getAllQuotes = asyncHandler(async (req, res) => {
+  const pageSize = 10;
+  const page = Number(req.query.pageNumber) || 1;
+  const count = await QuotationForm.countDocuments();
+
   const quotes = await QuotationForm.find()
+    .sort({ createdAt: -1 })
+    .limit(pageSize)
+    .skip(pageSize * (page - 1))
     .populate("selectedVan", "typeofVan")
     .populate("userID", "userName")
     .lean();
@@ -11,18 +18,12 @@ export const getAllQuotes = asyncHandler(async (req, res) => {
   if (!quotes.length) {
     return res.status(404).json({ message: "No quotes found" });
   }
-  for (let quote in quotes) {
-    quote.quoteDistance;
-  }
-  res.json(quotes);
-  // const result = await QuotationForm.updateMany(
-  //   {}, // Empty filter to match all documents
-  //   { $set: { quoteDistance: 234 } }
-  // );
-  // console.log(
-  //   `Successfully updated ${result.nModified} documents with quoteDistance: ${distanceValue}`
-  // );
-  // 234;
+  res.json({
+    success: true,
+    count,
+    quotes,
+    numberOfPages: Math.ceil(count / pageSize),
+  });
 });
 export const getQuoteById = asyncHandler(async (req, res) => {
   const id = req.params;

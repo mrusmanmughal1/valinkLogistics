@@ -1,4 +1,4 @@
-import Vehicle from "../models/Vehicle.js";
+import Vehicle from "../../models/Vehicle.js";
 import asyncHandler from "express-async-handler";
 
 /* Fethc all vehicles*/
@@ -43,15 +43,8 @@ export const createNewVehicle = asyncHandler(async (req, res) => {
 /* Update vehicle */
 
 export const updateVehicle = asyncHandler(async (req, res) => {
-  const {
-    id,
-    typeofVan,
-    size,
-    weight,
-    idealUses,
-    mileRate,
-    minCharge,
-  } = req.body;
+  const { id, typeofVan, size, weight, idealUses, mileRate, minCharge } =
+    req.body;
   if (
     !id ||
     !typeofVan ||
