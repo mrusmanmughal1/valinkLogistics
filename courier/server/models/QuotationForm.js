@@ -40,7 +40,7 @@ const QuotationFormSchema = new mongoose.Schema(
     },
     quoteJobStatus: {
       type: String,
-      enum: ["Pending", "Accepted", "In Progress", "Completed", "Cancelled"],
+      enum: ["Pending", "Accepted", "InProgress", "Completed", "Cancelled"],
       default: "Pending",
     },
     quoteAmmount: {
