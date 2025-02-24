@@ -26,13 +26,13 @@ export const getAllQuotes = asyncHandler(async (req, res) => {
   });
 });
 export const getQuoteById = asyncHandler(async (req, res) => {
-  const id = req.params;
+  const id = req.params.id;
   const quotes = await QuotationForm.findById(id)
     .populate("selectedVan", "typeofVan")
     .populate("userID", "userName")
     .lean();
 
-  if (!quotes.length) {
+  if (!quotes) {
     return res.status(404).json({ message: "No quotes found" });
   }
   res.json(quotes);
