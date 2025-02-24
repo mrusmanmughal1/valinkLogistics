@@ -8,7 +8,6 @@ import Adminlayout from "./Feature/Admin/Adminlayout";
 import QuotationsDetails from "./UI/QuotationsDetails";
 
 const App = () => {
-  const token = localStorage.getItem("Token");
 
   return (
     <BrowserRouter>

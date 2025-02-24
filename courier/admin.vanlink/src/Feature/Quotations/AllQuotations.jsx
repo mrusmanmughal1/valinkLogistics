@@ -1,18 +1,20 @@
 import { BiWorld } from "react-icons/bi";
 import { useGetAllQuotations } from "../../Services/Quotations/useGetAllQuotations";
 import Loader from "../../UI/Loader";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Model from "../../UI/Model";
 import { useState } from "react";
 import QuotationsDetails from "../../UI/QuotationsDetails";
 
- 
-
 const AllQuotations = () => {
-  const { data, isLoading, isError } = useGetAllQuotations();
+  const [quotenum, setquotnum] = useState(null);
+  const [searchQuote, setSearchQuote] = useState(null);
+  const [status, setstatus] = useState("");
+  const { data, isError, isPending, next, pre, page } =
+    useGetAllQuotations(searchQuote);
   const [Detail, setDetail] = useState();
   const [model, setmodel] = useState(false);
-  if (isLoading) return <Loader style="min-h-96 " />;
+  if (isPending) return <Loader style="min-h-96 " />;
   if (isError)
     return (
       <p className="text-2xl text-center font-bold">
@@ -22,17 +24,64 @@ const AllQuotations = () => {
     );
   return (
     <div className="flex flex-col gap-4 font-bold">
-      <div className=" text-lg font-bold uppercase">All Quotations</div>
+      <div className=" text-lg font-bold uppercase">
+        All Quotations ({data?.data?.count || 0})
+      </div>
+      <div className="flex justify-between w-full">
+        <p>Filters</p>
+        <div className="">
+          Status :{" "}
+          <select
+            name=""
+            id=""
+            className="w-32 px-2"
+            onChange={(e) => setstatus(e.target.value)}
+          >
+            <option value="Pending">Pending</option>
+            <option value="Accepted">Accepted</option>
+            <option value="InProgress">In-progress</option>
+            <option value="Completed">Completed</option>
+            <option value="Cancelled">Cancelled</option>
+          </select>
+        </div>
+      </div>
+      <div className="flex">
+        <input
+          type="text"
+          onChange={(e) => setquotnum(e.target.value)}
+          max={16}
+          className="w-full outline-none px-4 font-medium border-blue-primary border-2"
+          placeholder="Enter Quotation Number"
+        />
+        <button
+          onClick={() => setSearchQuote(quotenum)}
+          className="px-4 py-2 bg-blue-primary text-white"
+        >
+          <FaArrowRight />
+        </button>
+      </div>
+      <div className="flex justify-end  ">
+        <div className="flex items-center gap-2">
+          <button onClick={pre} className="bg-blue-primary text-white p-1">
+            <FaArrowLeft />
+          </button>
+          {page}
+          <button onClick={next} className="bg-blue-primary text-white p-1">
+            <FaArrowRight />
+          </button>
+        </div>
+      </div>
       {/* <Adminfilters /> */}
-      {data?.data?.map((val, i) => {
-        console.log(val);
+      {data?.data?.quotes?.map((val, i) => {
         const {
           bookerDetails,
           collectionDetails,
           deliveryDetails,
-          quoteAmmount,
           quoteJobStatus,
           userID,
+          quoteDistance,
+          quoteAmmount,
+          quoteNum,
         } = val;
         const handleModel = (val) => {
           setDetail(val);
@@ -47,7 +96,7 @@ const AllQuotations = () => {
             <div className="w-full md:w-1/3 flex flex-col gap-4">
               <div className=" ">
                 <span className="text-xs text-white bg-blue-primary p-1">
-                  ID: {userID._id}
+                  ID: {quoteNum}
                 </span>
                 <div className="">
                   <span className="text-xs"> Booker Name </span> :{" "}
@@ -73,7 +122,7 @@ const AllQuotations = () => {
                 <span className="text-sm font-medium">{val.rate}</span>{" "}
               </p>
               <p>
-                Total Distance : 50km
+                Total Distance : {quoteDistance}
                 <span className="font-medium">{val.contract_type}</span>
               </p>
             </div>
@@ -103,7 +152,7 @@ const AllQuotations = () => {
           </div>
         );
       })}
-      <Model model={model}>
+      <Model model={model} setmodel={setmodel}>
         <QuotationsDetails Data={Detail} />
       </Model>
     </div>
