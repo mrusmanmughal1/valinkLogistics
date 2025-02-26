@@ -11,6 +11,7 @@ import { searchQuotesByStatus } from "../controllers/quotation/quoteSearchByStat
 import { requestLimiter } from "../middleware/requestLimiter.js";
 import { verifyJWT } from "../middleware/verifyJWT.js";
 import { getAllquouteCounts } from "../controllers/quotation/getAllquouteCounts.js";
+import { searchQuotesV2 } from "../controllers/quotation/searchController.js";
 
 const router = express.Router();
 // CRUD operations for quotes
@@ -24,7 +25,7 @@ router
 router.route("/searchbyID/:id").get(getQuoteById);
 
 // Add the search route
-
+router.route("/search").get(searchQuotesV2);
 router.route("/searchByQuote/").get(searchQuotes);
 
 //Search by status

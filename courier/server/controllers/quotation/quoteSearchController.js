@@ -5,7 +5,7 @@ export const searchQuotes = asyncHandler(async (req, res) => {
   const { quoteNum } = req.query;
   //TODO delete this console.log
   console.log(quoteNum);
-  if (!quoteNum || quoteNum.length < 3) {
+  if (!quoteNum || quoteNum.length < 2) {
     return res.json([]);
   }
   const queryNumber = Number(quoteNum);
