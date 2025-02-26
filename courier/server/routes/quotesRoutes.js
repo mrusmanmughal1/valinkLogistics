@@ -17,18 +17,18 @@ const router = express.Router();
 
 router
   .route("/")
-  .get(verifyJWT, getAllQuotes)
+  .get(getAllQuotes)
   .post(requestLimiter, createNewQuote)
   .patch(updateQuote)
   .delete(deleteQuote);
-router.route("/searchbyID/:id").get(verifyJWT, getQuoteById);
+router.route("/searchbyID/:id").get(getQuoteById);
 
 // Add the search route
 
 router.route("/searchByQuote/").get(searchQuotes);
 
 //Search by status
-router.route("/searchByStatus/:st").get(verifyJWT, searchQuotesByStatus);
+router.route("/searchByStatus/:st").get(searchQuotesByStatus);
 
 router.route("/getQuoteCount").get(getAllquouteCounts);
 

@@ -12,8 +12,8 @@ const router = express.Router();
 router
   .route("/")
   .get(getAllVehicle)
-  .post(verifyJWT, createNewVehicle)
-  .patch(verifyJWT, updateVehicle)
-  .delete(verifyJWT, deleteVehicle);
+  .post(createNewVehicle)
+  .patch(updateVehicle)
+  .delete(deleteVehicle);
 
 export default router;
