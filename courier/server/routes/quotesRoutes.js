@@ -22,15 +22,15 @@ router
   .post(requestLimiter, createNewQuote)
   .patch(updateQuote)
   .delete(deleteQuote);
-router.route("/searchbyID/:id").get(getQuoteById);
 
 // Add the search route
-router.route("/search").get(searchQuotesV2);
-router.route("/searchByQuote/").get(searchQuotes);
+//router.route("/search").get(searchQuotesV2);
+//router.route("/searchByQuote/").get(searchQuotes);
 
 //Search by status
-router.route("/searchByStatus/:st").get(searchQuotesByStatus);
+//router.route("/searchByStatus/:st").get(searchQuotesByStatus);
 
-router.route("/getQuoteCount").get(getAllquouteCounts);
+//router.route("/getQuoteCount").get(getAllquouteCounts);
+router.route("/:id").get(getQuoteById);
 
 export default router;

@@ -58,6 +58,9 @@ export const searchQuotesV2 = asyncHandler(async (req, res) => {
       {
         $facet: {
           metadata: [{ $count: "totalRecords" }],
+          statusCounts: [
+            { $group: { _id: "$quoteJobStatus", count: { $sum: 1 } } }, // Count by status
+          ],
           data: [
             { $skip: skipRecords },
             { $limit: pageSize },
@@ -82,6 +85,17 @@ export const searchQuotesV2 = asyncHandler(async (req, res) => {
     ];
 
     const [result] = await QuotationForm.aggregate(aggregationPipeline);
+    // 🛠 Format `statusCounts` for Missing Values
+    const statusCounts = {
+      Pending: 0,
+      Accepted: 0,
+      InProgress: 0,
+      Completed: 0,
+      Cancelled: 0,
+    };
+    result.statusCounts.forEach((status) => {
+      statusCounts[`${status._id}`] = status.count;
+    });
     const totalRecords = result.metadata[0]?.totalRecords || 0;
     const quotes = result.data;
 
@@ -91,6 +105,7 @@ export const searchQuotesV2 = asyncHandler(async (req, res) => {
       totalRecords,
       totalPages: Math.ceil(totalRecords / pageSize),
       currentPage: pageNumber,
+      statusCounts,
       pageSize,
       data: quotes,
     });
