@@ -48,11 +48,8 @@ const Navbar = () => {
       <div className="w-full  text-[#052653]   hidden md:block ">
         <nav>
           <div className="flex      items-center  w-11/12 mx-auto   ">
-            <Link
-              href={"/"}
-              className=" p-2 pt-"
-            >
-              <Image src={logo} width={150}   alt="Logo" />
+            <Link href={"/"} className=" p-2 pt-">
+              <Image src={logo} width={150} alt="Logo" className=" " />
             </Link>
 
             <div className="flex    justify-end w-full gap-10 items-center">

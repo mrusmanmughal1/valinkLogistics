@@ -4,14 +4,15 @@
 
 /* Google Fonts  */
 
- 
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 
 body {
- 
+
   scroll-behavior: smooth;
 
 }
+
 html {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
@@ -26,7 +27,7 @@ html {
 }
 
 .activeLink {
-  @apply bg-blue-primary text-white   rounded-md shadow-md;
+  @apply bg-blue-primary text-white rounded-md shadow-md;
 }
 
 @layer utilities {
@@ -47,23 +48,44 @@ html {
 .slide-right {
   animation: 3s slide-right;
 }
+
 @keyframes slide-right {
   from {
     margin-left: -100%;
   }
+
   to {
     margin-left: 0%;
   }
 }
 
 .sidetip {
-  background: linear-gradient(
-    200deg,
-    rgb(5, 26, 120) 11.1%,
-    rgb(3, 33, 78) 95.3%
-  );
+  background: linear-gradient(200deg,
+      rgb(5, 26, 120) 11.1%,
+      rgb(3, 33, 78) 95.3%);
 }
 
 .slick-dots li button:before {
   font-size: 12px !important;
+}
+
+
+
+.fade {
+
+  animation: fadeAnimation 3s infinite;
+}
+
+@keyframes fadeAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }

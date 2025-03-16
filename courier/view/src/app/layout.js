@@ -14,11 +14,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
+        <div className="flex flex-col h-full">
+          <Navbar />
 
-        {children}
-        <FloatQuote />
-        <Footer />
+          <div className="">{children}</div>
+          <FloatQuote />
+          <Footer />
+        </div>
       </body>
     </html>
   );
