@@ -12,7 +12,7 @@ const Header = () => {
     navigate("/");
   };
   return (
-    <div className="shadow-sm">
+    <div className="border shadow-2xl">
       <div className="w-11/12 mx-auto">
         <div>
           <div className="flex   justify-between items-center">
