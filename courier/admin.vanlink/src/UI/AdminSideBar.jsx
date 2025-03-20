@@ -8,6 +8,8 @@ import { BiLogOutCircle } from "react-icons/bi";
 import { IoSettingsSharp } from "react-icons/io5";
 import { clearLocalStorage } from "../helpers/Helpers";
 // import { useLogout } from "../Services/Logout/useLogout";
+import { CiLogin } from "react-icons/ci";
+import { IoMdLogOut } from "react-icons/io";
 const AdminSideBar = () => {
   //   const { dispatch } = useUserinfo();
   //   const { mutate: logout } = useLogout();
@@ -51,18 +53,18 @@ const AdminSideBar = () => {
     },
   ];
   return (
-    <div className="relative w-full">
+    <div className="relative w-full pe-3 ">
       <div className="   mx-auto  h-screen  ">
         <ul className={`flex flex-col    gap-2 pt-8`}>
           {AdminNavLinks.map((NavValue, i) => {
             const { title, icon, to } = NavValue;
             return (
-              <li key={i} className=" md:py-3   lg:py-4">
+              <li key={i} className=" md:py-3    ">
                 <NavLink
                   to={to}
-                  className="flex admin  text-lg hover:text-yellowcolor gap-2 items-center"
+                  className="flex admin  gap-4 text-lg hover:text-yellowcolor   items-center"
                 >
-                  {icon} {title}
+                  <span className="text-2xl">{icon} </span> {title}
                 </NavLink>
               </li>
             );
@@ -72,7 +74,8 @@ const AdminSideBar = () => {
             className="  flex gap-2 items-center  md:py-3  lg:py-4 text-start"
             onClick={clearLocalStoragevalue}
           >
-            <BiLogOutCircle /> Logout
+           <span> <IoMdLogOut   className="text-white text-3xl" /> </span>
+           <span>Logout</span>
           </button>
         </ul>
       </div>

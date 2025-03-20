@@ -5,7 +5,8 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Model from "../../UI/Model";
 import { useEffect, useState } from "react";
 import QuotationsDetails from "../../UI/QuotationsDetails";
-
+import { IoIosArrowUp } from "react-icons/io";
+import { HiOutlineStatusOnline } from "react-icons/hi";
 const AllQuotations = () => {
   const [quotenum, setquotnum] = useState(null);
   const [searchQuote, setSearchQuote] = useState({
@@ -79,7 +80,9 @@ const AllQuotations = () => {
         <div className="flex items-center gap-2">
           Payment Status
           <select name="" id="" onChange={handlequotePayStatus}>
-            <option value="true">Paid</option>
+            <option value="" disabled>
+              Select{" "}
+            </option>
 
             <option value="true">Paid</option>
             <option value="false">Not Paid</option>
@@ -150,72 +153,124 @@ const AllQuotations = () => {
             quoteDistance,
             quoteAmmount,
             quoteNum,
+            quotePayStatus,
+            selectedVan,
           } = val;
           const handleModel = (val) => {
             setDetail(val);
             setmodel(true);
           };
           return (
-            <div
-              key={i}
-              className="flex flex-col items-center md:flex-row gap-4 p-5 bg-white shadow-lg border-2 border-b
-      hover:bg-slate-100"
-            >
-              <div className="w-full md:w-1/3 flex flex-col gap-4">
-                <div className=" ">
-                  <span className="text-xs text-white bg-blue-primary p-1">
-                    ID: {quoteNum}
-                  </span>
-                  <div className="">
-                    <span className="text-xs"> Booker Name </span> :{" "}
-                    <span className="font-semibold uppercase">
-                      {bookerDetails.name}
+            <div className="bg-white shadow-lg border-2 border-b">
+              <div
+                key={i}
+                className="flex flex-col   md:flex-row gap-4 
+      hover:bg-slate-50"
+              >
+                <div className="w-full md:w-1/3 flex flex-col gap-4 border-r border-black">
+                  <div className="p-2 ">
+                    <span className="text-xs text-white bg-blue-primary p-1">
+                      ID: {quoteNum}
                     </span>
+                    <div className="mt-2">
+                      <div className="">
+                        <span className="text-sm"> From </span> :&nbsp; &nbsp;
+                        <span className="font-semibold text-sm  capitalize">
+                          {collectionDetails.address}
+                        </span>
+                      </div>
+                      <div className="">
+                        <span className="text-sm"> To </span> : &nbsp;&nbsp;
+                        <span className="font-semibold  text-sm capitalize">
+                          {deliveryDetails.address}
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <p className="text-xs flex gap-2 items-center">
-                  <BiWorld /> {deliveryDetails.address}{" "}
-                  <FaArrowRight className="text-lg text-blue-primary" />{" "}
-                  {collectionDetails.address}
-                  {val?.addresses?.map((v) => (
-                    <span className="font-medium" key={i}>
-                      {v.city},{" "}
-                    </span>
-                  ))}
-                </p>
-              </div>
-              <div className="w-full md:w-1/3 text-sm p-2  font-bold">
-                <p className="pb-4">
-                  Price : {quoteAmmount} ${" "}
-                  <span className="text-sm font-medium">{val.rate}</span>{" "}
-                </p>
-                <p>
-                  Total Distance : {quoteDistance}
-                  <span className="font-medium">{val.contract_type}</span>
-                </p>
-              </div>
-              <div className="md:w-1/3 w-full flex justify-end gap-4 md:flex-row md:items-center text-purple-900">
-                <div className="flex gap-2 font-medium items-center">
-                  Status :{" "}
-                  <span
-                    className={`${
-                      quoteJobStatus == "Pending"
-                        ? "bg-yellow-500 "
-                        : "bg-blue-primary"
-                    } text-white px-2 py-1`}
-                  >
-                    {" "}
-                    {quoteJobStatus}{" "}
-                  </span>
-                </div>
+                <div className="w-full md:w-1/3 text-sm   font-bold border-r border-black">
+                  <div className="flex  p-2 gap-6">
+                    <div className=" text-sm">
+                      <p>Booked By : </p>
+                      <p>Phone : </p>
+                      <p>Agreed rate : </p>
 
-                <button
-                  onClick={() => handleModel(val)}
-                  className="text-xs font-semibold lg:px-2 xl:px-6 xl:py-3 px-6
+                      <p>Total Distance :</p>
+                      <p>Payment Status</p>
+                      <p>Selected Van </p>
+                    </div>
+                    <div className="text-sm">
+                      <p>{bookerDetails.name}</p>
+                      <p>{bookerDetails.phoneNumber}</p>
+                      <p>( £ ) {quoteAmmount} </p>
+                      <p>{quoteDistance} Miles</p>
+                      <p>{quotePayStatus ? "Paid" : "Un-Paid"}</p>
+                      <p>{selectedVan}</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="md:w-1/3 w-full  p-2 gap-4 md:flex-row md:items-center text-purple-900">
+                  <div className="flex  w-full justify-between ">
+                    <div className="flex gap-2 font-medium items-center">
+                      Status :{" "}
+                      <span
+                        className={`${
+                          quoteJobStatus == "Pending"
+                            ? "bg-yellow-500 "
+                            : "bg-blue-primary"
+                        } text-white px-2 py-1`}
+                      >
+                        {" "}
+                        {quoteJobStatus}{" "}
+                      </span>
+                    </div>
+
+                    <button
+                      onClick={() => handleModel(val)}
+                      className="text-xs font-semibold lg:px-2 xl:px-6 xl:py-3 px-6
            rounded-md py-3 border-2 border-blue-primary hover:text-white hover:bg-blue-primary"
-                >
-                  VIEW
-                </button>
+                    >
+                      VIEW
+                    </button>
+                  </div>
+                  <div className=""></div>
+                </div>
+              </div>
+              <div className=" p-4">
+                <p>
+                  Notes :{" "}
+                  <span className="font-light capitalize">
+                    {" "}
+                    Please DO it As Quick as possible{" "}
+                  </span>
+                </p>
+                <div className="inline-block ">
+                  <div className="flex relative items-center group  cursor-pointer gap-2">
+                    <div className=" absolute bg-gray-100 group-hover:block hidden w-28 p-2 bottom-4  left-0">
+                      <ul className="text-xs space-y-2">
+                        {[
+                          "Pending",
+                          "Accepted",
+                          "In-Progress",
+                          "Completed",
+                          "Cancel",
+                        ].map((val, i) => {
+                          return (
+                            <li
+                              className="hover:bg-gray-200 cursor-pointer"
+                              key={i}
+                            >
+                              {val}
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                    <HiOutlineStatusOnline className="text-yellow-600" />{" "}
+                    <span className="text-xs">{quoteJobStatus}</span>
+                    <IoIosArrowUp />
+                  </div>
+                </div>
               </div>
             </div>
           );
