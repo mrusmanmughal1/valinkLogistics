@@ -161,14 +161,14 @@ const AllQuotations = () => {
             setmodel(true);
           };
           return (
-            <div className="bg-white shadow-lg border-2 border-b">
+            <div className="bg-white p-4 shadow-lg border-2 border-b">
               <div
                 key={i}
                 className="flex flex-col   md:flex-row gap-4 
       hover:bg-slate-50"
               >
                 <div className="w-full md:w-1/3 flex flex-col gap-4 border-r border-black">
-                  <div className="p-2 ">
+                  <div className=" ">
                     <span className="text-xs text-white bg-blue-primary p-1">
                       ID: {quoteNum}
                     </span>
