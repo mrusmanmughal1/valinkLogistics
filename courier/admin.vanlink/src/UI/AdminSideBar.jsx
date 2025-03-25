@@ -41,11 +41,11 @@ const AdminSideBar = () => {
     //   icon: <FaNetworkWired />,
     // },
 
-    // {
-    //   title: "Employeer List",
-    //   to: `/admin/employeers`,
-    //   icon: <BsPersonWorkspace />,
-    // },
+    {
+      title: "Vehicles",
+      to: `/admin/vehicles-settings`,
+      icon: <BsPersonWorkspace />,
+    },
     {
       title: "Settings",
       to: "/admin/settings",
@@ -54,7 +54,7 @@ const AdminSideBar = () => {
   ];
   return (
     <div className="relative w-full pe-3 ">
-      <div className="   mx-auto  h-screen  ">
+      <div className="   mx-auto    ">
         <ul className={`flex flex-col    gap-2 pt-8`}>
           {AdminNavLinks.map((NavValue, i) => {
             const { title, icon, to } = NavValue;
@@ -74,8 +74,11 @@ const AdminSideBar = () => {
             className="  flex gap-2 items-center  md:py-3  lg:py-4 text-start"
             onClick={clearLocalStoragevalue}
           >
-           <span> <IoMdLogOut   className="text-white text-3xl" /> </span>
-           <span>Logout</span>
+            <span>
+              {" "}
+              <IoMdLogOut className="text-white text-3xl" />{" "}
+            </span>
+            <span>Logout</span>
           </button>
         </ul>
       </div>

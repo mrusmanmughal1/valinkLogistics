@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import QuotationsDetails from "../../UI/QuotationsDetails";
 import { IoIosArrowUp } from "react-icons/io";
 import { HiOutlineStatusOnline } from "react-icons/hi";
+import { useUpdateQuotation } from "../../Services/Quotations/useUpdateQuotation";
 const AllQuotations = () => {
   const [quotenum, setquotnum] = useState(null);
   const [searchQuote, setSearchQuote] = useState({
@@ -22,6 +23,8 @@ const AllQuotations = () => {
 
   const { data, isError, isPending, next, pre, page } =
     useGetAllQuotations(searchQuote);
+
+  const { mutate, isPending: reqPending, error } = useUpdateQuotation();
   const [Detail, setDetail] = useState();
   const [model, setmodel] = useState(false);
   const handlestatus = (u) => {
@@ -42,6 +45,12 @@ const AllQuotations = () => {
     }
   };
 
+  const handleupdateStatus = (id, status) => {
+    mutate({
+      id: id,
+      quoteJobStatus: status,
+    });
+  };
   if (isError)
     return (
       <p className="text-2xl text-center font-bold">
@@ -236,7 +245,7 @@ const AllQuotations = () => {
                   <div className=""></div>
                 </div>
               </div>
-              <div className=" p-4">
+              <div className=" pt-4 space-y-4">
                 <p>
                   Notes :{" "}
                   <span className="font-light capitalize">
@@ -254,13 +263,16 @@ const AllQuotations = () => {
                           "In-Progress",
                           "Completed",
                           "Cancel",
-                        ].map((val, i) => {
+                        ].map((values, i) => {
                           return (
                             <li
                               className="hover:bg-gray-200 cursor-pointer"
                               key={i}
+                              onClick={() =>
+                                handleupdateStatus(val._id, values)
+                              }
                             >
-                              {val}
+                              {values}
                             </li>
                           );
                         })}
