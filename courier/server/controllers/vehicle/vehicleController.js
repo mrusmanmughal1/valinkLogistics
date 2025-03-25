@@ -43,37 +43,59 @@ export const createNewVehicle = asyncHandler(async (req, res) => {
 /* Update vehicle */
 
 export const updateVehicle = asyncHandler(async (req, res) => {
-  const { id, typeofVan, size, weight, idealUses, mileRate, minCharge } =
-    req.body;
-  if (
-    !id ||
-    !typeofVan ||
-    !size ||
-    !weight ||
-    !idealUses ||
-    !mileRate ||
-    !minCharge
-  ) {
-    return res.status(400).json({ message: "All field are required" });
+  // const { id, typeofVan, size, weight, idealUses, mileRate, minCharge } =
+  //   req.body;
+  // if (
+  //   !id ||
+  //   !typeofVan ||
+  //   !size ||
+  //   !weight ||
+  //   !idealUses ||
+  //   !mileRate ||
+  //   !minCharge
+  // ) {
+  //   return res.status(400).json({ message: "All field are required" });
+  // }
+  // const vehicle = await Vehicle.findById(id).exec();
+  // if (!vehicle) {
+  //   return res.status(400).json({ message: "Vehicle not found" });
+  // }
+  // const duplicate = await Vehicle.findOne({ typeofVan }).lean().exec();
+  // if (duplicate && duplicate?._id.toString() !== id) {
+  //   return res
+  //     .status(409)
+  //     .json({ message: "Duplicate vehicle. Please change vehicle type." });
+  // }
+  // vehicle.typeofVan = typeofVan;
+  // vehicle.size = size;
+  // vehicle.weight = weight;
+  // vehicle.idealUses = idealUses;
+  // vehicle.mileRate = mileRate;
+  // vehicle.minCharge = minCharge;
+  // const result = await vehicle.save();
+  // res.json({ message: `${result.typeofVan} van updated` });
+
+  const { id, ...updateData } = req.body;
+
+  if (!id) {
+    return res.status(400).json({ message: "Vehicle ID is required" });
   }
+
   const vehicle = await Vehicle.findById(id).exec();
+
   if (!vehicle) {
-    return res.status(400).json({ message: "Vehicle not found" });
+    return res.status(404).json({ message: "Vehicle not found" });
   }
-  const duplicate = await Vehicle.findOne({ typeofVan }).lean().exec();
-  if (duplicate && duplicate?._id.toString() !== id) {
-    return res
-      .status(409)
-      .json({ message: "Duplicate vehicle. Please change vehicle type." });
-  }
-  vehicle.typeofVan = typeofVan;
-  vehicle.size = size;
-  vehicle.weight = weight;
-  vehicle.idealUses = idealUses;
-  vehicle.mileRate = mileRate;
-  vehicle.minCharge = minCharge;
-  const result = await vehicle.save();
-  res.json({ message: `${result.typeofVan} van updated` });
+
+  // Update only provided fields
+  Object.assign(vehicle, updateData);
+
+  const updatedVehicle = await vehicle.save();
+
+  res.json({
+    message: "Quote updated successfully",
+    updatedVehicle,
+  });
 });
 
 /* Delete Vehicle */
