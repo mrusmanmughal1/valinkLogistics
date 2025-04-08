@@ -6,12 +6,17 @@ import Loader from "./Loader";
 import Image from "next/image";
 import logo from "../Assets/Cars/1.png";
 
-const EstimationUI = ({ Distance = "", setPage, selected = "" }) => {
+const EstimationUI = ({
+  Distance = "",
+  setPage,
+  selected = "",
+  quoteRate,
+  setQuoteRate,
+}) => {
   const [Km, SetKm] = useState();
   // charges
   const { mileRate, minCharge } = selected;
 
-  console.log("selected", mileRate, minCharge);
   const handleClick = (val) => {
     setPage(val);
   };
@@ -19,25 +24,22 @@ const EstimationUI = ({ Distance = "", setPage, selected = "" }) => {
   useEffect(() => {
     // if value is  Km then cover to miles
     const ToMiles = (val) => {
-      console.log("if working");
       const hasKiloMetters = val?.includes("km");
 
       if (hasKiloMetters) {
         const distanceValue = parseInt(val?.match(/\d+/)[0], 10);
 
         const DistanceInMiles = distanceValue * 0.621371;
-        console.log(DistanceInMiles, " distanice in miles");
         SetKm(DistanceInMiles.toFixed());
       } else {
         const distanceValue = parseInt(val?.match(/\d+/)[0], 10);
-        console.log(distanceValue, " if not ");
 
         return SetKm(distanceValue);
       }
     };
 
     ToMiles(Distance);
-  });
+  }, [Distance]);
 
   const calulateRate = Km * mileRate;
   const rate = calulateRate?.toFixed(1);

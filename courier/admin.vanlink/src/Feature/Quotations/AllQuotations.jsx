@@ -25,6 +25,12 @@ const AllQuotations = () => {
     useGetAllQuotations(searchQuote);
 
   const { mutate, isPending: reqPending, error } = useUpdateQuotation();
+  const handleupdateStatus = (id, status) => {
+    mutate({
+      id: id,
+      quoteJobStatus: status,
+    });
+   };
   const [Detail, setDetail] = useState();
   const [model, setmodel] = useState(false);
   const handlestatus = (u) => {
@@ -45,12 +51,7 @@ const AllQuotations = () => {
     }
   };
 
-  const handleupdateStatus = (id, status) => {
-    mutate({
-      id: id,
-      quoteJobStatus: status,
-    });
-  };
+
   if (isError)
     return (
       <p className="text-2xl text-center font-bold">

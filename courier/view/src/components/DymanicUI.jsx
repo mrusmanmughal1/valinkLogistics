@@ -10,6 +10,7 @@ const DymanicUI = () => {
   const [page, setPage] = useState(1);
   const [selected, setSelected] = useState(null);
   const [Distance, setDIstance] = useState(null);
+  const [quoteRate , setQuoteRate]= useState(null)
   return (
     <>
       <PostalCodeProvider>
@@ -27,13 +28,15 @@ const DymanicUI = () => {
               selected={selected}
               Distance={Distance}
               setPage={setPage}
+              quoteRate={quoteRate}
+              setQuoteRate={setQuoteRate}
             />
           )}
           {page == 3 && (
-            <CourierDetailsForm setPage={setPage} selected={selected} />
+            <CourierDetailsForm setPage={setPage} selected={selected} Distance={Distance} />
           )}
             {page == 4 && (
-            <ResponseMessage setPage={setPage} selected={selected} />
+            <ResponseMessage setPage={setPage} selected={selected}  />
           )}
         </section>
       </PostalCodeProvider>

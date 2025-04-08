@@ -1,9 +1,10 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { BASE_URL } from "../../helpers/constants";
 const updateQuote = async (Update) => {
   const API = `${BASE_URL}quotation/`;
-  console.log(API)
+
 
   const req = await axios.patch(API, Update);
   return req;
@@ -11,13 +12,13 @@ const updateQuote = async (Update) => {
 export const useUpdateQuotation = () => {
   const queryClient = useQueryClient();
   const { mutate, isPending, isError, error } = useMutation({
-    mutationFn: (Update) => updateQuote(Update),
+    mutationFn: updateQuote,
     onSuccess: (res) => {
       toast.success("Job Updated successfully! Your listing is now live");
       queryClient.invalidateQueries(["admin-quotations"]);
-      return res;
     },
     onError: (err) => {
+      console.log(err)
       const errorMessage =
         "There was an error While Updating your job. Please try again.";
 

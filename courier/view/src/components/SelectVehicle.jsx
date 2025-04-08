@@ -30,7 +30,7 @@ const SelectVehicle = ({ setVehicle, selected, setDIstance, setPage , setcar }) 
         const data = await response.json();
         setData(data);
       } catch (err) {
-        console.log(err.message)
+        // console.log(err.message)
         
       } finally {
         setLoading(false);
