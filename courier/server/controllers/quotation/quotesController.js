@@ -160,6 +160,10 @@ export const createNewQuote = asyncHandler(async (req, res) => {
     deliveryDetails,
     bookerDetails,
     selectedVan,
+    quoteJobStatus,
+    quoteAmmount,
+    quoteDistance,
+    quotePayStatus,
     notes,
   } = req.body;
 
@@ -185,6 +189,10 @@ export const createNewQuote = asyncHandler(async (req, res) => {
     deliveryDetails,
     bookerDetails,
     selectedVan,
+    quoteJobStatus,
+    quoteAmmount,
+    quoteDistance,
+    quotePayStatus,
     notes,
   };
 
