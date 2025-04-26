@@ -11,7 +11,7 @@ const router = express.Router();
 
 router
   .route("/")
-  .get(getAllVehicle)
+  .get(verifyJWT, getAllVehicle)
   .post(createNewVehicle)
   .patch(updateVehicle)
   .delete(deleteVehicle);
